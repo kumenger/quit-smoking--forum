@@ -136,10 +136,10 @@ const SignUp = (props) => {
         <br></br>
         <div className="row">
           <div className=" offset-md-1 col-md-5">
-            <button className="btn  btn-success">Sign Up</button>
+            <button className="btn  btn-success btn-block">Sign Up</button>
           </div>
-          <div cla='col-md-5'>
-          <button type="button" className='btn btn-warning' onClick={props.reset} >Clear Values</button></div>
+          <div className='col-md-5'>
+          <button  className='btn btn-warning btn-block' onClick={props.reset}>Clear Values</button></div>
 
           </div>
         </div>

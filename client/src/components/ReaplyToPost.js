@@ -155,11 +155,11 @@ var months = [
 const validate = (formvalues) => {
   let error = {};
   if (!formvalues.replayername) {
-    error.replayername = "name required";
+    error.replayername =<i class="fas fa-exclamation-triangle text-warning"></i>;
   }
  
   if (!formvalues.replayerPost) {
-    error.replayerPost = "replay text required";
+    error.replayerPost =<i class="fas fa-exclamation-triangle text-warning"></i>
   }
   return error;
 };
@@ -174,7 +174,7 @@ const mapStateToProps=(state,ownProps)=>{
         mongologinreduxer:state.mongologinreduxer,
         initialValues:{
           replyertime:`  ${months[a.getMonth()]} ${a.getDate()} ${a.getFullYear()}`+" "+time,
-          replayername:`${state.facebookloginreducer.resp?state.facebookloginreducer.resp.name:" "}`
+        
 
       }
 

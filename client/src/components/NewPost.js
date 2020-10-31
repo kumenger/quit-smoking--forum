@@ -147,13 +147,13 @@ const NewPost = (props) => {
 const validate = (formvalues) => {
   let error = {};
   if (!formvalues.name) {
-    error.name = "name required";
+    error.name =<i class="fas fa-exclamation-triangle text-warning"></i>
   }
   if (!formvalues.title) {
-    error.title = "title required";
+    error.title = <i class="fas fa-exclamation-triangle text-warning"></i>
   }
   if (!formvalues.post) {
-    error.post = "post required";
+    error.post = <i class="fas fa-exclamation-triangle text-warning"></i>
   }
   return error;
 };
@@ -164,13 +164,7 @@ const mapStateToProps = (state) => {
     mongologinreduxer:state.mongologinreduxer,
     allposts: state.allPostsReducer,
     checkpagetypereducer:state.checkpagetypereducer,
-    initialValues: {
-      name: `${
-        state.facebookloginreducer.resp
-          ? state.facebookloginreducer.resp.name
-          : " "
-      }`,
-    },
+    
   };
 };
 export default connect(mapStateToProps, { createPost,checkPageCreateOrReplay })(formWrapped);
