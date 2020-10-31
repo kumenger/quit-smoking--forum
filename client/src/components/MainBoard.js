@@ -7,28 +7,25 @@ import {
   checkPageCreateOrReplay,
 } from "../actions";
 import { getIdForReplay } from "../actions";
-import { Accordion, Figure } from "react-bootstrap";
+
 import { Link } from "react-router-dom";
-import Signup from "./Signup";
-import FigureCaption from "react-bootstrap/esm/FigureCaption";
-import axios from "axios";
-import CommentBox from "./CommentBox";
+
 
 const MainBoard = (props) => {
   let myarry = [
     "f7af89",
     "e6e6fa",
     "e9a6af",
-    
+    "4B0082",
     "21b1ff",
-
-    "ebffc0",
-
+     "ebffc0",
+   "ebffc0",
+   "1E90FF",
     "aaccee",
     "e9bfa6",
     "6aa6e1",
     "a6afe9",
-    "F08080",
+   "4169E1",
     "008080",
     "808000",
   ];
@@ -55,8 +52,8 @@ const MainBoard = (props) => {
     <div
       className="row rounded-right rounded-left rounded-bottom rounded-top "
       style={{
-        paddingRight: "30px",
-        paddingLeft: "30px",
+       
+        padding:"30px"
       }}
     >
       <div
@@ -82,7 +79,7 @@ const MainBoard = (props) => {
                     to={`PostReplay/${x._id}`}
                     onClick={() => props.getIdForReplay(x._id)}
                   >
-                    <p style={{ color: "ROYALBLUE", fontSize: "18px" }}>
+                    <p style={{ color: "navy", fontSize: "18px" }}>
                       <u>{x.title}</u>
                     </p>
                   </Link>
@@ -92,10 +89,10 @@ const MainBoard = (props) => {
                   >{`${x.time}`}</p>
                 </div>
 
-                <div className="col-md-2">
+                <div className="col-md-2 ">
                   <img
                     style={{ maxWidth: "100%" }}
-                    className="rounded-right rounded-left rounded-bottom rounded-top border"
+                    className="rounded-right rounded-left rounded-bottom rounded-top border my-auto"
                     src={
                       props.facebookloginreducer.isLogIn &&
                       props.facebookloginreducer.resp.userID === x.userID &&
@@ -123,18 +120,18 @@ const MainBoard = (props) => {
                     {x.replay && x.replay.length > 0 ? (
                       <span
                         class="fas fa-comment "
-                        style={{ color: "blueviolet" }}
-                      >
+                        style={{ color: "indigo" }}
+                      >&nbsp;
                         {x.replay.length}
                       </span>
                     ) : (
                       ""
-                    )}{" "}
+                    )}&nbsp;
                     {x.likes && x.likes > 0 ? (
                       <span
                         class="fas fa-heart"
-                        style={{ color: "palevioletred" }}
-                      >
+                        style={{ color: "navy"}}
+                      >&nbsp;
                         {x.likes}
                       </span>
                     ) : (
@@ -212,9 +209,9 @@ const MainBoard = (props) => {
                       }
                     />
                   </div>
-                  <div className="offfset-md-1 col-md-8" style={{height:"50vh",overflow:"hidden"}}>
-                    <p className="text-left" >
-                      {props.allposts[props.allposts.length - 1].post +" "+`${<Link to='/'>hi</Link>}`  }
+                  <div className="col-md-9" style={{height:"50vh",overflow:"hidden"}}>
+                    <p  >
+                      {props.allposts[props.allposts.length - 1].post}
                     </p>
                   </div>
                   <br></br>
