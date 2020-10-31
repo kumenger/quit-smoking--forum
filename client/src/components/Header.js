@@ -40,7 +40,7 @@ const Header = (props) => {
 
   return (
     <div
-      className="rounded-right rounded-left rounded-bottom rounded-top border bg-light"
+      className="rounded-right rounded-left rounded-bottom rounded-top border " style={{backgroundColor:"lightslategray"}}
      
     >
       <div
@@ -51,7 +51,7 @@ const Header = (props) => {
           <Navbar expand="lg">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Brand>
-            <Link to="/" onClick={() => getIdForReplay(null)}>
+            <Link className='text-white' to="/" onClick={() => getIdForReplay(null)}>
                    <h6 style={{fontSize:"18px"}}> Home</h6>
                   </Link>
             </Navbar.Brand> &nbsp;

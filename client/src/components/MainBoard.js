@@ -53,15 +53,15 @@ const MainBoard = (props) => {
 
   return (
     <div
-      className="row rounded-right rounded-left rounded-bottom rounded-top overflow-auto"
+      className="row rounded-right rounded-left rounded-bottom rounded-top "
       style={{
         paddingRight: "30px",
         paddingLeft: "30px",
       }}
     >
       <div
-        className="col-md-8 scrollbar "
-        style={{ overflowY: "scroll", height: "80vh", padding: "20px" }}
+        className="col-md-7 rounded-right rounded-left rounded-bottom rounded-top  "
+        style={{ overflowY: "scroll", height: "80vh", padding: "30px",backgroundColor:"lightslategray"}}
       >
         {props.allposts.map((x, index, arr) => {
           return (
@@ -166,7 +166,7 @@ const MainBoard = (props) => {
           );
         })}
       </div>
-      <div className="col-md-4 " style={{paddingTop:"2%"}}>
+      <div className="col-md-5 " style={{paddingTop:"20px"}}>
         <div className="row">
           <div className="col-md-12">
             <div className="row">
@@ -214,7 +214,7 @@ const MainBoard = (props) => {
                   </div>
                   <div className="offfset-md-1 col-md-8" style={{height:"50vh",overflow:"hidden"}}>
                     <p className="text-left" >
-                      {props.allposts[props.allposts.length - 1].post}.....
+                      {props.allposts[props.allposts.length - 1].post +" "+`${<Link to='/'>hi</Link>}`  }
                     </p>
                   </div>
                   <br></br>

@@ -41,7 +41,7 @@ const LogIn = (props) => {
      return<div>{ ResponseError.Email}</div>
     }
     if(ResponseError.Password){
-      return <div> {ResponseError.Password} <Link to='/'>forget PassWord?</Link>  </div>
+      return <div className='text-dark'> {ResponseError.Password} <Link className ='text-white' to='/'>forget PassWord?</Link>  </div>
     }
     
   }
