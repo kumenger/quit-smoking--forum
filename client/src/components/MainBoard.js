@@ -40,13 +40,7 @@ const MainBoard = (props) => {
    const[len,setl]=useState(0)
 
   useEffect(() => {
-     //axios.get("http://localhost:8000/post/posts").then((res) => {
-      //setdata(res.data);});
-    async function getdata(){
-      const reps= await axios.get("/post/posts")
-      setdata(reps.data);
-    }
-     getdata()
+   
       
     
     props.loadAllPost()
@@ -162,20 +156,12 @@ const MainBoard = (props) => {
         })}
       </div>
       <div className='col-md-4 '  >
-       
+   
          
         <div className='row'>
          
        
-          <div className='col-md-12'>
-             <div className='row'>
-             <div className='col-md-12 text-center text-primary '>Recent Post</div>
-             <div className=' col-md-12'><p className='text-left'>{props.allposts[props.allposts.length-1].post}</p></div>
-             </div>
-
-
-          </div>
-          <div className='col-md-12'> <h6 className='text-right text-info'>Post by {   props.allposts[props.allposts.length-1].name} on {props.allposts[props.allposts.length-1].time}</h6></div>
+         
         </div>
       
       </div>
