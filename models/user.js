@@ -1,0 +1,13 @@
+const moongoose =require('mongoose')
+const schema=moongoose.Schema
+const newSchema=new schema({
+  FirstName:{type:String,required:true},
+  LastName:{type:String,required:true},
+  Email:{type:String,required:true},
+  Password:{type:String,required:true},
+  QuitDate:{type:Date},
+  Location:{type:String},
+  NumberOfRepaly:{type:Number},
+  JoinDate:{type:Date}
+})
+module.exports=moongoose.model("users",newSchema)
