@@ -56,6 +56,7 @@ const MainBoard = (props) => {
         padding:"30px"
       }}
     >
+      
       <div
         className="col-md-7 rounded-right rounded-left rounded-bottom rounded-top  "
         style={{ overflowY: "scroll", height: "80vh", padding: "30px",backgroundColor:"lightslategray"}}
@@ -163,9 +164,74 @@ const MainBoard = (props) => {
           );
         })}
       </div>
-      <div className="col-md-5 " style={{paddingTop:"20px"}}>
+      <div className="col-md-5 " style={{paddingTop:"20px"}}>   
+<div className="row">
+          <div className="col-md-12">
+            <div className="row">
+              <div className="col-md-12 text-center text-primary ">
+                <Link
+                  onClick={() =>
+                    props.getIdForReplay(
+                      props.allposts[props.allposts.length - 1]._id
+                    )
+                  }
+                  to={`/PostReplay/${
+                    props.allposts[props.allposts.length - 1]._id
+                  }`}
+                  style={{ fontSize: "20px" }}
+                  className="text-center text-primary"
+                >
+                  {props.allposts[props.allposts.length - 1].title}
+                </Link>
+              </div>
+
+              <div className=" col-md-12">
+                <div className="row">
+                  <div className="col-md-3">
+                    <img
+                      style={{ maxWidth: "100%" }}
+                      className="rounded-right rounded-left rounded-bottom rounded-top "
+                      src={
+                        props.facebookloginreducer.isLogIn &&
+                        props.facebookloginreducer.resp.userID ===
+                          props.allposts[props.allposts.length - 1].userID &&
+                        !props.facebookloginreducer.resp.error
+                          ? props.facebookloginreducer.resp.picture.data.url
+                          : `https://ui-avatars.com/api/?name=${
+                              props.allposts[props.allposts.length - 1].name
+                            }&size=128&font-size=0.2&rounded=true
+                        
+                          &background=${
+                            myarry[Math.round(Math.random() * myarry.length)]
+                          }
+                
+              
+          `
+                      }
+                    />
+                  </div>
+                  <div className="col-md-9" style={{height:"50vh",overflow:"hidden"}}>
+                    <p  >
+                      {props.allposts[props.allposts.length - 1].post}
+                    </p>
+                  </div>
+                  <br></br>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <div className="col-md-12">
+          <br></br>
+            <h6 className=" text-info text-center">
+            Recent Post by {props.allposts[props.allposts.length - 1].name} on{" "}
+              {props.allposts[props.allposts.length - 1].time}
+            </h6>
+          </div>
+        </div>
+ </div>
      
-      </div>
+     
     </div>
   );
 };

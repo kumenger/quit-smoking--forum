@@ -54,7 +54,7 @@ const LogIn = (props) => {
   
   }
   const onforumSubmint = (formValues) => {
-    console.log("hi");
+   
   };
   const myobj = { email: props.Email, password: props.Password };
   const clicked = () => {
@@ -91,7 +91,7 @@ const LogIn = (props) => {
     <div >
     
       {props.mongologinreduxer.isAuthenticated?<button
-          className="btn btn-outline-success"
+          className="btn btn-outline-light"
           onClick={() =>lougbtnclicked() }
         >
           {" "}

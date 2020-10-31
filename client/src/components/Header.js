@@ -13,7 +13,7 @@ const Header = (props) => {
 
   const showwhneishome = () => {
     return props.mongologinreduxer.isAuthenticated ? (
-      <Link to="/NewPost" className="blink btn btn-outline-primary ">
+      <Link to="/NewPost" className="blink btn btn-outline-light ">
         <strong>Create New Post</strong>
       </Link>
     ) : (
@@ -27,7 +27,7 @@ const Header = (props) => {
   const showwhenidonreplay = () => {
     return props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown" ||props.mongologinreduxer.isAuthenticated ? (
       <Link
-        className=" blink blink btn btn-outline-primary "
+        className=" blink blink btn btn-outline-light "
         to={`/ReplayTOPost/${props.getIdForReplayReducer.id}`}
       >
         {" "}
@@ -54,9 +54,9 @@ const Header = (props) => {
             <Link className='text-white' to="/" onClick={() => getIdForReplay(null)}>
                    <h6 style={{fontSize:"18px"}}> Home</h6>
                   </Link>
-            </Navbar.Brand> &nbsp;
+            </Navbar.Brand>
             <Navbar.Brand>
-            {props.mongologinreduxer.isAuthenticated? "":<div><h6 style={{fontSize:"16px"}}>New user? Wellcome &nbsp;&nbsp;&nbsp;<Link to="/signup" className='btn btn-info '>Register</Link></h6> </div>  }
+            {props.mongologinreduxer.isAuthenticated? "":<div><h6 style={{fontSize:"16px"}}>New user?&nbsp;&nbsp;<Link to="/signup" className='btn btn-info '>Register</Link></h6> </div>  }
             </Navbar.Brand>
            <Navbar.Brand style={{fontSize:"18px"}}>
            {props.checkpagetypereducer.page === true
