@@ -129,7 +129,7 @@ const PostReaply = (props) => {
                             x.replayername
                           } &size=64&font-size=0.2&background=${
                          colr2.current
-                       // colr2[Math.round(Math.random() * colr2.length)].current
+                       //colr2[Math.round(Math.random() * colr2.length)].current
 
   //myarry[Math.round(Math.random() * myarry.length)]
 

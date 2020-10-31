@@ -158,7 +158,7 @@ const CommentBox = (props) => {
             id="there"
             contentEditable={editable}
             className={`${editable ? "blickme" : ""}`}
-            style={{margin:0,padding:0}}
+            style={{margin:0,padding:0,fontFamily:"monospace",fontSize:"15px"}}
             dangerouslySetInnerHTML={{__html:`${props.Replay}`}}
           />
            

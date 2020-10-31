@@ -222,6 +222,7 @@ const RepliyListcommnetbox = (props) => {
            style={{fontSize:"14px"}}
             ref={replayerPost}
             id={editable ? "six" : ""}
+            style={{fontFamily:"monospace",fontSize:"15px"}}
             contentEditable={editable}
             className={`${editable ? "blickme" : ""}`}
             dangerouslySetInnerHTML={{__html:`${props.Replayx}`}}

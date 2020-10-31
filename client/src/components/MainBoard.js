@@ -80,7 +80,7 @@ const MainBoard = (props) => {
                     to={`PostReplay/${x._id}`}
                     onClick={() => props.getIdForReplay(x._id)}
                   >
-                    <p style={{ color: "navy", fontSize: "18px" }}>
+                    <p style={{ color: "navy", fontSize: "18px" ,fontFamily:"sarif" }}>
                       <u>{x.title}</u>
                     </p>
                   </Link>
@@ -211,7 +211,7 @@ const MainBoard = (props) => {
                     />
                   </div>
                   <div className="col-md-9" style={{height:"50vh",overflow:"hidden"}}>
-                    <p  >
+                    <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}} >
                       {props.allposts[props.allposts.length - 1].post}
                     </p>
                   </div>
