@@ -63,7 +63,7 @@ const MainBoard = (props) => {
       </div>
     );
   }
-console.log(props.allposts)
+
   return (
     
     <div
@@ -169,16 +169,13 @@ console.log(props.allposts)
        
           <div className='col-md-12'>
              <div className='row'>
-             <div className='col-md-12 text-center'><Link 
-               onClick={() => props.getIdForReplay(props.allposts[props.allposts.length-1]._id)}
-             to={`/PostReplay/${props.allposts[props.allposts.length-1]._id}`} 
-             style={{fontSize:"20px"}}  className='text-center text-primary'>{props.allposts[props.allposts.length-1].title}</Link></div>
+             <div className='col-md-12 text-center text-primary '>Recent Post</div>
              <div className=' col-md-12'><p className='text-left'>{props.allposts[props.allposts.length-1].post}</p></div>
              </div>
 
 
           </div>
-          <div className='col-md-12'> <h6 className='text-right text-info'>Last Post {   props.allposts[props.allposts.length-1].name} on {props.allposts[props.allposts.length-1].time}</h6></div>
+          <div className='col-md-12'> <h6 className='text-right text-info'>Post by {   props.allposts[props.allposts.length-1].name} on {props.allposts[props.allposts.length-1].time}</h6></div>
         </div>
       
       </div>
