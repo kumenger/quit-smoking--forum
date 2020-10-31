@@ -53,7 +53,7 @@ const MainBoard = (props) => {
       className="row rounded-right rounded-left rounded-bottom rounded-top "
       style={{
        
-        padding:"30px"
+      
       }}
     >
       
