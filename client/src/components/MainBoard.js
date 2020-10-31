@@ -22,11 +22,10 @@ const MainBoard = (props) => {
     "e9a6af",
     "ff634d",
     "21b1ff",
-    "663399",
-    "663399",
+    
     "9662eb",
     "ebffc0",
-    "ffd732",
+    
     "aaccee",
     "e9bfa6",
     "6aa6e1",
@@ -50,7 +49,7 @@ const MainBoard = (props) => {
   }, []);
   
 
-  if (!data) {
+  if (!props.allposts) {
     return (
       <div class="spinner-border text-danger text-center" role="status">
         <span class="sr-only">Loading...</span>
@@ -69,15 +68,15 @@ const MainBoard = (props) => {
     >
    
 
-      <div className="col-md-8 " style={{overflowY:"scroll",height:"80vh",padding:"20px"}}>
+      <div className="col-md-8 scrollbar "  style={{overflowY:"scroll",height:"80vh",padding:"20px"}}>
         {props.allposts.map((x, index, arr) => {
           return (
             <div key={index} style={{}}>
               <div
                 className="row rounded-right rounded-left rounded-bottom rounded-top  "
                 style={{
-                 // backgroundColor: "snow",
-                   backgroundColor:"ActiveBorder",
+                 backgroundColor: "snow",
+                
                   paddingTop: "5px",
                   color: "BLACK",
                   border:"1px solid black"
@@ -104,7 +103,7 @@ const MainBoard = (props) => {
                     <img   alt={`${x.replay&&x.replay.length>0?x.replay.length:0}`}
                     
                     style={{maxWidth:"100%"}}
-                      className="rounded-right rounded-left rounded-bottom rounded-top"
+                      className="rounded-right rounded-left rounded-bottom rounded-top border"
                       src={
                         props.facebookloginreducer.isLogIn &&
                         props.facebookloginreducer.resp.userID === x.userID &&
@@ -117,7 +116,7 @@ const MainBoard = (props) => {
                               )
                                 ? x.replay[x.replay.length - 1].replayername
                                 : x.name
-                            }&size=64&font-size=0.2&
+                            }&size=64&font-size=0.2
                         
                           &background=${
                             myarry[Math.round(Math.random() * myarry.length)]
@@ -127,7 +126,7 @@ const MainBoard = (props) => {
           `
                       }
                     />
-                   <p>{x.replay&&x.replay.length>0?<span class="fas fa-comment " style={{color:"blueviolet"}}>{x.replay.length}</span>:""}        {x.likes&&x.likes>0?<span class="fas fa-heart" style={{color:"ButtonShadow"}}>{x.likes}</span>:""} </p>   
+                   <p>{x.replay&&x.replay.length>0?<span class="fas fa-comment " style={{color:"blueviolet"}}>{x.replay.length}</span>:""}        {x.likes&&x.likes>0?<span class="fas fa-heart" style={{color:"palevioletred"}}>{x.likes}</span>:""} </p>   
                   
                 </div>
                 <div className="col-md-4">
@@ -159,7 +158,20 @@ const MainBoard = (props) => {
    
          
         <div className='row'>
-         
+        <div className='col-md-12'>
+             <div className='row'>
+             <div className='col-md-12 text-center text-primary '>
+<Link 
+               onClick={() => props.getIdForReplay(props.allposts[props.allposts.length-1]._id)}
+             to={`/PostReplay/${props.allposts[props.allposts.length-1]._id}`} 
+             style={{fontSize:"20px"}}  className='text-center text-primary'>{props.allposts[props.allposts.length-1].title}</Link></div>
+             <div className=' col-md-12'><p className='text-left'>{props.allposts[props.allposts.length-1].post}</p></div>
+             </div>
+
+
+          </div>
+          <div className='col-md-12'> <h6 className='text-right text-info'>Post by {   props.allposts[props.allposts.length-1].name} on {props.allposts[props.allposts.length-1].time}</h6></div>
+
        
          
         </div>
