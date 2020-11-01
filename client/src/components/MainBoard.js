@@ -50,7 +50,7 @@ const MainBoard = (props) => {
 
   return (
     <div
-      className="row rounded-right rounded-left rounded-bottom rounded-top "
+      className="row rounded-right rounded-left rounded-bottom rounded-top  "
       style={{
        
       
@@ -58,7 +58,7 @@ const MainBoard = (props) => {
     >
       
       <div
-        className="col-md-7 rounded-right rounded-left rounded-bottom rounded-top  "
+        className="col-md-7 col-xs-7 col-s-7 rounded-right rounded-left rounded-bottom rounded-top  "
         style={{ overflowY: "scroll", height: "80vh", padding: "30px",backgroundColor:"lightslategray"}}
       >
         {props.allposts.map((x, index, arr) => {
@@ -67,10 +67,10 @@ const MainBoard = (props) => {
               <div
                 className="row rounded-right rounded-left rounded-bottom rounded-top  "
                 style={{
-                  backgroundColor: "snow",
+                  backgroundColor:"ghostwhite",
 
                   paddingTop: "5px",
-                  color: "BLACK",
+                  
                   border: "1px solid black",
                 }}
               >
@@ -86,14 +86,14 @@ const MainBoard = (props) => {
                   </Link>
                   <p>{`Post by ${x.name} `}</p>
                   <p
-                    style={{ color: "BLUE", fontSize: "12px" }}
+                    style={{ color: "blue", fontSize: "12px" }}
                   >{`${x.time}`}</p>
                 </div>
 
                 <div className="col-md-2 ">
                   <img
                     style={{ maxWidth: "100%" }}
-                    className="rounded-right rounded-left rounded-bottom rounded-top border my-auto"
+                    className="rounded-right rounded-left rounded-bottom rounded-top  my-auto"
                     src={
                       props.facebookloginreducer.isLogIn &&
                       props.facebookloginreducer.resp.userID === x.userID &&
@@ -131,7 +131,7 @@ const MainBoard = (props) => {
                     {x.likes && x.likes > 0 ? (
                       <span
                         class="fas fa-heart"
-                        style={{ color: "navy"}}
+                        style={{ color: "lightpink"}}
                       >&nbsp;
                         {x.likes}
                       </span>
@@ -164,7 +164,7 @@ const MainBoard = (props) => {
           );
         })}
       </div>
-      <div className="col-md-5 " style={{paddingTop:"20px"}}>   
+      <div className="col-md-5 col-xs-5 col-s-5 " style={{paddingTop:"20px"}}>   
 <div className="row">
           <div className="col-md-12">
             <div className="row">
