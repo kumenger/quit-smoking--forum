@@ -3,19 +3,23 @@ import {connect} from 'react-redux'
 import { getIdForReplay,loadAllPost } from "../actions";
 import { Link } from "react-router-dom";
 class LastPost extends React.Component{
+    state={data:[]}
   componentDidMount(){
-this.props.loadAllPost()
+
+   this.props.loadAllPost()
+   this.setState({data:this.props.allpost[this.props.allpost.length-1]})
+  
   }
   render(){
-      console.log(this.props.allpost)
+     
       if(!this.props.allpost){
           return <div>loding...</div>
       }
+      console.log(this.state.data)
       return(
 
-<div>
 
-
+<div >
 <div className="row">
           <div className="col-md-12">
             <div className="row">
@@ -23,16 +27,16 @@ this.props.loadAllPost()
               <Link
                   onClick={() =>
                     this.props.getIdForReplay(
-                     this.props.allpost[this.props.allpost.length - 1]._id
+                     this.state.data._id
                     )
                   }
                   to={`/PostReplay/${
-                   this.props.allpost[this.props.allpost.length - 1]._id
+                   this.state.data._id
                   }`}
                   style={{ fontSize: "20px" }}
                   className="text-center text-primary"
                 >
-                  {this.props.allpost[this.props.allpost.length - 1].title}
+                  {this.state.data.title}
                 </Link>
               </div>
 
@@ -41,7 +45,7 @@ this.props.loadAllPost()
                   
                   <div className="col-md-10 offset-md-1" style={{maxHeight:"70vh",overflow:"scroll"}}>
                     <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}} >
-                      {this.props.allpost[this.props.allpost.length - 1].post}
+                      {this.state.data.post}
                     </p>
                   </div>
                   <br></br>
@@ -53,11 +57,13 @@ this.props.loadAllPost()
           <div className="col-md-12">
           <br></br>
             <h6 className=" text-info text-center">
-            Recent Post by {this.props.allpost[this.props.allpost.length - 1].name} on{" "}
-              {this.props.allpost[this.props.allpost.length - 1].time}
+            Recent Post by {this.state.data.name} on{" "}
+              {this.state.data.time}
             </h6>
           </div>
-        </div>
+        </div>     
+
+
 
 </div>
       )
@@ -65,7 +71,8 @@ this.props.loadAllPost()
 
 }
 const mapStateToProps=(state)=>{
-    return{allpost:Object.values(state.allPostsReducer),
+    return{
+        allpost:Object.values(state.allPostsReducer),
         getIdForReplayReducer: state.getIdForReplayReducer,
     }
 }
