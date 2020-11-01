@@ -98,7 +98,7 @@ const CommentBox = (props) => {
   };
   const iconclicked = () => {
    // props.UpdateLikes(props.getcurrentlikes, props.getidfromparent);
-    axios.put(`http://localhost:8000/post/updatelikes/${props.getidfromparent}`)
+    axios.put(`/post/updatelikes/${props.totallikes,props.getidfromparent}`)
      setlikes(likes+1)           
   };
 

@@ -68,7 +68,7 @@ const MainBoard = (props) => {
               <div
                 className="row rounded-right rounded-left rounded-bottom rounded-top  "
                 style={{
-                  backgroundColor:"ghostwhite",
+                  backgroundColor:"snow",
 
                   paddingTop: "5px",
                   
@@ -189,7 +189,7 @@ const MainBoard = (props) => {
               <div className=" col-md-12">
                 <div className="row">
                   
-                  <div className="col-md-10 offset-md-1" style={{height:"70vh",overflow:"scroll"}}>
+                  <div className="col-md-10 offset-md-1" style={{maxHeight:"70vh",overflow:"scroll"}}>
                     <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}} >
                       {props.allposts[props.allposts.length - 1].post}
                     </p>
