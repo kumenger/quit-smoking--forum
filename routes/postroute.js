@@ -81,7 +81,7 @@ Router.route("/updateReplylikes/:id").put((req, res) => {
     }
   );
 });
-Router.route("/updatereply/:id").put((req, res) => {
+Router.route("/updatereply/:id").patch((req, res) => {
   Post.findOneAndUpdate(
     { _id: req.params.id,"replay._id": req.body.id},
     

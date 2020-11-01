@@ -15,11 +15,11 @@ class App extends React.Component  {
   render(){
   return (
     <div>
-      <div className="fluid-container" style={{ paddingLeft: "10px",paddingRight:"10px" }}>
+      <div className="fluid-container" style={{ paddingLeft: "10px",paddingRight:"10px",paddingTop:"10px" }}>
         <Router history={history}>
       
           <Header />
-          <br></br>
+          <br/>
 
           <div>
             <Route path="/" exact component={MainBoard} />

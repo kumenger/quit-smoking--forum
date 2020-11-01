@@ -180,7 +180,7 @@ const MainBoard = (props) => {
               <div className="col-md-12 text-center text-primary ">
               <Link
                   onClick={() =>
-                    this.props.getIdForReplay(
+                  props.getIdForReplay(
                      props.allposts[props.allposts.length-1]._id
                     )
                   }
