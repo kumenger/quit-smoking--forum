@@ -63,7 +63,8 @@ const MainBoard = (props) => {
         style={{ overflowY: "scroll", height: "80vh",padding: "30px",backgroundColor:"lightslategray"}}
       >
         {props.allposts.map((x, index, arr) => {
-          return (
+          if(x.name&&x.post&&x.time)
+         { return (
             <div key={index} style={{}}>
               <div
                 className="row rounded-right rounded-left rounded-bottom rounded-top  "
@@ -162,7 +163,7 @@ const MainBoard = (props) => {
 
               <br></br>
             </div>
-          );
+          );}
         })}
       </div>
       <div className="col-md-5 col-xs-5 col-s-5 " style={{paddingTop:"20px"}}>   
