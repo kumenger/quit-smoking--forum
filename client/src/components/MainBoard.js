@@ -7,7 +7,7 @@ import {
   checkPageCreateOrReplay,
 } from "../actions";
 import { getIdForReplay } from "../actions";
-
+import axios from 'axios'
 import { Link } from "react-router-dom";
 import LastPost from './LastPost'
 
@@ -31,16 +31,23 @@ const MainBoard = (props) => {
   ];
 
   const [data, setdata] = useState([]);
-  const [len, setl] = useState(0);
+  const [id, setid] = useState();
 
   useEffect(() => {
-    setdata(props.allposts)
+    async function get(){
+     await axios.get('http://localhost:8000/post/posts').then((res)=>{
+        setdata(res.data)
+        
+      }) 
+    }           
+    get()
+    
     props.loadAllPost();
     props.getIdForReplay(null);
     props.checkPageCreateOrReplay(true);
   }, []);
 
-  if (!data) {
+  if (!props.allposts) {
     return (
       <div class="spinner-border text-danger text-center" role="status">
         <span class="sr-only">Loading...</span>
@@ -62,7 +69,7 @@ const MainBoard = (props) => {
         className="col-md-7 col-xs-7 col-s-7 rounded-right rounded-left rounded-bottom rounded-top  "
         style={{ overflowY: "scroll", height: "80vh",padding: "30px",backgroundColor:"lightslategray"}}
       >
-        {data.map((x, index, arr) => {
+        {props.allposts.map((x, index, arr) => {
          
          return (
             <div key={index} style={{}}>
@@ -100,7 +107,7 @@ const MainBoard = (props) => {
                       props.facebookloginreducer.isLogIn &&
                       props.facebookloginreducer.resp.userID === x.userID &&
                       !props.facebookloginreducer.resp.error
-                        ? props.facebookloginreducer.resp.picture.data.url
+                        ? props.facebookloginreducer.resp.picture.props.allposts.url
                         : `https://ui-avatars.com/api/?name=${
                             x.replay &&
                             x.replay.length > 0 &&
@@ -167,7 +174,48 @@ const MainBoard = (props) => {
         })}
       </div>
       <div className="col-md-5 col-xs-5 col-s-5 " style={{paddingTop:"20px"}}>   
-      <LastPost/>
+      <div className="row">
+          <div className="col-md-12">
+            <div className="row">
+              <div className="col-md-12 text-center text-primary ">
+              <Link
+                  onClick={() =>
+                    this.props.getIdForReplay(
+                     props.allposts[props.allposts.length-1]._id
+                    )
+                  }
+                to={`/PostReplay/${
+                  props.allposts[props.allposts.length-1]._id
+                  }`}
+                  style={{ fontSize: "20px" }}
+                  className="text-center text-primary"
+                >
+                  { props.allposts[props.allposts.length-1].title}
+                </Link>
+              </div>
+
+              <div className=" col-md-12">
+                <div className="row">
+                  
+                  <div className="col-md-10 offset-md-1" style={{maxHeight:"70vh",overflow:"scroll"}}>
+                    <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}} >
+                      { props.allposts[props.allposts.length-1].post}
+                    </p>
+                  </div>
+                  <br></br>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <div className="col-md-12">
+          <br></br>
+            <h6 className=" text-info text-center">
+            Recent Post by { props.allposts[props.allposts.length-1].name} on{" "}
+              { props.allposts[props.allposts.length-1].time}
+            </h6>
+          </div>
+        </div>     
       </div>
      
      

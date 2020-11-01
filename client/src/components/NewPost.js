@@ -63,7 +63,7 @@ const NewPost = (props) => {
       if(props.facebookloginreducer.isLogIn){getUserId.userID=props.facebookloginreducer.resp.id}
       else if(props.mongologinreduxer.isAuthenticated){getUserId.userID=props.mongologinreduxer.user.id}
    
-       console.log(getUserId.userID)
+      
        props.createPost({...formValues,...getUserId});
    /*const {userID}=props.facebookloginreducer.resp
    axios.post("http://localhost:8000/post/createPost",{
@@ -75,7 +75,10 @@ const NewPost = (props) => {
 
 
 
-    setTimeout(()=>{history.push('/')},1000)
+    setTimeout(()=>{
+      history.push('/')
+     
+    },1000)
     
   };
  

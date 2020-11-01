@@ -2,20 +2,25 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { getIdForReplay,loadAllPost } from "../actions";
 import { Link } from "react-router-dom";
+import axios from 'axios'
 class LastPost extends React.Component{
-    state={data:[]}
+    state={data:[],id:""}
   componentDidMount(){
+    async function get(){
+        const resp=await axios.get('http://localhost:8000/post/posts')
+            this.setState({data:resp.data})
+        
+       } 
 
-   this.props.loadAllPost()
-   this.setState({data:this.props.allpost[this.props.allpost.length-1]})
   
   }
+
   render(){
      
-      if(!this.props.allpost){
+      if(!this.state.data){
           return <div>loding...</div>
       }
-      console.log(this.state.data)
+      console.log(this.state.data);
       return(
 
 
@@ -27,11 +32,11 @@ class LastPost extends React.Component{
               <Link
                   onClick={() =>
                     this.props.getIdForReplay(
-                     this.state.data._id
+                     this.state.id
                     )
                   }
-                  to={`/PostReplay/${
-                   this.state.data._id
+                to={`/PostReplay/${
+                  this.state.id
                   }`}
                   style={{ fontSize: "20px" }}
                   className="text-center text-primary"
