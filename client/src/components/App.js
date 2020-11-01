@@ -9,6 +9,7 @@ import SignUp from "./Signup";
 import { connect } from "react-redux";
 import ReplayTOPost from "./ReaplyToPost";
 import {fetchuser} from "../actions";
+
 class App extends React.Component  {
 
   render(){
@@ -16,6 +17,7 @@ class App extends React.Component  {
     <div>
       <div className="fluid-container" style={{ paddingLeft: "10px",paddingRight:"10px" }}>
         <Router history={history}>
+      
           <Header />
           <br></br>
 
