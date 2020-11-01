@@ -52,7 +52,8 @@ const MainBoard = (props) => {
     <div
       className="row rounded-right rounded-left rounded-bottom rounded-top  "
       style={{
-       paddingLeft:"15px"
+       paddingLeft:"15px",
+       paddingRight:"15px"
       
       }}
     >
