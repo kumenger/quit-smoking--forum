@@ -97,7 +97,7 @@ Router.route("/updatereply/:id").put((req, res) => {
   })
   .catch((err) => res.status(400).json("Error" + " " + err));;
 });
-Router.route("/updatepost/:id").put((req, res) => {
+Router.route("/updatepost/:id").patch((req, res) => {
   Post.findByIdAndUpdate(req.params.id).then((post) => {
     (post.name = req.body.name),
       (post.time = req.body.time),

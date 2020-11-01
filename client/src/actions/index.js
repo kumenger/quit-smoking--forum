@@ -119,7 +119,7 @@ export const UpdateLikes = (currentlikes, id) => async (dispatch, getState) => {
 
 export const editPost = (id, obj) => async (dispatch) => {
   try {
-    const response = await axios.put(
+    const response = await axios.patch(
       `/post/updatepost/${id}`,
       obj
     );
@@ -136,7 +136,7 @@ export const editPostReplay = (id, formvalues) => async (
  
 
   try {
-    const response = await axios.put(
+    const response = await axios.patch(
       `/post/updatereply/${id}`,
       formvalues
     );
