@@ -198,9 +198,12 @@ const MainBoard = (props) => {
                 <div className="row">
                   
                   <div className="col-md-10 offset-md-1" style={{maxHeight:"70vh",overflow:"scroll"}}>
-                    <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}} >
-                      { props.allposts[props.allposts.length-1].post}
-                    </p>
+                    <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}}
+                    dangerouslySetInnerHTML={{__html:`${ props.allposts[props.allposts.length-1].post}`}}
+                    
+                    / >
+                     
+                   
                   </div>
                   <br></br>
                 </div>
