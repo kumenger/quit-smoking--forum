@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { connect } from "react-redux";
 import { editPost, deletepost } from "../actions";
 import { UpdateLikes } from "../actions";
@@ -15,6 +15,14 @@ const CommentBox = (props) => {
   const [editable, seteditale] = useState(false);
   const [show, setShow] = useState(false);
   const[likes,setlikes]=useState(props.totallikes)
+  const one=useRef()
+  const two=useRef()
+  const theree=useRef()
+  const four=useRef()
+  
+
+  
+
 
   const UpdateDeleteButton = () => {
     let history=useHistory()
@@ -86,10 +94,10 @@ const CommentBox = (props) => {
     if (editable) {
       props.editPost(props.getIdForReplayReducer.id, {
         ...myobj,
-        name: document.getElementById("one").innerHTML,
-        time: document.getElementById("two").innerHTML,
-        post: document.getElementById("there").innerHTML ,
-        title: document.getElementById("four").innerHTML,
+        name: one.current.innerHTML,
+        time: two.current.innerHTML,
+        post: theree.current.innerHTML ,
+        title: four.current.innerHTML,
       });
         
       seteditale(false);
@@ -114,6 +122,7 @@ const CommentBox = (props) => {
           <div className="col-md-3 text-cente">
             <p
               id="one"
+              ref={one}
               className="text-white "
               contentEditable={editable}
               className={`${editable ? "blickme" : "text-white"}`}
@@ -125,6 +134,7 @@ const CommentBox = (props) => {
             <p
             
               id="four"
+              ref={four}
               name="time"
               style={{color:"POWDERBLUE"}}
               className="text-white"
@@ -137,6 +147,7 @@ const CommentBox = (props) => {
           <div className="  col-md-3 ">
             <p
               id="two"
+              ref={two}
               name="time"
               className="text-white "
               contentEditable={editable}
@@ -156,6 +167,7 @@ const CommentBox = (props) => {
           <div
            style={{fontSize:"14px"}}
             id="there"
+            ref={theree}
             contentEditable={editable}
             className={`${editable ? "blickme" : ""}`}
             style={{margin:0,padding:0,fontFamily:"monospace",fontSize:"15px"}}
