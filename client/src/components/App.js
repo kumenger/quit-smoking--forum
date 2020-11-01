@@ -14,7 +14,7 @@ class App extends React.Component  {
   render(){
   return (
     <div>
-      <div className="fluid-container" style={{ padding: "10px" }}>
+      <div className="fluid-container" style={{ paddingLeft: "10px",paddingRight:"10px" }}>
         <Router history={history}>
           <Header />
           <br></br>

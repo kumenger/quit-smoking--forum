@@ -52,14 +52,14 @@ const MainBoard = (props) => {
     <div
       className="row rounded-right rounded-left rounded-bottom rounded-top  "
       style={{
-       
+       paddingLeft:"15px"
       
       }}
     >
       
       <div
         className="col-md-7 col-xs-7 col-s-7 rounded-right rounded-left rounded-bottom rounded-top  "
-        style={{ overflowY: "scroll", height: "80vh", padding: "30px",backgroundColor:"lightslategray"}}
+        style={{ overflowY: "scroll", height: "80vh",padding: "30px",backgroundColor:"lightslategray"}}
       >
         {props.allposts.map((x, index, arr) => {
           return (
@@ -187,30 +187,8 @@ const MainBoard = (props) => {
 
               <div className=" col-md-12">
                 <div className="row">
-                  <div className="col-md-3">
-                    <img
-                      style={{ maxWidth: "100%" }}
-                      className="rounded-right rounded-left rounded-bottom rounded-top "
-                      src={
-                        props.facebookloginreducer.isLogIn &&
-                        props.facebookloginreducer.resp.userID ===
-                          props.allposts[props.allposts.length - 1].userID &&
-                        !props.facebookloginreducer.resp.error
-                          ? props.facebookloginreducer.resp.picture.data.url
-                          : `https://ui-avatars.com/api/?name=${
-                              props.allposts[props.allposts.length - 1].name
-                            }&size=128&font-size=0.2&rounded=true
-                        
-                          &background=${
-                            myarry[Math.round(Math.random() * myarry.length)]
-                          }
-                
-              
-          `
-                      }
-                    />
-                  </div>
-                  <div className="col-md-9" style={{height:"50vh",overflow:"hidden"}}>
+                  
+                  <div className="col-md-10 offset-md-1" style={{height:"70vh",overflow:"scroll"}}>
                     <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}} >
                       {props.allposts[props.allposts.length - 1].post}
                     </p>
