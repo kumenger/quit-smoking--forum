@@ -33,11 +33,11 @@ useEffect(()=>{
     <Link
         onClick={() =>
         props.getIdForReplay(
-          props.getlastPostReducer.id
+          props.getlastPostReducer._id
           )
         }
       to={`/PostReplay/${
-       props.getlastPostReducer.lastpost.id
+       props.getlastPostReducer.lastpost._id
         }`}
         style={{ fontSize: "20px" }}
         className="text-center text-white"
