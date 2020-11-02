@@ -61,15 +61,15 @@ const MainBoard = (props) => {
       style={{
        paddingLeft:"15px",
        paddingRight:"15px",
-      
+       alignItems:"center"
       
       
       }}
     >
       
       <div
-        className="col-md-7 col-xs-7 col-s-7 rounded-right rounded-left rounded-bottom rounded-top  "
-        style={{ overflowY: "scroll", height: "100vh",backgroundColor:""}}
+        className="col-md-12 rounded-right rounded-left rounded-bottom rounded-top  "
+        style={{backgroundColor:""}}
       >
         {props.allposts.map((x, index, arr) => {
          
@@ -175,43 +175,8 @@ const MainBoard = (props) => {
           );
         })}
       </div>
-      <div className="col-md-5 col-xs-5 col-s-5 " style={{paddingTop:"20px"}}>   
-      <div className="row">
-          <div className="col-md-12">
-            <div className="row">
-              <div className="col-md-12 text-center text-primary ">
-              <p
-                  style={{color:"navy",fontFamily:"sans-serif",fontSize:"18px"}}
-                >
-                  { props.allposts[props.allposts.length-1].title}
-                </p>
-              </div>
-
-              <div className=" col-md-12">
-                <div className="row">
-                  
-                  <div className="col-md-10 offset-md-1" style={{maxHeight:"70vh",overflow:"scroll"}}>
-                    <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}}
-                    dangerouslySetInnerHTML={{__html:`${ props.allposts[props.allposts.length-1].post}`}}
-                    
-                    / >
-                     
-                   
-                  </div>
-                  <br></br>
-                </div>
-              </div>
-            </div>
-          </div>
-         
-          <div className="col-md-12">
-          <br></br>
-            <h6 className=" text-info text-center">
-            Recent Post by { props.allposts[props.allposts.length-1].name} on{" "}
-              { props.allposts[props.allposts.length-1].time}
-            </h6>
-          </div>
-        </div>     
+      <div>   
+       
       </div>
      
      
