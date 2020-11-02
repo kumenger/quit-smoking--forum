@@ -27,6 +27,26 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <style>
+      .outset{
+        border-style: inset;
+        border: 5px solid gray;
+      }
+         @media only screen and (max-width: 768px)  {
+     h5 {
+         font-size: 1.2em;
+     }
+    
+   
+     
+     }
+       @media only screen and(max-width:992px){
+    h5 {
+         font-size: 1.5em;
+     }
+    
+     
+     
+   }
       .googlefont{
         font-family:tahoma
       }
@@ -53,12 +73,15 @@
   50% {
     opacity: 0.3;
   }
+ 
 }
 
     </style>
     <title>React App</title>
   </head>
-  <body style="background-color: gainsboro;"   >
+  
+
+  <body style="background-color: #4d4d4d;"  class='opacity-1' >
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"  ></div>
     <!--

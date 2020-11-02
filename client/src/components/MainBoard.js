@@ -61,50 +61,50 @@ const MainBoard = (props) => {
       style={{
        paddingLeft:"15px",
        paddingRight:"15px",
-       alignItems:"center"
+     
       
       
       }}
     >
       
       <div
-        className="col-md-12 rounded-right rounded-left rounded-bottom rounded-top  "
+        className="col-md-8 rounded-right rounded-left rounded-bottom rounded-top  "
         style={{backgroundColor:""}}
       >
-        {props.allposts.map((x, index, arr) => {
+        {props.allposts.map((x, index, arr) => 
          
-         return (
-            <div key={index} style={{}}>
+    
+            <div key={index} style={{}} >
               <div
-                className="row rounded-right rounded-left rounded-bottom rounded-top border "
+                className="row rounded-right rounded-left rounded-bottom rounded-top outset "
                 style={{
-                  backgroundColor:"ActiveBorder",
-
+                  backgroundColor:"#ebf1f1",
+                
                   paddingTop: "5px",
                   
                  
                 }}
               >
-                <div className="col-md-6 ">
+                <div className="col-md-5">
                   <Link
                     className="googlefont"
                     to={`PostReplay/${x._id}`}
                     onClick={() => props.getIdForReplay(x._id)}
                   >
-                    <p style={{ color: "navy", fontSize: "18px" ,fontFamily:"revert" }}>
+                    <h5 style={{ color: "darkinfo" ,fontFamily:"revert" }}>
                       <u>{x.title}</u>
-                    </p>
+                    </h5>
                   </Link>
                   <p>{`Post by ${x.name} `}</p>
                   <p
-                    style={{ color: "blue", fontSize: "12px" }}
+                    style={{ color: "#0B6943", fontSize: "12px" }}
                   >{`${x.time}`}</p>
                 </div>
 
-                <div className="col-md-2 ">
+                <div className="col">
                   <img
                     style={{ maxWidth: "100%" }}
-                    className="rounded-right rounded-left rounded-bottom rounded-top  my-auto"
+                    className="rounded-right rounded-left rounded-bottom rounded-top img-responsive my-auto"
                     src={
                       props.facebookloginreducer.isLogIn &&
                       props.facebookloginreducer.resp.userID === x.userID &&
@@ -151,8 +151,8 @@ const MainBoard = (props) => {
                     )}{" "}
                   </p>
                 </div>
-                <div className="col-md-4">
-                  <p style={{ fontSize: "14px" }}>
+                <div className="col">
+                  <p style={{ fontSize: "14px" }} className='text-left'>
                     last reply by{" "}
                     {x.replay &&
                     x.replay.length > 0 &&
@@ -168,18 +168,47 @@ const MainBoard = (props) => {
                       : x.time}
                   </p>
                 </div>
+                
               </div>
-
             
+              <br/>
             </div>
-          );
-        })}
-      </div>
-      <div>   
+          
+         
+        
+        
+        
+  
+        
+        )}
        
       </div>
+      <div className='col-md-4'>
+        <div className='row'>
+          <div className='col'>
+            <div className='row'>
+            <div className='col-md-12'>
+              <img  src="https://i.ibb.co/FzhXx8P/2.jpg" alt="2" className='img-responsive' width='70%' />
+            </div>
+            <div className='col-md-12'>
+           A dozen reason to crush the habbit
+            </div>
+            </div>
+
+          </div>
+          <div className='col'>
+          <img  src="https://i.ibb.co/FzhXx8P/2.jpg" alt="2" className='img-responsive' width='50%'  />
+            </div>
+
+        </div>
      
+      </div>
+      
+      <div>   
      
+      </div>
+     
+  
     </div>
   );
 };
