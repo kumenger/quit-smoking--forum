@@ -67,20 +67,20 @@ const MainBoard = (props) => {
       
       <div
         className="col-md-7 col-xs-7 col-s-7 rounded-right rounded-left rounded-bottom rounded-top  "
-        style={{ overflowY: "scroll", height: "80vh",padding: "30px",backgroundColor:"lightslategray"}}
+        style={{ overflowY: "scroll", height: "80vh",backgroundColor:""}}
       >
         {props.allposts.map((x, index, arr) => {
          
          return (
             <div key={index} style={{}}>
               <div
-                className="row rounded-right rounded-left rounded-bottom rounded-top  "
+                className="row rounded-right rounded-left rounded-bottom rounded-top border "
                 style={{
                   backgroundColor:"snow",
 
                   paddingTop: "5px",
                   
-                  border: "1px solid black",
+                 
                 }}
               >
                 <div className="col-md-6 ">
@@ -89,7 +89,7 @@ const MainBoard = (props) => {
                     to={`PostReplay/${x._id}`}
                     onClick={() => props.getIdForReplay(x._id)}
                   >
-                    <p style={{ color: "navy", fontSize: "18px" ,fontFamily:"sarif" }}>
+                    <p style={{ color: "navy", fontSize: "18px" ,fontFamily:"revert" }}>
                       <u>{x.title}</u>
                     </p>
                   </Link>
@@ -168,7 +168,7 @@ const MainBoard = (props) => {
                 </div>
               </div>
 
-              <br></br>
+            
             </div>
           );
         })}
