@@ -119,9 +119,10 @@ const CommentBox = (props) => {
     >
       <div>
         <div className="row bg-dark   rounded-top border">
-          <div className="col-md-3 text-cente">
+          <div className="col ">
             <p
               id="one"
+              style={{fontSize:"13px"}}
               ref={one}
               className="text-white "
               contentEditable={editable}
@@ -130,13 +131,13 @@ const CommentBox = (props) => {
               {props.ReplayPosteName}
             </p>
           </div>
-          <div className="col-md-6 text-">
+          <div className="col ">
             <p
             
               id="four"
               ref={four}
               name="time"
-              style={{color:"POWDERBLUE"}}
+              style={{color:"POWDERBLUE",fontSize:"15px"}}
               className="text-white"
               contentEditable={editable}
               className={`${editable ? "blickme" : "text-warning"}`}
@@ -144,9 +145,10 @@ const CommentBox = (props) => {
               {props.ReplayPostTitle}
             </p>
           </div>
-          <div className="  col-md-3 ">
+          <div className="col">
             <p
               id="two"
+              style={{fontSize:"13px"}}
               ref={two}
               name="time"
               className="text-white "
@@ -160,7 +162,7 @@ const CommentBox = (props) => {
         </div>
       </div>
       <div className="row bg-light border ">
-        <div className="col-md-2 " style={{ padding: "20px" }}>
+        <div className="col " style={{ padding: "20px" }}>
           <img  src={props.avaterPic}  className="rounded-right rounded-left rounded-bottom rounded-top" />
         </div>
         <div className="col-md-10">

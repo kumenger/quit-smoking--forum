@@ -1,86 +1,89 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {connect} from 'react-redux'
-import { getIdForReplay,loadAllPost } from "../actions";
+import { getIdForReplay,  getlastPOst,loadAllPost } from "../actions";
 import { Link } from "react-router-dom";
-import axios from 'axios'
-class LastPost extends React.Component{
-    state={data:[],id:""}
-  componentDidMount(){
-    async function get(){
-        const resp=await axios.get('http://localhost:8000/post/posts')
-            this.setState({data:resp.data})
-        
-       } 
+
+ const LastPost=(props)=>{
+   
+  
+useEffect(()=>{
+   props.loadAllPost()
+    props.getlastPOst(props.allposts[props.allposts.length-1]._id)
+})
+    
 
   
-  }
+  
 
-  render(){
+ 
      
-      if(!this.state.data){
+      if(!props.getlastPostReducer.lastpost){
           return <div>loding...</div>
       }
-      console.log(this.state.data);
+     
       return(
 
 
-<div >
 <div className="row">
-          <div className="col-md-12">
-            <div className="row">
-              <div className="col-md-12 text-center text-primary ">
-              <Link
-                  onClick={() =>
-                    this.props.getIdForReplay(
-                     this.state.id
-                    )
-                  }
-                to={`/PostReplay/${
-                  this.state.id
-                  }`}
-                  style={{ fontSize: "20px" }}
-                  className="text-center text-primary"
-                >
-                  {this.state.data.title}
-                </Link>
-              </div>
 
-              <div className=" col-md-12">
-                <div className="row">
-                  
-                  <div className="col-md-10 offset-md-1" style={{maxHeight:"70vh",overflow:"scroll"}}>
-                    <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}} >
-                      {this.state.data.post}
-                    </p>
-                  </div>
-                  <br></br>
-                </div>
-              </div>
-            </div>
-          </div>
+<div className="row">
+<div className="col-md-12">
+  <div className="row">
+    <div className="col-md-12 text-center text-primary ">
+    <Link
+        onClick={() =>
+        props.getIdForReplay(
+          props.getlastPostReducer.id
+          )
+        }
+      to={`/PostReplay/${
+       props.getlastPostReducer.lastpost.id
+        }`}
+        style={{ fontSize: "20px" }}
+        className="text-center text-white"
+      >
+       <u>{props.getlastPostReducer.lastpost.title}</u> 
+      </Link>
+    </div>
+
+    <div className=" col-md-12">
+      <div className="row">
+        
+        <div className="col-md-10 offset-md-1" style={{maxHeight:"70vh",overflow:"auto",backgroundColor:"ActiveBorder"}}>
+          <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}}
+          dangerouslySetInnerHTML={{__html:`${props.getlastPostReducer.lastpost.post}`}}
+          
+          / >
+           
          
-          <div className="col-md-12">
-          <br></br>
-            <h6 className=" text-info text-center">
-            Recent Post by {this.state.data.name} on{" "}
-              {this.state.data.time}
-            </h6>
-          </div>
-        </div>     
-
-
-
+        </div>
+        <br></br>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div className="col-md-12">
+<br></br>
+  <h6 className=" text-info text-center">
+  Recent Post by {props.getlastPostReducer.lastpost.name} on{" "}
+    {props.getlastPostReducer.lastpost.time}
+  </h6>
+</div>
+</div> 
+</div> 
       )
   }
 
-}
+
 const mapStateToProps=(state)=>{
     return{
-        allpost:Object.values(state.allPostsReducer),
+        getlastPostReducer:state.getlastPostReducer,
         getIdForReplayReducer: state.getIdForReplayReducer,
+        allposts: Object.values(state.allPostsReducer),
+
     }
 }
   
  
-  export default connect(mapStateToProps,{getIdForReplay,loadAllPost})(LastPost)
+  export default connect(mapStateToProps,{getIdForReplay,getlastPOst,loadAllPost})(LastPost)

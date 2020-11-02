@@ -182,7 +182,7 @@ const RepliyListcommnetbox = (props) => {
       </Modal>
       <div>
         <div className="row bg-dark   rounded-top border">
-          <div className="col-md-3 text-cente">
+          <div className="col">
             <p
               ref={replayername}
               id={editable ? "four" : ""}
@@ -194,7 +194,7 @@ const RepliyListcommnetbox = (props) => {
             </p>
           </div>
 
-          <div className=" offset-md-6 col-md-3 ">
+          <div className=" col ">
             <p
               ref={replyertime}
               id={editable ? "five" : ""}

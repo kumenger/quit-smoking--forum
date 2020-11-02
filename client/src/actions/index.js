@@ -223,4 +223,13 @@ export const setUserLoading = () => {
   };
 };
 
+export const getlastPOst=(id)=> async (dispatch)=>{
+  const response = await axios.get(`/post/${id}`);
+  dispatch({ type: "LAST_POST", payload: response.data });
+   
+ 
+
+
+}
+
 

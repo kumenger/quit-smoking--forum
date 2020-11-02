@@ -5,6 +5,8 @@ import {
   loadAllPost,
   getnumberOfReplies,
   checkPageCreateOrReplay,
+  getlastPOst,
+  loadPost
 } from "../actions";
 import { getIdForReplay } from "../actions";
 import axios from 'axios'
@@ -34,15 +36,10 @@ const MainBoard = (props) => {
   const [id, setid] = useState();
 
   useEffect(() => {
-    async function get(){
-     await axios.get('http://localhost:8000/post/posts').then((res)=>{
-        setdata(res.data)
-        
-      }) 
-    }           
-    get()
-    
+   
+  
     props.loadAllPost();
+
     props.getIdForReplay(null);
     props.checkPageCreateOrReplay(true);
   }, []);
@@ -54,7 +51,7 @@ const MainBoard = (props) => {
       </div>
     );
   }
-
+  console.log(window.screen.width)
   return (
     <div
       className="row rounded-right rounded-left rounded-bottom rounded-top  "
@@ -184,23 +181,9 @@ const MainBoard = (props) => {
        
       </div>
       <div className='col-md-4'>
-        <div className='row'>
-          <div className='col'>
-            <div className='row'>
-            <div className='col-md-12'>
-              <img  src="https://i.ibb.co/FzhXx8P/2.jpg" alt="2" className='img-responsive' width='70%' />
-            </div>
-            <div className='col-md-12'>
-           A dozen reason to crush the habbit
-            </div>
-            </div>
+       
 
-          </div>
-          <div className='col'>
-          <img  src="https://i.ibb.co/FzhXx8P/2.jpg" alt="2" className='img-responsive' width='50%'  />
-            </div>
-
-        </div>
+<LastPost/>
      
       </div>
       
@@ -220,13 +203,16 @@ const mapStateToProps = (state) => {
     getInsideIndexforlikesreducer: state.getInsideIndexforlikesreducer,
     checkpagetypereducer: state.checkpagetypereducer,
     mongologinreduxer: state.mongologinreduxer,
+    getlastPostReducer:state.getlastPostReducer
   };
 };
 
 const formWrapped = reduxForm({ form: "MainBoard" })(MainBoard);
 export default connect(mapStateToProps, {
+  loadPost,
   loadAllPost,
   getIdForReplay,
   getnumberOfReplies,
   checkPageCreateOrReplay,
+  getlastPOst
 })(formWrapped);

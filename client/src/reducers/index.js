@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
-import _ from "lodash";
+import _, { concat } from "lodash";
 import { persistReducer} from 'redux-persist'
 import isEmpty from 'is-empty'
 import storage from 'redux-persist/lib/storage'
@@ -117,10 +117,16 @@ const geterrorreducer=(state={error:null},action)=>{
   }
   return state
 }
+const getlastPostReducer=(state={lastpost:null},action)=>{
+if(action.type ==='LAST_POST'){
+  return {...state,lastpost:action.payload}
+}
+return state
+}
 const rootPersistConfig = {
   key:'root',
   storage,
-  blacklist:['mongologinreduxer','form','fbmongodbreducer',"facebookloginreducer"]
+  blacklist:['mongologinreduxer','form','fbmongodbreducer',"facebookloginreducer",'getlastPostReducer']
   
 }
 
@@ -133,6 +139,7 @@ const rootPersistConfig = {
 
 export default persistReducer(rootPersistConfig,combineReducers({
   form: formReducer,
+  getlastPostReducer,
   geterrorreducer:geterrorreducer,
   fbmongodbreducer:fbmongodbreducer,
   mongologinreduxer:mongologinreduxer  ,
