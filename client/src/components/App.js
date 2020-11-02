@@ -19,7 +19,7 @@ class App extends React.Component  {
         <Router history={history}>
       
           <Header />
-          <br/>
+       
 
           <div>
             <Route path="/" exact component={MainBoard} />

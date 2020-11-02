@@ -60,14 +60,16 @@ const MainBoard = (props) => {
       className="row rounded-right rounded-left rounded-bottom rounded-top  "
       style={{
        paddingLeft:"15px",
-       paddingRight:"15px"
+       paddingRight:"15px",
+       alignItems:"center"
+      
       
       }}
     >
       
       <div
         className="col-md-7 col-xs-7 col-s-7 rounded-right rounded-left rounded-bottom rounded-top  "
-        style={{ overflowY: "scroll", height: "80vh",backgroundColor:""}}
+        style={{ overflowY: "scroll", height: "100vh",backgroundColor:""}}
       >
         {props.allposts.map((x, index, arr) => {
          
@@ -76,7 +78,7 @@ const MainBoard = (props) => {
               <div
                 className="row rounded-right rounded-left rounded-bottom rounded-top border "
                 style={{
-                  backgroundColor:"snow",
+                  backgroundColor:"ActiveBorder",
 
                   paddingTop: "5px",
                   
