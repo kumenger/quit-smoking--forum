@@ -180,20 +180,20 @@ const MainBoard = (props) => {
           <div className="col-md-12">
             <div className="row">
               <div className="col-md-12 text-center text-primary ">
-              <Link
+              <a
                   onClick={() =>
                   props.getIdForReplay(
                      props.allposts[props.allposts.length-1]._id
                     )
                   }
-                to={`/PostReplay/${
+                href={`/PostReplay/${
                   props.allposts[props.allposts.length-1]._id
                   }`}
                   style={{ fontSize: "20px" }}
                   className="text-center text-primary"
                 >
                   { props.allposts[props.allposts.length-1].title}
-                </Link>
+                </a>
               </div>
 
               <div className=" col-md-12">
