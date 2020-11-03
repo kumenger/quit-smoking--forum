@@ -8,11 +8,11 @@ import history from "../history";
 import SignUp from "./Signup";
 import { connect } from "react-redux";
 import ReplayTOPost from "./ReaplyToPost";
-import {currentuser} from "../actions";
+
 
 class App extends React.Component  {
 componentDidMount(){
-this.props.currentuser()
+
 }
   render(){
   return (
@@ -38,6 +38,6 @@ this.props.currentuser()
   );}
 };
 const mapStateToProps=(state)=>{
-  return{fbmongodbreducer:state.fbmongodbreducer,getcurrentuserreducer:state.getcurrentuserreducer}
+  return{fbmongodbreducer:state.fbmongodbreducer}
 }
-export default connect(mapStateToProps,{currentuser})(App);
+export default connect(mapStateToProps)(App);

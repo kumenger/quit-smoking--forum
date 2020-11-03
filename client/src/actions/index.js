@@ -228,9 +228,7 @@ export const getlastPOst=(id)=> async (dispatch)=>{
   dispatch({ type: "LAST_POST", payload: response.data });
    
 }
-export const currentuser=() => async dispatch=>{
- const resp= await axios.get('/api/current_user')
- dispatch({type:"CURRENT_USER",payload:resp.data})
-}
+
+
 
 
