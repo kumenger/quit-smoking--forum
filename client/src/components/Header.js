@@ -56,7 +56,10 @@ const Header = (props) => {
                   </Link>
             </Navbar.Brand>
             <Navbar.Brand>
-            {props.mongologinreduxer.isAuthenticated? "":<div><h6 style={{fontSize:"16px"}}>New user?&nbsp;<Link to="/signup" className='btn btn-info '>Register</Link></h6> </div>  }
+            {props.mongologinreduxer.isAuthenticated? "":<div><h6 style={{fontSize:"16px"}}><Link to="/signup" className='btn btn-info '>Register</Link></h6> </div>  }
+            </Navbar.Brand>
+            <Navbar.Brand>
+             <a className='btn btn-primary' href='http://localhost:8000/auth/facebook'><i className="fab fa-facebook-square "></i> Log in facebook</a>
             </Navbar.Brand>
            <Navbar.Brand style={{fontSize:"18px"}}>
            {props.checkpagetypereducer.page === true

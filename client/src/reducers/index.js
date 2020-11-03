@@ -123,10 +123,16 @@ if(action.type ==='LAST_POST'){
 }
 return state
 }
+const getcurrentuserreducer=(state={data:null},action)=>{
+  if(action.type==='CURRENT_USER'){
+    return {...state,data:action.payload}
+  }
+  return state
+}
 const rootPersistConfig = {
   key:'root',
   storage,
-  blacklist:['mongologinreduxer','form','fbmongodbreducer',"facebookloginreducer",'getlastPostReducer']
+  blacklist:['mongologinreduxer','form','fbmongodbreducer',"facebookloginreducer",'getlastPostReducer','getcurrentuserreducer']
   
 }
 
@@ -139,6 +145,7 @@ const rootPersistConfig = {
 
 export default persistReducer(rootPersistConfig,combineReducers({
   form: formReducer,
+  getcurrentuserreducer:getcurrentuserreducer,
   getlastPostReducer,
   geterrorreducer:geterrorreducer,
   fbmongodbreducer:fbmongodbreducer,

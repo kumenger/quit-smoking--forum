@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
    
   
 useEffect(()=>{
-   props.loadAllPost()
+    props.loadAllPost()
     props.getlastPOst(props.allposts[props.allposts.length-1]._id)
-})
+},[])
     
 
   
