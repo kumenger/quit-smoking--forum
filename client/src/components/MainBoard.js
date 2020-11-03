@@ -65,8 +65,9 @@ const MainBoard = (props) => {
     >
       
       <div
-        className="col-md-8 rounded-right rounded-left rounded-bottom rounded-top  "
-        style={{backgroundColor:""}}
+        className="col-md-8 rounded-right rounded-left rounded-bottom rounded-top  " 
+        style={{backgroundColor:"",height:"80vh",
+        overflow:"auto"}}
       >
         {props.allposts.map((x, index, arr) => 
          
@@ -76,7 +77,7 @@ const MainBoard = (props) => {
                 className="row rounded-right rounded-left rounded-bottom rounded-top outset "
                 style={{
                   backgroundColor:"#ebf1f1",
-                
+                  
                   paddingTop: "5px",
                   
                  
@@ -168,7 +169,7 @@ const MainBoard = (props) => {
                 
               </div>
             
-              <br/>
+            
             </div>
           
          
