@@ -102,8 +102,9 @@ const MainBoard = (props) => {
                 <div className="col">
                   <img
                     style={{ maxWidth: "100%" }}
-                    className="rounded-right rounded-left rounded-bottom rounded-top img-responsive my-auto"
+                    className="rounded-right rounded-left rounded-bottom rounded-top img-responsive "
                     src={
+                    
                       props.facebookloginreducer.isLogIn &&
                       props.facebookloginreducer.resp.userID === x.userID &&
                       !props.facebookloginreducer.resp.error
@@ -116,7 +117,7 @@ const MainBoard = (props) => {
                             )
                               ? x.replay[x.replay.length - 1].replayername
                               : x.name
-                          }&size=64&font-size=0.2
+                          }&size=64&font-size=0.2&
                         
                           &background=${
                             myarry[Math.round(Math.random() * myarry.length)]

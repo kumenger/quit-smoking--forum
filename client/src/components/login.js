@@ -91,7 +91,7 @@ const LogIn = (props) => {
     <div >
     
       {props.mongologinreduxer.isAuthenticated?<button
-          className="btn btn-outline-light"
+          className="btn btn-outline-info"
           onClick={() =>lougbtnclicked() }
         >
           {" "}
@@ -117,7 +117,7 @@ const LogIn = (props) => {
          
         />
         &nbsp;
-        <button className="btn btn-outline-LIGHT" onClick={() => clicked()}>
+        <button className="btn btn-info" onClick={() => clicked()}>
           {" "}
           Log In
         </button>
