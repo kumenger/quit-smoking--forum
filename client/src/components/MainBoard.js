@@ -51,7 +51,7 @@ const MainBoard = (props) => {
       </div>
     );
   }
-  console.log(window.screen.width)
+
   return (
     <div
       className="row rounded-right rounded-left rounded-bottom rounded-top  "
@@ -183,9 +183,13 @@ const MainBoard = (props) => {
        
       </div>
       <div className='col-md-4'>
+       {props.facebookloginreducer.isLogIn?<div className='row'>
+        <div className='col-md-1  ' > <img  className='img-responsive' src={props.facebookloginreducer.resp.picture.data.url}/></div> 
+        <div className=' offset-md-1 col-md-8'><h5 className='text-left text-success'>Welcome {props.facebookloginreducer.resp.name}</h5></div>
        
+       </div>:""}
 
-<LastPost/>
+        <LastPost/>
      
       </div>
       

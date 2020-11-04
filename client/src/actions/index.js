@@ -58,6 +58,7 @@ export const createPost = (formValues) => async (dispatch, getState) => {
   dispatch({ type: "CREATE_POST", payload: response.data });
 };
 export const facebookloginaction = (repo) => (dispatch) => {
+ 
   dispatch({ type: "FB_LOGIN", payload: repo });
 };
 export const facebooklogout = () => (dispatch) => {

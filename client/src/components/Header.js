@@ -56,7 +56,7 @@ const Header = (props) => {
                   </Link>
             </Navbar.Brand>
             <Navbar.Brand>
-            {props.mongologinreduxer.isAuthenticated? "":<div><h6 style={{fontSize:"16px"}}><Link to="/signup" className='btn btn-info '>Register</Link></h6> </div>  }
+            { props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown" ||props.mongologinreduxer.isAuthenticated? "":<div><h6 style={{fontSize:"16px"}}><Link to="/signup" className='btn btn-info '>Register</Link></h6> </div>  }
             </Navbar.Brand>
            
            <Navbar.Brand style={{fontSize:"18px"}}>
@@ -76,12 +76,12 @@ const Header = (props) => {
               </Nav>
                
               <Nav.Link>
-               <FacebookLogin/>
+              {props.mongologinreduxer.isAuthenticated?"":<FacebookLogin/>}
               </Nav.Link>
             
               
               <Nav.Link>
-               {<LogIn />} 
+               {props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown"?"":<LogIn />} 
               </Nav.Link>
             </Navbar.Collapse>
           </Navbar>

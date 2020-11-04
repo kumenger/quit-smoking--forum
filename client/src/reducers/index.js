@@ -140,7 +140,7 @@ const rootPersistConfig = {
     "mongologinreduxer",
     "form",
     "fbmongodbreducer",
-    "facebookloginreducer",
+    
     "getlastPostReducer",
     "getcurrentuserreducer",
   ],
