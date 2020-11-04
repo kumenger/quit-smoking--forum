@@ -98,7 +98,7 @@ const RepliyListcommnetbox = (props) => {
     //props.updateLikesforReplies(props.curentlikes,props.getIdForReplayReducer.id, props.getInsideIndexforlikesreducer.index)
     axios.put(
       `http://localhost:8000/post/updateReplylikes/${props.getidfromparent}`,
-      { id: props.getInsideIndexforlikesreducer.index }
+      { id: props.nestedindex }
     );
     setlikes(likes + 1);
   };
@@ -240,9 +240,7 @@ const RepliyListcommnetbox = (props) => {
           {" "}
           <button
             style={{ backgroundColor: "DARKGRAY", fontSize: "22px" }}
-            onMouseOver={() => {
-              props.getInsideIndexforlikes(props.nestedindex);
-            }}
+            
             disabled={props.facebookloginreducer.isLogIn||props.mongologinreduxer.isAuthenticated ? false : true}
             onClick={() => iconclicked()}
             className="fas fa-thumbs-up fa-2x btn btn-block  "
