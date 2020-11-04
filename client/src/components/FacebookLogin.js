@@ -24,7 +24,7 @@ const FacebookLogInPage = (props) => {
   };
 
   let fbContent = () => {
-    if (isLogIn&&!props.facebookloginreducer.resp) {
+    if (isLogIn&&!props.facebookloginreducer.resp.status) {
       return (
         <div>
           <Link
