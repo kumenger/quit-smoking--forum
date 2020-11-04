@@ -42,13 +42,16 @@ const fblougoutclicked=()=>{
   
 }
 
-  let fbContent;
-  if (props.facebookloginreducer.isLogIn!=null) {
-    fbContent=(<Link to='/' className='btn  btn-primary' onClick={()=>fblougoutclicked()} style={{backgroundColor:"DARKBLUE"}} ><i className="fab fa-facebook-square"></i>
-  facebook Log out  </Link>)
-  } else {
-    fbContent = (
-        <FacebookLogin
+  let fbContent=()=>{
+    if (props.facebookloginreducer.isLogIn!=null){
+      return(<div>
+    <Link to='/' className='btn  btn-primary' onClick={()=>fblougoutclicked()} style={{backgroundColor:"#1877F2"}} >
+    <i class="fab fa-facebook"></i> facebook Log out  </Link>
+      </div>) 
+ 
+    }else{
+      return (<div>
+     <FacebookLogin
           appId="1082730518808869"
           autoLoad={true}
           fields="name,email,picture"
@@ -59,12 +62,15 @@ const fblougoutclicked=()=>{
           fontFamily="sans-serif"
          
           render={renderProps => (
-            <button onClick={renderProps.onClick} className='btn  btn btn-primary ' style={{backgroundColor:"DARKBLUE"}}><i className="fab fa-facebook-square"></i> facebook  Log In</button>
+            <button onClick={renderProps.onClick} className='btn  btn btn-primary ' style={{backgroundColor:"#1877F2"}}><i className="fab fa-facebook-square"></i> facebook  Log In</button>
           )}
         />
-      );
+      </div>)
+    }
   }
-return <div>{fbContent}</div>;
+
+  
+return <div>{fbContent()}</div>;
 };
 const mapStateTOProps=(state)=>{
     return {facebookloginreducer:state.facebookloginreducer}
