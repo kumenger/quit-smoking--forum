@@ -8,7 +8,7 @@ import setAuthToken from '../utils/setAuthToken'
 
 const FacebookLogInPage = (props) => {
   const [isLogIn, setIslogIn] = useState();
-  const componentClicked=(response)=>{
+ /* const componentClicked=(response)=>{
     if(response.status!="unknown"){
    
      //props.dispatch(props.facebookloginaction)
@@ -18,7 +18,7 @@ const FacebookLogInPage = (props) => {
    }
    
     props.facebookloginaction(response)
-}
+}*/
 
 const responseFacebook=(response)=>{
  // console.log(response)
@@ -33,7 +33,7 @@ const responseFacebook=(response)=>{
     
 }
 const fblougoutclicked=()=>{
-  props.facebookloginaction({})
+  props.facebooklogout()
   //props.facebooklogout()
 //props.facebooklogout()
  window.location.href='/'
@@ -52,7 +52,7 @@ const fblougoutclicked=()=>{
           appId="1082730518808869"
           autoLoad={true}
           fields="name,email,picture"
-          onClick={componentClicked}
+         // onClick={componentClicked}
           callback={responseFacebook}
          
           textButton="Facebook Login"

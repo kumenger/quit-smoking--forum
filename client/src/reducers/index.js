@@ -67,7 +67,7 @@ const facebookloginreducer = (
     return { ...state, isLogIn: true, resp: action.payload };
   }
   if (action.type === "FB_LOG_OUT") {
-    return { ...state, isLogIn: false, resp: null };
+    return { ...state, isLogIn: false, resp: " " };
   }
   return state;
 };
