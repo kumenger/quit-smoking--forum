@@ -1,5 +1,5 @@
 import React ,{useEffect,useState} from "react";
-
+import FacebookLogin from './FacebookLogin'
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { connect } from "react-redux";
@@ -75,7 +75,9 @@ const Header = (props) => {
                
               </Nav>
                
-               
+              <Nav.Link>
+               <FacebookLogin/>
+              </Nav.Link>
             
               
               <Nav.Link>

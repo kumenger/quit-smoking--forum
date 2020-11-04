@@ -108,7 +108,7 @@ const MainBoard = (props) => {
                       props.facebookloginreducer.isLogIn &&
                       props.facebookloginreducer.resp.userID === x.userID &&
                       !props.facebookloginreducer.resp.error
-                        ? props.facebookloginreducer.resp.picture.props.allposts.url
+                        ? props.facebookloginreducer.resp.picture.data.url
                         : `https://ui-avatars.com/api/?name=${
                             x.replay &&
                             x.replay.length > 0 &&
@@ -117,7 +117,7 @@ const MainBoard = (props) => {
                             )
                               ? x.replay[x.replay.length - 1].replayername
                               : x.name
-                          }&size=64&font-size=0.2&
+                          }&size=50&font-size=0.4&
                         
                           &background=${
                             myarry[Math.round(Math.random() * myarry.length)]

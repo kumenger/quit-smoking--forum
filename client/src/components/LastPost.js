@@ -49,8 +49,8 @@ useEffect(()=>{
     <div className=" col-md-12">
       <div className="row">
         
-        <div className="col-md-10 offset-md-1" style={{maxHeight:"70vh",overflow:"auto",backgroundColor:"ActiveBorder"}}>
-          <p  style={{color:"navy",fontFamily:"monospace",fontSize:"15px"}}
+        <div className="col-md-10 offset-md-1" style={{maxHeight:"70vh",overflow:"auto"}}>
+          <p  style={{color:"whitesmoke",fontFamily:"monospace",fontSize:"16px"}}
           dangerouslySetInnerHTML={{__html:`${props.getlastPostReducer.lastpost.post}`}}
           
           / >
