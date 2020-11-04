@@ -56,7 +56,7 @@ const Header = (props) => {
                   </Link>
             </Navbar.Brand>
             <Navbar.Brand>
-            { props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown" ||props.mongologinreduxer.isAuthenticated? "":<div><h6 style={{fontSize:"16px"}}><Link to="/signup" className='btn btn-info '>Register</Link></h6> </div>  }
+            { props.facebookloginreducer.isLogIn&&!props.facebookloginreducer.resp.status ||props.mongologinreduxer.isAuthenticated? "":<div><h6 style={{fontSize:"16px"}}><Link to="/signup" className='btn btn-info '>Register</Link></h6> </div>  }
             </Navbar.Brand>
            
            <Navbar.Brand style={{fontSize:"18px"}}>

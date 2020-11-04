@@ -8,13 +8,8 @@ import { Link } from "react-router-dom";
 const FacebookLogInPage = (props) => {
   const [isLogIn, setIslogIn] = useState();
   useEffect(() => {
-    const check=()=>{
-      if(props.facebookloginreducer.resp.status==="unknown"){
-        props.facebooklogout();
-        setIslogIn(false);
-      }
-    }
-    check()
+    
+      
     setIslogIn(props.facebookloginreducer.isLogIn);
   }, []);
 
@@ -29,7 +24,7 @@ const FacebookLogInPage = (props) => {
   };
 
   let fbContent = () => {
-    if (isLogIn) {
+    if (isLogIn&&!props.facebookloginreducer.resp) {
       return (
         <div>
           <Link
