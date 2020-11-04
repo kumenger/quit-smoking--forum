@@ -52,11 +52,11 @@ const Header = (props) => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Brand>
             <Link className='' to="/" onClick={() => getIdForReplay(null)}>
-                   <h5 style={{fontSize:"18px"}}> Home</h5>
+                   <h5> Home</h5>
                   </Link>
             </Navbar.Brand>
             <Navbar.Brand>
-            { props.facebookloginreducer.isLogIn&&!props.facebookloginreducer.resp.status ||props.mongologinreduxer.isAuthenticated? "":<div><h5 style={{fontSize:"16px"}}><Link to="/signup" className='btn btn-info '>Register</Link></h5> </div>  }
+            { props.facebookloginreducer.isLogIn&&!props.facebookloginreducer.resp.status ||props.mongologinreduxer.isAuthenticated? "":<div><h5 ><Link to="/signup" className='btn btn-info '>Register</Link></h5> </div>  }
             </Navbar.Brand>
            
            <Navbar.Brand style={{fontSize:"18px"}}>
