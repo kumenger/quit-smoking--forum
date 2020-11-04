@@ -12,7 +12,7 @@ const Header = (props) => {
  
 
   const showwhneishome = () => {
-    return props.mongologinreduxer.isAuthenticated ? (
+    return props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown" ||props.mongologinreduxer.isAuthenticated  ? (
       <Link to="/NewPost" className="blink btn btn-outline-primary ">
         <strong>Create New Post</strong>
       </Link>

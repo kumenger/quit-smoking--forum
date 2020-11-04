@@ -34,16 +34,17 @@ const responseFacebook=(response)=>{
 }
 const fblougoutclicked=()=>{
   props.facebooklogout()
+  setIslogIn(false)
   //props.facebooklogout()
 //props.facebooklogout()
- window.location.href='/'
+
  
   
   
 }
 
   let fbContent=()=>{
-    if (props.facebookloginreducer.isLogIn!=null){
+    if (isLogIn){
       return(<div>
     <Link to='/' className='btn  btn-primary' onClick={()=>fblougoutclicked()} style={{backgroundColor:"#1877F2"}} >
     <i class="fab fa-facebook"></i> facebook Log out  </Link>
