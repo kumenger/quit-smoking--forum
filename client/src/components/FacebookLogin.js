@@ -28,7 +28,7 @@ const FacebookLogInPage = (props) => {
             to="/"
             className="btn  btn-primary"
             onClick={() => fblougoutclicked()}
-            style={{ backgroundColor: "#1877F2" }}
+            style={{ backgroundColor: "#4267B2" }}
           >
             <i class="fab fa-facebook"></i> facebook Log out{" "}
           </Link>
@@ -48,7 +48,7 @@ const FacebookLogInPage = (props) => {
             <button
               onClick={renderProps.onClick}
               className="btn  btn btn-primary "
-              style={{ backgroundColor: "#1877F2" }}
+              style={{ backgroundColor: "#4267B2" }}
             >
               <i className="fab fa-facebook-square"></i> facebook Log In
             </button>

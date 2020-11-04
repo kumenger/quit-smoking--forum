@@ -84,6 +84,10 @@ const Header = (props) => {
                {props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown"?"":<LogIn />} 
               </Nav.Link>
             </Navbar.Collapse>
+            
+            <Navbar.Brand>
+           { props.facebookloginreducer.isLogIn? <img  className='rounded-right rounded-left rounded-bottom rounded-top img-responsive ' src={props.facebookloginreducer.resp.picture.data.url}/>:""}
+            </Navbar.Brand>
           </Navbar>
         </div>
       </div>

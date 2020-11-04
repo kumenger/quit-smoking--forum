@@ -18,7 +18,7 @@ useEffect(()=>{
  
      
       if(!props.getlastPostReducer.lastpost){
-          return <div className='text-center te'>Getting Last Post...</div>
+          return <div className='text-center text-white'>Getting Last Post...</div>
       }
      
       return(

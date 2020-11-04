@@ -88,7 +88,7 @@ const NewPost = (props) => {
         <div className="col-md-8 offset-md-2">
           <form onSubmit={props.handleSubmit(onformsubmit)}>
             <div>
-              <lable>
+              <lable className='text-white'>
                 <strong>Name</strong>
               </lable>
               <div>
@@ -103,7 +103,7 @@ const NewPost = (props) => {
               </div>
             </div>
             <div>
-              <lable>
+              <lable className='text-white'>
                 <strong>Title</strong>
               </lable>
               <div>
@@ -118,7 +118,7 @@ const NewPost = (props) => {
               </div>
             </div>
             <div>
-              <lable>
+              <lable className='text-white'>
                 <strong>Post</strong>
               </lable>
               <div>
