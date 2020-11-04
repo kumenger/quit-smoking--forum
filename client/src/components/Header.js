@@ -40,7 +40,7 @@ const Header = (props) => {
 
   return (
     <div
-      className="rounded-right rounded-left rounded-bottom rounded-top outset " style={{paddingTop:"px",backgroundColor:"#ebf1f1"}}
+      className=" outset " style={{paddingTop:"px",backgroundColor:"#ebf1f1"}}
      
     >
       <div
@@ -86,7 +86,7 @@ const Header = (props) => {
             </Navbar.Collapse>
             
             <Navbar.Brand>
-           { props.facebookloginreducer.isLogIn? <img  className='rounded-right rounded-left rounded-bottom rounded-top img-responsive ' src={props.facebookloginreducer.resp.picture.data.url}/>:""}
+           { props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!=="unknown"? <img  className='rounded-right rounded-left rounded-bottom rounded-top img-responsive ' src={props.facebookloginreducer.resp.picture.data.url}/>:""}
             </Navbar.Brand>
           </Navbar>
         </div>

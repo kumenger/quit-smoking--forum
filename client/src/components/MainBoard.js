@@ -126,7 +126,7 @@ const MainBoard = (props) => {
                   )}
                   &nbsp;
                   {x.likes && x.likes > 0 ? (
-                    <span class="fas fa-heart" style={{ color: "lightpink" }}>
+                    <span class="fas fa-heart" style={{ color: "#C13584" }}>
                       &nbsp;
                       {x.likes}
                     </span>

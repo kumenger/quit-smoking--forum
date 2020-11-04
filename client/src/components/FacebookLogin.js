@@ -8,10 +8,18 @@ import { Link } from "react-router-dom";
 const FacebookLogInPage = (props) => {
   const [isLogIn, setIslogIn] = useState();
   useEffect(() => {
+    const check=()=>{
+      if(props.facebookloginreducer.resp.status==="unknown"){
+        props.facebooklogout();
+        setIslogIn(false);
+      }
+    }
+    check()
     setIslogIn(props.facebookloginreducer.isLogIn);
   }, []);
 
   const responseFacebook = (response) => {
+   
     setIslogIn(true);
     props.facebookloginaction(response);
   };
