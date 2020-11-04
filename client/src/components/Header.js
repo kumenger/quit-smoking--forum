@@ -14,14 +14,14 @@ const Header = (props) => {
   const showwhneishome = () => {
     return props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown" ||props.mongologinreduxer.isAuthenticated  ? (
       <Link to="/NewPost" className="blink btn btn-outline-primary ">
-        <strong><h5>Create New Post</h5></strong>
+        Create Post
       </Link>
-    ) : (
+    ) : 
       
        
       ""
      
-    );
+    
    
   };
   const showwhenidonreplay = () => {
