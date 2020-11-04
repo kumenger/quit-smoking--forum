@@ -40,6 +40,7 @@ const FacebookLogInPage = (props) => {
         <FacebookLogin
           appId="1082730518808869"
          // autoLoad={true}
+         disableMobileRedirect={true}
           fields="name,email,picture"
           // onClick={componentClicked}
           callback={responseFacebook}
