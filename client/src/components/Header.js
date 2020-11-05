@@ -40,7 +40,7 @@ const Header = (props) => {
 
   return (
     <div
-      className=" outset " style={{paddingTop:"px",backgroundColor:"#ebf1f1"}}
+      className="rounded-right rounded-left rounded-bottom  " style={{paddingTop:"px",backgroundColor:"#ebf1f1"}}
      
     >
       <div
@@ -68,13 +68,11 @@ const Header = (props) => {
            </Navbar.Brand>
           
    
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto">
-                
+            <Navbar.Collapse id="basic-navbar-nav" >
+              <Nav className='mr-auto'>
 
-               
               </Nav>
-               
+              <Nav  pullRight >
               <Nav.Link>
               {props.mongologinreduxer.isAuthenticated?"":<FacebookLogin/>}
               </Nav.Link>
@@ -82,7 +80,12 @@ const Header = (props) => {
               
               <Nav.Link>
                {props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown"?"":<LogIn />} 
-              </Nav.Link>
+              </Nav.Link> 
+
+               
+              </Nav>
+               
+              
             </Navbar.Collapse>
             
             <Navbar.Brand>

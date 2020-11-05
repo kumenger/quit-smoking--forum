@@ -33,7 +33,7 @@ const FacebookLogInPage = (props) => {
             onClick={() => fblougoutclicked()}
             style={{ backgroundColor: "#4267B2" }}
           >
-            <i class="fab fa-facebook"></i> facebook Log out{" "}
+            <i class="fab fa-facebook"></i> Facebook Log out{" "}
           </Link>
         </div>
       );
@@ -54,7 +54,7 @@ const FacebookLogInPage = (props) => {
               className="btn  btn btn-primary "
               style={{ backgroundColor: "#4267B2" }}
             >
-              <i className="fab fa-facebook-square"></i> facebook Log In
+              <i className="fab fa-facebook-square"></i> Facebook Log In
             </button>
           )}
         />

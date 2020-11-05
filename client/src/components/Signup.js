@@ -37,7 +37,11 @@ const SignUp = (props) => {
   const [checkemail, setcheckemail] = useState("");
   const [dataall, setdatadataall] = useState();
   useEffect(() => {
-   ;
+   const check=()=>{
+     if(props.mongologinreduxer.isAuthenticated||props.facebookloginreducer.resp.name){
+       history.push('/')
+     }
+   }
     props.getalluser();
     let iscanceled = false;
     const get = async () => {
@@ -47,7 +51,7 @@ const SignUp = (props) => {
       }
     };
 
-   
+   check()
     get();
     return () => {
       iscanceled = true;

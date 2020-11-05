@@ -58,10 +58,7 @@ const MainBoard = (props) => {
         paddingRight: "15px",
       }}
     >
-      <div
-        className="col-md-8 rounded-right rounded-left rounded-bottom rounded-top  "
-        style={{ backgroundColor: "", height: "80vh", overflow: "auto" }}
-      >
+      <div className="col rounded-right rounded-left rounded-bottom rounded-top  ">
         {props.allposts.map((x, index, arr) => (
           <div key={index} style={{}}>
             <div
@@ -115,7 +112,7 @@ const MainBoard = (props) => {
           `
                   }
                 />
-                <p style={{ fontSize: "14px" }} className="text-left">
+                <p style={{ fontSize: "12px" }} className="text-left">
                   {x.replay && x.replay.length > 0 ? (
                     <span class="fas fa-comment " style={{ color: "indigo" }}>
                       &nbsp;
@@ -156,11 +153,114 @@ const MainBoard = (props) => {
           </div>
         ))}
       </div>
-      <div className="col-md-4">
-        <LastPost />
+      <div className="col">
+        <div className="row">
+          <div className="col text-center">
+            <h5 className="text-center" style={{color:"royalblue"}}>TimeLine </h5>
+            <img
+              src="https://i.ibb.co/fkQ1THj/Ignition-of-the-last-one-cigarette-Quit-smoking-concept-photography-Shutterstock-ID-1125219683-Purch.jpg"
+              className="rounded-right rounded-left rounded-bottom rounded-top text-center"
+              style={{ width: "50%" }}
+            />
+            <p
+              style={{
+                color: "royalblue",
+                fontFamily: "monospace",
+                fontSize: "16px",
+              }}
+            >
+              <strong>After 1 hour</strong>
+            </p>
+            <p
+              className="  text-left"
+              style={{
+                color: "",
+                fontFamily: "monospace",
+                fontSize: "16px",
+              }}
+            >
+              In as little as 20 minutes after the last cigarette is smoked, the
+              heart rate drops and returns to normal. Blood pressure begins to
+              drop, and circulation may start to improve.
+            </p>
+            <p>
+              <strong
+                style={{
+                  color: "royalblue",
+                  fontFamily: "monospace",
+                  fontSize: "16px",
+                }}
+              >
+                After 12 hours
+              </strong>
+            </p>
+            <p
+              className=" text-left"
+              style={{
+                color: "",
+                fontFamily: "monospace",
+                fontSize: "16px",
+              }}
+            >
+              Cigarettes contain a lot of known toxins including carbon
+              monoxide, a gas present in cigarette smoke. This gas can be
+              harmful or fatal in high doses and prevents oxygen from entering
+              the lungs and blood. When inhaled in large doses in a short time,
+              suffocation can occur from lack of oxygen. After just 12 hours
+              without a cigarette, the body cleanses itself of the excess carbon
+              monoxide from the cigarettes. The carbon monoxide level returns to
+              normal, increasing the body’s oxygen levels
+            </p>
+            <p
+              style={{
+                color: "royalblue",
+                fontFamily: "monospace",
+                fontSize: "16px",
+              }}
+            >
+              <strong>After 1 day</strong>
+            </p>
+            <p
+              className="text-left"
+              style={{
+                color: "",
+                fontFamily: "monospace",
+                fontSize: "16px",
+              }}
+            >
+              Just 1 day after quitting smoking, the risk of heart attack begins
+              to decrease. Smoking raises the risk of developing coronary heart
+              disease by lowering good cholesterol, which makes heart-healthy
+              exercise harder to do. Smoking also raises blood pressure and
+              increases blood clots, increasing the risk of stroke. In as little
+              as 1 day after quitting smoking, a person’s blood pressure begins
+              to drop, decreasing the risk of heart disease from smoking-induced
+              high blood pressure. In this short time, a person’s oxygen levels
+              will have risen, making physical activity and exercise easier to
+              do, promoting heart-healthy habits.
+            </p>
+            <p
+              style={{
+                color: "royalblue",
+                fontFamily: "monospace",
+                fontSize: "16px",
+              }}
+            >
+              <strong>After 2 hour</strong>
+            </p>
+            <p className="text-left"  style={{
+                color: "",
+                fontFamily: "monospace",
+                fontSize: "16px",
+              }}>
+              Smoking damages the nerve endings responsible for the senses of
+              smell and taste. In as little as 2 days after quitting, a person
+              may notice a heightened sense of smell and more vivid tastes as
+              these nerves heal.
+            </p>
+          </div>
+        </div>
       </div>
-
-      <div></div>
     </div>
   );
 };
