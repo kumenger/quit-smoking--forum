@@ -162,12 +162,15 @@ const MainBoard = (props) => {
        overflow:"scroll"}}>
         <div className="row">
           <div className="col text-center">
-            <h6 className="text-center" style={{color:"royalblue"}}>TimeLine </h6>
-            <img
+            <div className='row'>
+            <div className='col'><img
               src="https://i.ibb.co/fkQ1THj/Ignition-of-the-last-one-cigarette-Quit-smoking-concept-photography-Shutterstock-ID-1125219683-Purch.jpg"
               className="rounded-right rounded-left rounded-bottom rounded-top text-center"
-              style={{ width: "50%" }}
-            />
+              style={{ width: "75%" }}
+            /></div>
+           
+            
+            </div>
             <p
               style={{
                 color: "royalblue",
@@ -175,7 +178,7 @@ const MainBoard = (props) => {
                 fontSize: "16px",
               }}
             >
-              <strong>After 1 hour</strong>
+              <strong>after 1 hour Quit Smoking...</strong>
             </p>
             <p
               className="  text-left"
@@ -198,7 +201,7 @@ const MainBoard = (props) => {
                   fontSize: "16px",
                 }}
               >
-                After 12 hours
+                  In 12 hours...
               </strong>
             </p>
             <p
@@ -222,7 +225,7 @@ const MainBoard = (props) => {
                 fontSize: "16px",
               }}
             >
-              <strong>After 1 day</strong>
+              <strong>In 1  day...</strong>
             </p>
             <p
               className="text-left"
@@ -245,7 +248,7 @@ const MainBoard = (props) => {
                 fontSize: "16px",
               }}
             >
-              <strong>After 2 hour</strong>
+              <strong>In 2  day....</strong>
             </p>
             <p className="text-left"  style={{
                 color: "",
