@@ -54,11 +54,12 @@ const MainBoard = (props) => {
     <div
       className="row rounded-right rounded-left rounded-bottom rounded-top  "
       style={{
-       
+     
         
       }}
     >
-      <div className="col rounded-right rounded-left rounded-bottom rounded-top  ">
+      <div className="col rounded-right rounded-left rounded-bottom rounded-top  " style={{  height:"80vh",
+       overflow:"scroll"}}>
         {props.allposts.map((x, index, arr) => (
           <div key={index} style={{}}>
             <div
@@ -204,11 +205,7 @@ const MainBoard = (props) => {
              
               }}
             >
-              Cigarettes contain a lot of known toxins including carbon
-              monoxide, a gas present in cigarette smoke. This gas can be
-              harmful or fatal in high doses and prevents oxygen from entering
-              the lungs and blood. When inhaled in large doses in a short time,
-              suffocation can occur from lack of oxygen. After just 12 hours
+              After just 12 hours
               without a cigarette, the body cleanses itself of the excess carbon
               monoxide from the cigarettes. The carbon monoxide level returns to
               normal, increasing the body’s oxygen levels
@@ -234,13 +231,7 @@ const MainBoard = (props) => {
               Just 1 day after quitting smoking, the risk of heart attack begins
               to decrease. Smoking raises the risk of developing coronary heart
               disease by lowering good cholesterol, which makes heart-healthy
-              exercise harder to do. Smoking also raises blood pressure and
-              increases blood clots, increasing the risk of stroke. In as little
-              as 1 day after quitting smoking, a person’s blood pressure begins
-              to drop, decreasing the risk of heart disease from smoking-induced
-              high blood pressure. In this short time, a person’s oxygen levels
-              will have risen, making physical activity and exercise easier to
-              do, promoting heart-healthy habits.
+              exercise harder to do.
             </p>
             <p
               style={{

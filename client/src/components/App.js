@@ -19,8 +19,12 @@ componentDidMount(){
     <div>
       <div className="fluid-container" style={{ paddingLeft: "10px",paddingRight:"10px",paddingTop:"10px" }}>
         <Router history={history}>
-      
+     
           <Header />
+         <div className='a  rounded-right rounded-left rounded-bottom rounded-top ' style={{padding:"1px"}}>
+            <h5 className='text-center text-white'>Quit Smoking! Get Help</h5>
+            <h6 className='text-center text-white'>Share Your experience and story ,how you beat the Nicodemon</h6>
+           </div> 
        <br/>
 
           <div>
