@@ -8,15 +8,22 @@ import { Link } from "react-router-dom";
 const FacebookLogInPage = (props) => {
   const [isLogIn, setIslogIn] = useState();
   useEffect(() => {
-    
-      
-    setIslogIn(props.facebookloginreducer.isLogIn);
+   
+   setIslogIn(props.facebookloginreducer.isLogIn)
+  
   }, []);
+ 
 
   const responseFacebook = (response) => {
-   
+  console.log(response)
+   if(response.name){
     setIslogIn(true);
     props.facebookloginaction(response);
+   }else
+     setIslogIn(false)
+     
+  
+   
   };
   const fblougoutclicked = () => {
     props.facebooklogout();
@@ -24,7 +31,7 @@ const FacebookLogInPage = (props) => {
   };
 
   let fbContent = () => {
-    if (!isLogIn&&props.facebookloginreducer.resp.status) {
+    if (isLogIn) {
       return (
         <div>
           <Link
@@ -45,7 +52,7 @@ const FacebookLogInPage = (props) => {
          // autoLoad={true}
          disableMobileRedirect={true}
           fields="name,email,picture"
-          // onClick={componentClicked}
+           //onClick={componentClicked}
           callback={responseFacebook}
           fontFamily="sans-serif"
           render={(renderProps) => (
