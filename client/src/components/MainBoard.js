@@ -54,8 +54,8 @@ const MainBoard = (props) => {
     <div
       className="row rounded-right rounded-left rounded-bottom rounded-top  "
       style={{
-        paddingLeft: "15px",
-        paddingRight: "15px",
+       
+        
       }}
     >
       <div className="col rounded-right rounded-left rounded-bottom rounded-top  ">
@@ -156,7 +156,7 @@ const MainBoard = (props) => {
       <div className="col">
         <div className="row">
           <div className="col text-center">
-            <h5 className="text-center" style={{color:"royalblue"}}>TimeLine </h5>
+            <h6 className="text-center" style={{color:"royalblue"}}>TimeLine </h6>
             <img
               src="https://i.ibb.co/fkQ1THj/Ignition-of-the-last-one-cigarette-Quit-smoking-concept-photography-Shutterstock-ID-1125219683-Purch.jpg"
               className="rounded-right rounded-left rounded-bottom rounded-top text-center"
@@ -176,7 +176,8 @@ const MainBoard = (props) => {
               style={{
                 color: "",
                 fontFamily: "monospace",
-                fontSize: "16px",
+                fontSize:"14px",
+              
               }}
             >
               In as little as 20 minutes after the last cigarette is smoked, the
@@ -199,7 +200,8 @@ const MainBoard = (props) => {
               style={{
                 color: "",
                 fontFamily: "monospace",
-                fontSize: "16px",
+                fontSize:"14px",
+             
               }}
             >
               Cigarettes contain a lot of known toxins including carbon
@@ -225,7 +227,8 @@ const MainBoard = (props) => {
               style={{
                 color: "",
                 fontFamily: "monospace",
-                fontSize: "16px",
+                fontSize:"14px",
+               
               }}
             >
               Just 1 day after quitting smoking, the risk of heart attack begins
@@ -250,8 +253,9 @@ const MainBoard = (props) => {
             </p>
             <p className="text-left"  style={{
                 color: "",
+                fontSize:"14px",
                 fontFamily: "monospace",
-                fontSize: "16px",
+              
               }}>
               Smoking damages the nerve endings responsible for the senses of
               smell and taste. In as little as 2 days after quitting, a person
