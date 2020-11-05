@@ -51,16 +51,20 @@ const MainBoard = (props) => {
   }
 
   return (
+
     <div
       className="row rounded-right rounded-left rounded-bottom rounded-top  "
       style={{
-     
+        
         
       }}
     >
+      
       <div className="col rounded-right rounded-left rounded-bottom rounded-top  " style={{  height:"80vh",
        overflow:"scroll"}}>
+         
         {props.allposts.map((x, index, arr) => (
+          
           <div key={index} style={{}}>
             <div
               className="row rounded-right rounded-left rounded-bottom rounded-top outset "
@@ -154,7 +158,8 @@ const MainBoard = (props) => {
           </div>
         ))}
       </div>
-      <div className="col">
+      <div className="col" style={{  height:"80vh",
+       overflow:"scroll"}}>
         <div className="row">
           <div className="col text-center">
             <h6 className="text-center" style={{color:"royalblue"}}>TimeLine </h6>
