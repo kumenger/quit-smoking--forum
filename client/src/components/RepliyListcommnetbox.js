@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {
   whatEditClicked,
   editPostReplay,
-  updateLikesforReplies,
+  updateReplylikes,
   deleteReplay,
   loadAllPost,
 } from "../actions";
@@ -49,6 +49,7 @@ const RepliyListcommnetbox = (props) => {
       url: `http://localhost:8000/post/deleteReplay/${props.getidfromparent}`,
       data: myobj2,
     });
+   
    setShow(false)
       
   };
@@ -95,10 +96,11 @@ const RepliyListcommnetbox = (props) => {
     }
   };
   const iconclicked = () => {
-     axios.put(
+    axios.patch(
       `http://localhost:8000/post/updateReplylikes/${props.getidfromparent}`,
       { id: props.nestedindex }
     );
+   // props.updateReplylikes(props.getidfromparent,props.nestedindex)
     setlikes(likes + 1);
   };
 
@@ -270,7 +272,7 @@ export default connect(mapStateToProps, {
   getInsideIndexforlikes,
   whatEditClicked,
   editPostReplay,
-  updateLikesforReplies,
+  updateReplylikes,
   deleteReplay,
   loadAllPost,
 })(fromwarapeed);

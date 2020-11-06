@@ -32,8 +32,8 @@ const allPostsReducer = (state = {}, action, getState) => {
   if (action.type === "EDIT_POST_REPLAY") {
     return { ...state, [action.payload.id]: action.payload };
   }
-  if (action.type === "UPDATE_LIKE_REPLY") {
-    return { ...state, [action.payload.id]: action.payload };
+  if (action.type === "UPDATE_REPLAY_LIKES") {
+    return { ...state, [action.payload.idmain]: action.payload };
   }
   if (action.type === "DELETE_POST") {
     return _.omit(state, action.payload);

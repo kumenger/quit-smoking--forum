@@ -25,7 +25,7 @@ componentDidMount(){
            <Header />
            <div className='a  rounded-right rounded-left rounded-bottom rounded-top ' style={{padding:"1px"}}>
             <h5 className='text-center ' style={{color:"snow"}}>Quit Smoking! Get Help <i class="fas fa-hands-helping" style={{color:"lightblue"}}></i></h5>
-            <h6 className='text-center' style={{color:"snow"}}>Share Your story ,relapse,how you beat <i class="fas fa-grin-tongue-wink blink" style={{color:"lightblue",fontSize:"20px"}}></i> the Nicodemon</h6>
+            <h6 className='text-center' style={{color:"snow"}}>Share Your story ,relapse,how you beat <i class="fas fa-grin-tongue-wink" style={{color:"lightblue",fontSize:"20px"}}></i> the Nicodemon</h6>
            </div>
            <br/>
 

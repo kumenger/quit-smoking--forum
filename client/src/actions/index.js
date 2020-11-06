@@ -106,17 +106,20 @@ export const getnumberOfReplies = () => async (dispatch, getState) => {
 export const getIdForReplay = (id) => {
   return { type: "ID_FOR_REPLYA", payload: id };
 };
-export const UpdateLikes = (currentlikes, id) => async (dispatch, getState) => {
-  try {
+export const UpdateLikes = (id) => async dispatch => {
+ 
     const response = await axios.put(
       `/post/updatelikes/${id}`,
-      {
-        likes: currentlikes + 1,
-      }
+    
     );
     dispatch({ type: "UPDATE_LIKES", payload: response.data });
-  } catch {}
+ 
 };
+export const updateReplylikes=(idmain,idnested)=>async dispatch=>{
+ 
+  const response=await axios.patch(`post/updateReplylikes${idmain}`,{id:idnested})
+  dispatch({type:"UPDATE_REPLAY_LIKES",payload:response})
+}
 
 export const editPost = (id, obj) => async (dispatch) => {
   try {
