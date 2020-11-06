@@ -2,7 +2,7 @@ import axios from "axios";
 import _, { get, method } from "lodash";
 import setAuthToken from "../utils/setAuthToken";
 import Jwt_decode from "jwt-decode";
-
+import { configure } from "@testing-library/react";
 
 let a = new Date();
 var months = [
@@ -116,9 +116,11 @@ export const UpdateLikes = (id) => async dispatch => {
  
 };
 export const updateReplylikes=(idmain,idnested)=>async dispatch=>{
- 
-  const response=await axios.patch(`post/updateReplylikes${idmain}`,{id:idnested})
-  dispatch({type:"UPDATE_REPLAY_LIKES",payload:response})
+  let obj={id:null}
+ try
+{  const response=await axios.patch(`/post/updateReplylikes/${idmain}`,{...obj,id:idnested})
+  dispatch({type:"UPDATE_REPLAY_LIKES",payload:response})}
+  catch{}
 }
 
 export const editPost = (id, obj) => async (dispatch) => {
@@ -170,12 +172,13 @@ export const deletepost = (id) => async (dispatch) => {
   dispatch({ type: "DELETE_POST", payload: id });
 };
 
-export const deleteReplay = (mainindex, rep) => async (dispatch, getState) => {
-  const response = await axios.delete(
-    `/post/deleteReplay/${mainindex}`,
-    { data: { rep } }
-  );
-  dispatch({ type: "DELETE_REPLAY", payload: response.data });
+export const deleteReplay = (mainindex, rep) => async (dispatch) => {
+  axios.request({
+    ...configure,
+    method: "delete",
+    url: `http://localhost:8000/post/deleteReplay/${mainindex}`,
+    data: rep,
+  })
 };
 export const createpostformongo = (fromValues) => async (getState) => {
   const { userID } = getState().facebookloginreducer.resp;

@@ -40,7 +40,7 @@ const Header = (props) => {
 
   return (
     <div
-      className="rounded-right rounded-left rounded-bottom  " style={{paddingTop:"px",backgroundColor:"#ebf1f1"}}
+      className="rounded-right rounded-left rounded-bottom rounded-to" style={{paddingTop:"px",backgroundColor:"#ebf1f1"}}
      
     >
       <div
@@ -72,7 +72,7 @@ const Header = (props) => {
               <Nav className='mr-auto'>
 
               </Nav>
-              <Nav  pullRight >
+              <Nav>
               <Nav.Link>
               {props.mongologinreduxer.isAuthenticated?"":<FacebookLogin/>}
               </Nav.Link>

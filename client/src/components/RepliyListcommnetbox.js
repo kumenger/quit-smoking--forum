@@ -42,13 +42,13 @@ const RepliyListcommnetbox = (props) => {
 
   const myobj2 = { id: props.getInsideIndexforlikesreducer.index };
   const modelareplayclicked = () => {
-    
-    axios.request({
+    props.deleteReplay(props.getidfromparent,myobj2)
+    /*axios.request({
       ...configure,
       method: "delete",
       url: `http://localhost:8000/post/deleteReplay/${props.getidfromparent}`,
       data: myobj2,
-    });
+    });*/
  
    setShow(false)
       
@@ -96,11 +96,11 @@ const RepliyListcommnetbox = (props) => {
     }
   };
   const iconclicked = () => {
-    axios.patch(
+   /* axios.patch(
       `http://localhost:8000/post/updateReplylikes/${props.getidfromparent}`,
       { id: props.getInsideIndexforlikesreducer.index  }
-    );
-   // props.updateReplylikes(props.getidfromparent,props.nestedindex)
+    );*/
+    props.updateReplylikes(props.getidfromparent,props.nestedindex)
     setlikes(likes + 1);
   };
 

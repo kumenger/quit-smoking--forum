@@ -44,8 +44,8 @@ const MainBoard = (props) => {
 
   if (!props.allposts) {
     return (
-      <div class="spinner-border text-danger text-center" role="status">
-        <span class="sr-only">Loading...</span>
+      <div className="spinner-border text-danger text-center" role="status">
+        <span className="sr-only">Loading...</span>
       </div>
     );
   }
@@ -60,8 +60,7 @@ const MainBoard = (props) => {
       }}
     >
       
-      <div className="col rounded-right rounded-left rounded-bottom rounded-top  " style={{  height:"80vh",
-       overflow:"scroll"}}>
+      <div className="col rounded-right rounded-left rounded-bottom rounded-top  " >
          
         {props.allposts.map((x, index, arr) => (
           
@@ -119,7 +118,7 @@ const MainBoard = (props) => {
                 />
                 <p style={{ fontSize: "12px" }} className="text-left">
                   {x.replay && x.replay.length > 0 ? (
-                    <span class="fas fa-comment " style={{ color: "indigo" }}>
+                    <span className="fas fa-comment " style={{ color: "indigo" }}>
                       &nbsp;
                       {x.replay.length}
                     </span>
@@ -128,7 +127,7 @@ const MainBoard = (props) => {
                   )}
                   &nbsp;
                   {x.likes && x.likes > 0 ? (
-                    <span class="fas fa-heart" style={{ color: "#C13584" }}>
+                    <span className="fas fa-heart" style={{ color: "#C13584" }}>
                       &nbsp;
                       {x.likes}
                     </span>
@@ -158,8 +157,7 @@ const MainBoard = (props) => {
           </div>
         ))}
       </div>
-      <div className="col" style={{  height:"80vh",
-       overflow:"scroll"}}>
+      <div className="col">
         <div className="row">
           <div className="col text-center">
             <div className='row'>
