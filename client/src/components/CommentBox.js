@@ -104,7 +104,7 @@ const CommentBox = (props) => {
       console.log(myobj)
     }
   };
-  const iconclicked = () => {
+  const iconclickedMain = () => {
     props.UpdateLikes(props.getidfromparent);
    // axios.put(`/post/updatelikes/${props.getidfromparent}`)
      setlikes(likes+1)           
@@ -189,7 +189,7 @@ const CommentBox = (props) => {
           <button
             style={{ backgroundColor: "DARKGRAY", fontSize: "22px" }}
             disabled={props.facebookloginreducer.isLogIn ||props.mongologinreduxer.isAuthenticated ? false : true}
-            onClick={() => iconclicked()}
+            onClick={() => iconclickedMain()}
             className="fas fa-thumbs-up fa-2x btn btn-block  "
           >
             {" "}

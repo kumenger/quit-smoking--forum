@@ -57,14 +57,14 @@ const MainBoard = (props) => {
   return (
 
     <div
-      className="row rounded-right rounded-left rounded-bottom rounded-top  "
+      className="row rounded-right rounded-left rounded-bottom rounded-top flex-nowrap  "
       style={{
         
         
       }}
     >
       
-      <div className="col rounded-right rounded-left rounded-bottom rounded-top  " >
+      <div className="col-7  rounded-right rounded-left rounded-bottom rounded-top  "  >
          
         {props.allposts.map((x, index, arr) => (
           
@@ -83,9 +83,9 @@ const MainBoard = (props) => {
                   to={`PostReplay/${x._id}`}
                   onClick={() => props.getIdForReplay(x._id)}
                 >
-                  <h5 style={{ color: "darkinfo", fontFamily: "revert" }}>
+                  <h6 style={{ color: "darkinfo", fontFamily: "revert" }}>
                     <u>{x.title}</u>
-                  </h5>
+                  </h6>
                 </Link>
                 <p>{`Post by ${x.name} `}</p>
                 <p
@@ -142,7 +142,7 @@ const MainBoard = (props) => {
               </div>
               <div className="col">
                 <p style={{ fontSize: "14px" }} className="text-left">
-                <i class="fas fa-reply"></i>{" "}
+                last replay{" "}
                   {x.replay &&
                   x.replay.length > 0 &&
                   x.replay[x.replay.length - 1].hasOwnProperty("replayername")
@@ -161,7 +161,7 @@ const MainBoard = (props) => {
           </div>
         ))}
       </div>
-      <div className="col">
+      <div className=" col-5 ">
         <div className="row">
           <div className="col text-center">
             <div className='row'>
@@ -267,6 +267,7 @@ const MainBoard = (props) => {
         </div>
       </div>
     </div>
+    
   );
 };
 const mapStateToProps = (state) => {
