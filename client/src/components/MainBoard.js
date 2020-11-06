@@ -183,11 +183,11 @@ const MainBoard = (props) => {
               <strong>after 1 hour Quit Smoking...</strong>
             </p>
             <p
-              className="  text-left"
-              style={{
+                className="  text-left"
+                style={{
                 color: "",
                 fontFamily: "monospace",
-                fontSize:"14px",
+              
               
               }}
             >
@@ -211,7 +211,7 @@ const MainBoard = (props) => {
               style={{
                 color: "",
                 fontFamily: "monospace",
-                fontSize:"14px",
+               
              
               }}
             >
@@ -234,7 +234,7 @@ const MainBoard = (props) => {
               style={{
                 color: "",
                 fontFamily: "monospace",
-                fontSize:"14px",
+              
                
               }}
             >
@@ -254,7 +254,7 @@ const MainBoard = (props) => {
             </p>
             <p className="text-left"  style={{
                 color: "",
-                fontSize:"14px",
+              
                 fontFamily: "monospace",
               
               }}>
