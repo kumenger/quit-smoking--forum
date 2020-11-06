@@ -141,7 +141,6 @@ const rootPersistConfig = {
     "mongologinreduxer",
     "form",
     "fbmongodbreducer",
-    
     "getlastPostReducer",
     "getcurrentuserreducer",
   ],

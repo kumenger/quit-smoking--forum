@@ -8,7 +8,9 @@ import {useHistory} from 'react-router-dom'
 import _ from 'lodash'
 
 const renderInput = (fromProps) => {
-  console.log({ fromProps });
+ 
+
+  
   return (
     <div className="row">
       <div className="col-md-8">
@@ -88,7 +90,7 @@ const NewPost = (props) => {
         <div className="col-md-8 offset-md-2">
           <form onSubmit={props.handleSubmit(onformsubmit)}>
             <div>
-              <lable className='text-white'>
+              <lable className='text-black'>
                 <strong>Name</strong>
               </lable>
               <div>
@@ -103,7 +105,7 @@ const NewPost = (props) => {
               </div>
             </div>
             <div>
-              <lable className='text-white'>
+              <lable className='text-black'>
                 <strong>Title</strong>
               </lable>
               <div>
@@ -118,7 +120,7 @@ const NewPost = (props) => {
               </div>
             </div>
             <div>
-              <lable className='text-white'>
+              <lable className='text-black'>
                 <strong>Post</strong>
               </lable>
               <div>

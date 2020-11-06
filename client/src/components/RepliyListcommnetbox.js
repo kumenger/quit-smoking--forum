@@ -40,7 +40,7 @@ const RepliyListcommnetbox = (props) => {
     setrender(true)
   },[render])
 
-  const myobj2 = { id: props.nestedindex };
+  const myobj2 = { id: props.getInsideIndexforlikesreducer.index };
   const modelareplayclicked = () => {
     
     axios.request({
@@ -49,7 +49,7 @@ const RepliyListcommnetbox = (props) => {
       url: `http://localhost:8000/post/deleteReplay/${props.getidfromparent}`,
       data: myobj2,
     });
-   
+ 
    setShow(false)
       
   };
@@ -98,7 +98,7 @@ const RepliyListcommnetbox = (props) => {
   const iconclicked = () => {
     axios.patch(
       `http://localhost:8000/post/updateReplylikes/${props.getidfromparent}`,
-      { id: props.nestedindex }
+      { id: props.getInsideIndexforlikesreducer.index  }
     );
    // props.updateReplylikes(props.getidfromparent,props.nestedindex)
     setlikes(likes + 1);
@@ -150,7 +150,8 @@ const RepliyListcommnetbox = (props) => {
 
   const deletebtnclicked = () => {
     setShow(true);
-   // props.getInsideIndexforlikes(props.nestedindex);
+    
+    props.getInsideIndexforlikes(props.nestedindex);
   };
   return (
     <div
@@ -239,7 +240,8 @@ const RepliyListcommnetbox = (props) => {
           {" "}
           <button
             style={{ backgroundColor: "DARKGRAY", fontSize: "22px" }}
-            
+            onMouseOver={()=>props.getInsideIndexforlikes(props.nestedindex)}
+            onTouchMove={()=>props.getInsideIndexforlikes(props.nestedindex)}
             disabled={props.facebookloginreducer.isLogIn||props.mongologinreduxer.isAuthenticated ? false : true}
             onClick={() => iconclicked()}
             className="fas fa-thumbs-up fa-2x btn btn-block  "

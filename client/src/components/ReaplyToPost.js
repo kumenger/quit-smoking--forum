@@ -81,7 +81,7 @@ let c=`${months[a.getMonth()]} ${a.getDate()} ${a.getFullYear()} `+ time
         <div className='col-md-8 offset-md-2'>
       <form onSubmit={props.handleSubmit(onformsubmit)} style={{padding:"20px"}}>
           <div>
-              <lable className='text-white'><strong>Name</strong></lable>
+              <lable className='text-black'><strong>Name</strong></lable>
             <div><Field
             name="replayername"
             component={renderInput}
@@ -93,7 +93,7 @@ let c=`${months[a.getMonth()]} ${a.getDate()} ${a.getFullYear()} `+ time
           /></div>
           </div>
           <div>
-              <lable className='text-white'><strong>Current date</strong></lable>
+              <lable className='text-black'><strong>Current date</strong></lable>
               <div><Field
             name="replyertime"
             component={renderInput}
@@ -107,7 +107,7 @@ let c=`${months[a.getMonth()]} ${a.getDate()} ${a.getFullYear()} `+ time
           /></div>
           </div>
           <div >
-              <lable className='text-white' ><strong>Post</strong></lable>
+              <lable className='text-black' ><strong>Post</strong></lable>
               <div >
                   <Field
             name="replayerPost"
