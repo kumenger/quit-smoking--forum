@@ -12,8 +12,12 @@ import { getIdForReplay } from "../actions";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import LastPost from "./LastPost";
-
+import _ from 'lodash'
 const MainBoard = (props) => {
+  const getfirst=(name=" ")=>{
+    let s=name.split(" ")
+    return s[0]
+  }
   let myarry = [
     "f7af89",
     "e6e6fa",
@@ -138,12 +142,12 @@ const MainBoard = (props) => {
               </div>
               <div className="col">
                 <p style={{ fontSize: "14px" }} className="text-left">
-                  last reply by{" "}
+                <i class="fas fa-reply"></i>{" "}
                   {x.replay &&
                   x.replay.length > 0 &&
                   x.replay[x.replay.length - 1].hasOwnProperty("replayername")
-                    ? x.replay[x.replay.length - 1].replayername
-                    : x.name}
+                    ? getfirst( x.replay[x.replay.length - 1].replayername)
+                    : getfirst(x.name)}
                 </p>
                 <p style={{ fontSize: "12px", color: "BLUE" }}>
                   {x.replay &&
