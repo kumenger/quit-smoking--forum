@@ -19,13 +19,15 @@ componentDidMount(){
     <div>
       <div className="fluid-container" style={{ paddingLeft: "10px",paddingRight:"10px",paddingTop:"10px" }}>
         <Router history={history}>
-     
-          <Header />
-         <div className='a  rounded-right rounded-left rounded-bottom rounded-top ' style={{padding:"1px"}}>
-            <h5 className='text-center text-white' style={{fontFamily:""}}>Quit Smoking! Get Help <i class="fas fa-hands-helping" style={{color:"violet"}}></i></h5>
-            <h6 className='text-center text-white' style={{fontFamily:""}}>Share Your experience and story ,relapse,how you beat <i class="fas fa-grin-tongue-wink" style={{color:"violet"}}></i> the Nicodemon</h6>
-           </div> 
-       <br/>
+        
+         
+          
+           <Header />
+           <div className='a  rounded-right rounded-left rounded-bottom rounded-top ' style={{padding:"1px"}}>
+            <h5 className='text-center ' style={{color:"snow"}}>Quit Smoking! Get Help <i class="fas fa-hands-helping" style={{color:"lightblue"}}></i></h5>
+            <h6 className='text-center' style={{color:"snow"}}>Share Your story ,relapse,how you beat <i class="fas fa-grin-tongue-wink blink" style={{color:"lightblue",fontSize:"20px"}}></i> the Nicodemon</h6>
+           </div>
+           <br/>
 
           <div>
             <Route path="/" exact component={MainBoard} />

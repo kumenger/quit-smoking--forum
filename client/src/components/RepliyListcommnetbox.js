@@ -40,7 +40,7 @@ const RepliyListcommnetbox = (props) => {
     setrender(true)
   },[render])
 
-  const myobj2 = { id: props.getInsideIndexforlikesreducer.index };
+  const myobj2 = { id: props.nestedindex };
   const modelareplayclicked = () => {
     
     axios.request({
@@ -95,8 +95,7 @@ const RepliyListcommnetbox = (props) => {
     }
   };
   const iconclicked = () => {
-    //props.updateLikesforReplies(props.curentlikes,props.getIdForReplayReducer.id, props.getInsideIndexforlikesreducer.index)
-    axios.put(
+     axios.put(
       `http://localhost:8000/post/updateReplylikes/${props.getidfromparent}`,
       { id: props.nestedindex }
     );
@@ -147,11 +146,9 @@ const RepliyListcommnetbox = (props) => {
     return " ";
   };
 
-  //console.log(props.getidfromparent)
-  //console.log(props.nestedindex)
   const deletebtnclicked = () => {
     setShow(true);
-    props.getInsideIndexforlikes(props.nestedindex);
+   // props.getInsideIndexforlikes(props.nestedindex);
   };
   return (
     <div
