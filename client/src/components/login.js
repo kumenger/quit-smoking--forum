@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 
 import { connect } from "react-redux";
-
+import {useHistory} from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 import setAuthToken from '../utils/setAuthToken'
 import {setCurrentUser,logoutUser} from '../actions/index'
-import { loginUser } from "../actions/index";
+import { loginUser,resendVerification } from "../actions/index";
 import { FormControl } from "react-bootstrap";
 import { reduxForm, Field, formValueSelector } from "redux-form";
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import Jwt_decode from "jwt-decode";
+import Modal from "react-bootstrap/esm/Modal";
+import Button from "react-bootstrap/esm/Button";
 
 
 
 
 const renderInput = (fromProps,props) => {
-  
+ 
   return (
     <div>
       <div>
@@ -33,7 +35,11 @@ const renderInput = (fromProps,props) => {
 };
 
 const LogIn = (props) => {
+ const [show,setShow]=useState(false)
+ const [email,setemail]=useState('')
+  
   const [ResponseError,setResponseError]=useState("")
+  
   const renderlink=()=>{
   
     
@@ -43,9 +49,31 @@ const LogIn = (props) => {
     if(ResponseError.Password){
       return <div className='text-dark'> {ResponseError.Password} <Link className ='text-white' to='/'>forget PassWord?</Link>  </div>
     }
+    if(ResponseError.unverified){
+      return <div className='text-dark'> {
+      ResponseError.unverified} &nbsp;
+         <button className='btn btn-info' onClick={()=>unverfiedclicked()
+        
+      }>Resend Verificatiin</button>  </div>
+    }
+   
     
   }
+  
+  const unverfiedclicked=()=>{
+    setShow(true)
+    props.resendVerification(props.Email)
+   
+  }
+  const unverfiedclicked2=()=>{
+    setShow(false)
+    window.location.href='/'
+    
+   
+  }
 
+
+  
   if(localStorage.jwtToken){
     const token=localStorage.jwtToken
     setAuthToken(token)
@@ -86,9 +114,26 @@ const LogIn = (props) => {
     props.logoutUser()
     window.location.href='/'
   }
- 
+ const history=useHistory()
   return (
     <div >
+       <Modal show={show}>
+        <Modal.Header>
+          <Modal.Title>Email Verification </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {props.emailverifyreducer.resend.msg?props.emailverifyreducer.resend.msg:"Please Wait......"}
+          
+  
+        </Modal.Body>
+        <Modal.Footer>
+          
+          <Button className="primary" onClick={() =>
+             unverfiedclicked2()}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     
       {props.mongologinreduxer.isAuthenticated?<button
           className="btn btn-outline-info"
@@ -150,7 +195,8 @@ const mapStateToProps = (state) => {
     Email: selecteor(state, "Email"),
     Password: selecteor(state, "Password"),
     mongologinreduxer:state.mongologinreduxer,
+    emailverifyreducer:state.emailverifyreducer
     
   };
 };
-export default connect(mapStateToProps, { loginUser, logoutUser })(formWrapped);
+export default connect(mapStateToProps, { loginUser, logoutUser,resendVerification })(formWrapped);

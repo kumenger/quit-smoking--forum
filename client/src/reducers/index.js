@@ -84,14 +84,16 @@ const whateditbuttonclikedreducer = (state = { nestedindex: null }, action) => {
   }
   return state;
 };
-const mongoregistersignupreducer = (state = [], action) => {
+const mongoregistersignupreducer = (state = {newuser:"",err:""}, action) => {
   if (action.type === "USER_REJISTER") {
-    const newState = [...state];
-    newState.push(action.payload);
-    return newState;
+   
+    return {...state,newuser:action.payload.msg,err:''};
   }
-  if (action.type === "ALL_USERS") {
+ /* if (action.type === "ALL_USERS") {
     return action.payload;
+  }*/
+  if (action.type === "GET_ERRORS_REGISTER") {
+    return {...state,newuser:"",err:action.payload} ;
   }
   return state;
 };
@@ -133,16 +135,29 @@ const getlastPostReducer = (state = { lastpost: null }, action) => {
   }
   return state;
 };
-
+const emailverifyreducer=(state={result:"",err:"",resend:""},action)=>{
+  if(action.type==='USER_VERIFICATION'){
+    return {...state,result:action.payload,err:""}
+  }
+  if(action.type==='GET_ERROR_VERIFY'){
+    return {...state,result:"",err:action.payload}
+  }
+  if(action.type==='RESEND_VERIFY'){
+  return {...state,result:"",err:"",resend:action.payload}
+  }
+  return state
+}
 const rootPersistConfig = {
   key: "root",
   storage,
   blacklist: [
+    'emailverifyreducer',
     "mongologinreduxer",
     "form",
     "fbmongodbreducer",
     "getlastPostReducer",
     "getcurrentuserreducer",
+    'mongoregistersignupreducer'
   ],
 };
 
@@ -150,7 +165,7 @@ export default persistReducer(
   rootPersistConfig,
   combineReducers({
     form: formReducer,
-
+    emailverifyreducer,
     getlastPostReducer,
     geterrorreducer: geterrorreducer,
     fbmongodbreducer: fbmongodbreducer,

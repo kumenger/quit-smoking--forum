@@ -52,9 +52,12 @@ const PostReaply = (props) => {
   }, [data]);
 
   if (!props.post[id]) {
-    return <div className="spinner-border text-warning text-center" role="status">
-    <span >Loading...</span>
-  </div>;
+    return <div className="text-center">
+    <p className=" text-danger">loding...</p>
+<div className="spinner-border" role="status">
+
+</div>
+</div>
   }
 
   

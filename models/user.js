@@ -8,6 +8,7 @@ const newSchema=new schema({
   QuitDate:{type:Date},
   Location:{type:String},
   NumberOfRepaly:{type:Number},
-  JoinDate:{type:Date}
+  JoinDate:{type:Date},
+  isVerfied:{type:Boolean,default:false}
 })
 module.exports=moongoose.model("users",newSchema)

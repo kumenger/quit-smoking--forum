@@ -31,38 +31,45 @@ const rednerinput = (fromProps) => {
     </div>
   );
 };
+
 const SignUp = (props) => {
   const history = useHistory();
   const [date, setdate] = useState(new Date());
-  const [checkemail, setcheckemail] = useState("");
-  const [dataall, setdatadataall] = useState();
+  const [checkemail, setcheckemail] = useState(" ");
+  const [dataall, setdatadataall] = useState([]);
   useEffect(() => {
+    setcheckemail(props.mongoregistersignupreducer.err)
    const check=()=>{
-     if(props.mongologinreduxer.isAuthenticated||props.facebookloginreducer.resp.name){
+     if(props.mongologinreduxer.isAuthenticated||props.facebookloginreducer.isLogIn){
        history.push('/')
      }
    }
-    props.getalluser();
-    let iscanceled = false;
-    const get = async () => {
-      const resp = await axios.get("/users/allusers");
+   // props.getalluser();
+   // let iscanceled = false;
+   /* const get = async () => {
+      const resp = await axios.get("/users/allusers")
       if (!iscanceled) {
         setdatadataall(resp.data);
       }
-    };
+    };*/
 
    check()
-    get();
-    return () => {
+   // get();
+   
+    /*return () => {
       iscanceled = true;
-    };
-  }, [dataall]);
+    };*/
+  }, [checkemail]);
 
   const onforumSubmint = (fromValues) => {
     
 
     let myobj = { QuitDate: null, JoinDate: null };
-    if (
+    props.userRejister({
+      ...fromValues,
+      ...{ ...myobj, QuitDate: date, JoinDate: new Date() },
+    });
+    /*if (
       dataall.map((x) => x.Email === fromValues.Email).filter((x) => x === true)
         .length > 0
     ) {
@@ -73,15 +80,16 @@ const SignUp = (props) => {
         ...{ ...myobj, QuitDate: date, JoinDate: new Date() },
       });
       history.push("/");
-    }
+    }*/
   };
-
+  console.log(props.mongoregistersignupreducer.err)
   return (
     <div
       className="rounded-right rounded-left rounded-bottom rounded-top row "
       style={{
         backgroundColor:"dark",
         alignItems: "center",
+      
        
       }}
     ><div className='col-md-6 offset-md-3'>
@@ -137,6 +145,7 @@ const SignUp = (props) => {
           component={rednerinput}
           lable="Location "
         />
+       <div><p className='text-danger text-center' style={{fontSize:"16px"}}>{props.mongoregistersignupreducer.newuser?props.mongoregistersignupreducer.newuser:props.mongoregistersignupreducer.err}</p></div> 
         <br></br>
         <div className="row">
           <div className=" offset-md-1 col-md-5">
@@ -197,8 +206,8 @@ const formWarapped = reduxForm({
 })(SignUp);
 const mapStateToProps = (state) => {
   return {
-    registerdUsers: state.mongoregistersignupreducer,
-    form: state.form,
+    mongoregistersignupreducer: state.mongoregistersignupreducer,
+    form:state.form,
     facebookloginreducer: state.facebookloginreducer,
     mongologinreduxer: state.mongologinreduxer,
   };
