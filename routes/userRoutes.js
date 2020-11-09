@@ -182,8 +182,8 @@ Router.route('/resendverify').post((req,res)=>{
            
             host: 'smtp.gmail.com',
             port: 587,
+            ignoreTLS: false,
             secure: false,
-            requireTLS: true,
            
             auth: {
               user:keys.Email, pass:keys.password
