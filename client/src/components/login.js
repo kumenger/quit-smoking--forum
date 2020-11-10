@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 import setAuthToken from '../utils/setAuthToken'
 import {setCurrentUser,logoutUser} from '../actions/index'
-import { loginUser,resendVerification } from "../actions/index";
+import { loginUser,resendVerification ,forgetPassword} from "../actions/index";
 import { FormControl } from "react-bootstrap";
 import { reduxForm, Field, formValueSelector } from "redux-form";
 import axios from 'axios'
@@ -60,7 +60,9 @@ const LogIn = (props) => {
     
   }
   const forgetccliked=()=>{
-    axios.post('http://localhost:8000/users/emailforget',{Email:props.Email}).then((res)=>{console.log(res.data)}).catch((err)=>{console.log(err)})
+    setShow(true)
+   props.forgetPassword(props.Email)
+    //axios.post('http://localhost:8000/users/emailforget',{Email:props.Email}).then((res)=>{console.log(res.data)}).catch((err)=>{console.log(err)})
   }
   const unverfiedclicked=()=>{
     setShow(true)
@@ -124,7 +126,7 @@ const LogIn = (props) => {
           <Modal.Title>Email Verification </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {props.emailverifyreducer.resend.msg?props.emailverifyreducer.resend.msg:"Please Wait......"}
+          {props.emailverifyreducer.resend.msg?props.emailverifyreducer.resend.msg:props.emailverifyreducer.result.msg?props.emailverifyreducer.result.msg:"please wai..."}
           
   
         </Modal.Body>
@@ -201,4 +203,4 @@ const mapStateToProps = (state) => {
     
   };
 };
-export default connect(mapStateToProps, { loginUser, logoutUser,resendVerification })(formWrapped);
+export default connect(mapStateToProps, { loginUser, logoutUser,resendVerification ,forgetPassword})(formWrapped);

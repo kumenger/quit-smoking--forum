@@ -145,6 +145,12 @@ const emailverifyreducer=(state={result:"",err:"",resend:""},action)=>{
   if(action.type==='RESEND_VERIFY'){
   return {...state,result:"",err:"",resend:action.payload}
   }
+  if(action.type==='FORGET_PASSWORD'){
+    return {...state,result:action.payload,err:"",resend:""}
+    }
+    if(action.type==='FORGET_PASSWORD_ERROR'){
+      return {...state,result:"",err:action.payload,resend:""}
+      }
   return state
 }
 const changePasswordReducer=(state={result:"",err:""},action)=>{

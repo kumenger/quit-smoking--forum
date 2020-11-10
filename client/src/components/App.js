@@ -21,7 +21,7 @@ componentDidMount(){
   render(){
   return (
     <div>
-      <div className="container-fluid" style={{ paddingLeft: "10px",paddingRight:"10px",paddingTop:"10px" }}>
+      <div className="container" style={{ paddingLeft: "10px",paddingRight:"10px",paddingTop:"10px" }}>
         <Router history={history}>
         
      

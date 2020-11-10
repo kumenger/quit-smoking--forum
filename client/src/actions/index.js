@@ -209,6 +209,9 @@ export const resendVerification=(email)=>dispatch=>{
   let obj={Email:null}
   axios.post('/users/resendverify',{...obj,Email:email}).then((resp)=>{dispatch({type:"RESEND_VERIFY",payload:resp.data})})
 }
+export const forgetPassword=(email)=>dispatch=>{
+  axios.post('/users/emailforget',{Email:email}).then((res)=>{dispatch({type:"FORGET_PASSWORD",payload:res.data})}).catch((err)=>{dispatch({type:"FORGET_PASSWORD_ERROR",payload:err.res.data})})
+}
 export const getalluser = () => async (dispatch) => {
   const response = await axios.get("/users/allusers");
   dispatch({ type: "ALL_USERS", payload: response.data });
