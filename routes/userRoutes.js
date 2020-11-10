@@ -58,7 +58,7 @@ Router.route("/register").post((req, res) => {
                   from: "kumeprog@gmail.com",
                   to: newUser.Email,
                   subject: "Quit Smoking Account Verification ",
-                  html:`Hello, ${newUser.FirstName} <br></br> please verify account by following this <a href='http://localhost:3000/users/confirmation/${newtoke.token} 
+                  html:`Hello, ${newUser.FirstName} <br></br> please verify account by following this <a href='https://scary-eyeballs-76816.herokuapp.com/users/confirmation/${newtoke.token} 
    
                   
                   
@@ -194,7 +194,7 @@ Router.route('/resendverify').post((req,res)=>{
             from: "kumeprog@gmail.com",
             to: user.Email,
             subject: "Quit Smoking Account Verification ",
-            html:`Hello, ${user.FirstName} <br></br> please verify account by following this <a href='http://localhost:3000/users/confirmation/${newtoke.token} 
+            html:`Hello, ${user.FirstName} <br></br> please verify account by following this <a href='https://scary-eyeballs-76816.herokuapp.com/users/confirmation/${newtoke.token} 
 
             
             
@@ -232,7 +232,7 @@ Router.route('/resendverify').post((req,res)=>{
           from: "kumeprog@gmail.com",
           to: user.Email,
           subject: "Quit Smoking Account Verification ",
-          html:`Hello, ${user.FirstName} <br></br> please verify account by following this <a href='http://localhost:3000/users/confirmation/${token.token} 
+          html:`Hello, ${user.FirstName} <br></br> please verify account by following this <a href='https://scary-eyeballs-76816.herokuapp.com/users/confirmation/${token.token} 
 
           
           
