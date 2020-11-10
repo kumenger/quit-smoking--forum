@@ -10,6 +10,6 @@ const newSchema=new schema({
   NumberOfRepaly:{type:Number},
   JoinDate:{type:Date},
   isVerfied:{type:Boolean,default:false},
-  resetPassword:{type:String}
+  resetPassword:{type:String,expires:"30m"}
 })
 module.exports=moongoose.model("users",newSchema)

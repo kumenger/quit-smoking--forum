@@ -41,7 +41,7 @@ const ResetPassword = (props) => {
     <div>
          <Modal show={show}>
         <Modal.Header>
-          <Modal.Title>ChangePassword </Modal.Title>
+          <Modal.Title>Change Password </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {props.changePasswordReducer.result.msg?props.changePasswordReducer.result.msg:"Please Wait......"}
@@ -57,9 +57,10 @@ const ResetPassword = (props) => {
         </Modal.Footer>
       </Modal>
       <form onSubmit={props.handleSubmit(onforumSubmint)}>
-        <Field name="pass" component={renderInput} label="New Password" />
+        <Field name="pass" component={renderInput} label="New Password" type='password'/>
         <br></br>
         <Field
+        password
           name="passrepet"
           component={renderInput}
           label="Repet Password"

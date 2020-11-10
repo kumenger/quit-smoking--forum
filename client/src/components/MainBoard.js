@@ -9,9 +9,9 @@ import {
   loadPost,
 } from "../actions";
 import { getIdForReplay } from "../actions";
-import axios from "axios";
+
 import { Link } from "react-router-dom";
-import LastPost from "./LastPost";
+
 import _ from 'lodash'
 const MainBoard = (props) => {
   const getfirst=(name=" ")=>{
@@ -187,7 +187,7 @@ const MainBoard = (props) => {
                 style={{
                 color: "",
                 fontFamily: "monospace",
-              
+                fontSize:"14px",
               
               }}
             >
@@ -211,7 +211,7 @@ const MainBoard = (props) => {
               style={{
                 color: "",
                 fontFamily: "monospace",
-               
+                fontSize:"14px",
              
               }}
             >
@@ -234,7 +234,7 @@ const MainBoard = (props) => {
               style={{
                 color: "",
                 fontFamily: "monospace",
-              
+                fontSize:"14px",
                
               }}
             >
@@ -254,7 +254,7 @@ const MainBoard = (props) => {
             </p>
             <p className="text-left"  style={{
                 color: "",
-              
+                fontSize:"14px",
                 fontFamily: "monospace",
               
               }}>

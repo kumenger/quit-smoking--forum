@@ -322,7 +322,7 @@ Router.route('/emailforget/:resendToken').patch((req,res)=>{
           user.Password=hash
           user.save((err)=>{
             if(err){return json.status(500).json({msg:err.message})}
-            return res.status(200).json({msg:"Password sussfulty changed" +" ,"+ user.FirstName})
+            return res.status(200).json({msg:"Password successfully changed" +" ,"+ user.FirstName})
           })
 
         })
