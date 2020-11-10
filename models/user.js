@@ -9,6 +9,7 @@ const newSchema=new schema({
   Location:{type:String},
   NumberOfRepaly:{type:Number},
   JoinDate:{type:Date},
-  isVerfied:{type:Boolean,default:false}
+  isVerfied:{type:Boolean,default:false},
+  resetPassword:{type:String}
 })
 module.exports=moongoose.model("users",newSchema)

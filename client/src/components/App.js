@@ -10,6 +10,8 @@ import { connect } from "react-redux";
 import ReplayTOPost from "./ReaplyToPost";
 import {userVerification} from '../actions'
 import UserVerify from './UserVerify'
+import ResetPassword from './ResetPassword'
+
 
 
 class App extends React.Component  {
@@ -19,12 +21,13 @@ componentDidMount(){
   render(){
   return (
     <div>
-      <div className="fluid-container" style={{ paddingLeft: "10px",paddingRight:"10px",paddingTop:"10px" }}>
+      <div className="container-fluid" style={{ paddingLeft: "10px",paddingRight:"10px",paddingTop:"10px" }}>
         <Router history={history}>
         
      
           
            <Header />
+           <br></br>
            <div className='a  rounded-right rounded-left rounded-bottom rounded-top ' style={{padding:"1px"}}>
             <h5 className='text-center ' style={{color:"snow"}}>Quit Smoking! Get Help <i className="fas fa-hands-helping" style={{color:"lightblue"}}></i></h5>
             <h6 className='text-center' style={{color:"snow"}}>Share Your story ,relapse,how you beat <i className="fas fa-grin-tongue-wink" style={{color:"lightblue",fontSize:"20px"}}></i> the Nicodemon</h6>
@@ -37,6 +40,7 @@ componentDidMount(){
             <Route path="/NewPost" component={NewPost} />
             <Route path="/ReplayTOPost/:id" component={ReplayTOPost} />
             <Route path='/users/confirmation/:tok' component={UserVerify}/>
+            <Route path='/users/emailforget/:resendToken' component={ResetPassword}/>
             <Route path="/signup" component={SignUp} />
             <Route path="/MainBoard" exact component={MainBoard} />
           </div>

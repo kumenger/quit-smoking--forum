@@ -147,6 +147,11 @@ const emailverifyreducer=(state={result:"",err:"",resend:""},action)=>{
   }
   return state
 }
+const changePasswordReducer=(state={result:"",err:""},action)=>{
+if(action.type==='CHANGE_PASSWORD'){return {...state,result:action.payload,err:""}}
+if(action.type==='GET_ERROR_CHANGE_PASSWORD'){return {...state,result:"",err:action.payload}}
+  return state
+}
 const rootPersistConfig = {
   key: "root",
   storage,
@@ -157,7 +162,9 @@ const rootPersistConfig = {
     "fbmongodbreducer",
     "getlastPostReducer",
     "getcurrentuserreducer",
-    'mongoregistersignupreducer'
+    'mongoregistersignupreducer',
+    'changePasswordReducer'
+
   ],
 };
 
@@ -165,6 +172,7 @@ export default persistReducer(
   rootPersistConfig,
   combineReducers({
     form: formReducer,
+    changePasswordReducer,
     emailverifyreducer,
     getlastPostReducer,
     geterrorreducer: geterrorreducer,

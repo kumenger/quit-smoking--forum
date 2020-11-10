@@ -7,7 +7,9 @@ const Token = require("../models/Tokens");
 const crpto=require('crypto')
 const nodemailer=require('nodemailer');
 const path =require('path');
+const user = require("../models/user");
 const { json } = require("body-parser");
+
 
 
 Router.route("/allusers").get((req, res) => {
@@ -115,6 +117,7 @@ Router.route("/login").post((req, res) => {
             expiresIn: 31556926, // 1 year in seconds
           },
           (err, token) => {
+            if(err){res.status(500).json({error:err.message})}
             return res.json({
               success: true,
               token: "Bearer " + token,
@@ -257,5 +260,77 @@ Router.route('/resendverify').post((req,res)=>{
      }).catch((err)=>{   return res.status(500).json({ msg: err.message });})
    }
   }).catch((err)=>{   return res.status(500).json({ msg: err.message });})
+})
+Router.route('/emailforget').post((req,res)=>{
+User.findOne({Email:req.body.Email}).then((user)=>{
+ if(!user){return res.status(200).json({msg:"email not found"})}
+ if(user){
+   user.resetPassword=crpto.randomBytes(16).toString('hex')
+   user.save((err)=>{
+     if(err){return res.status(500).json({msg:err})}
+     var transporter = nodemailer.createTransport({
+           
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      requireTLS: true,
+     
+      auth: {
+        user:keys.Email, pass:keys.password
+      },
+    });
+    var mailOptions = {
+        
+      from: "kumeprog@gmail.com",
+      to: user.Email,
+      subject: "Reset Password Request ",
+      html:`Hello, ${user.FirstName} <br></br> please follow the link to reset password <a href='https://scary-eyeballs-76816.herokuapp.com/users/emailforget/${user.resetPassword} 
+
+      
+      
+      ' ><strong>link</strong> </a> `
+      //text:'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host +'\/users' +'\/confirmation\/' + newtoke.token 
+    };
+    transporter.sendMail(mailOptions, function (err) {
+      if (err) {
+        return res.status(500).json({ msg: err.message });
+      }
+      res
+        .status(200)
+        .json(
+         {msg:"A reset password link sent to  " +
+          user.Email +" "+ 
+          " please chek your email to reset password."}
+        );
+    });
+  
+   })
+ }
+}).catch(()=>{
+
+})
+})
+Router.route('/emailforget/:resendToken').patch((req,res)=>{
+  User.findOne({resetPassword:req.params.resendToken}).then((user)=>{
+   if(!user){return res.status(200).json({msg:"activation not found"})}
+   if(user){
+     const newPassword=req.body.Password
+      bcrypt.genSalt(10,(err,salt)=>{
+        if(err){return res.status(500).json({msg:err.message})}
+        bcrypt.hash(newPassword,salt,(err,hash)=>{
+          if(err){return res.status(500).json({msg:err.message})}
+          user.Password=hash
+          user.save((err)=>{
+            if(err){return json.status(500).json({msg:err.message})}
+            return res.status(200).json({msg:"Password sussfulty changed" +" ,"+ user.FirstName})
+          })
+
+        })
+      })
+   }
+  }).catch((err)=>{
+    return json.status(200).json({msg:err.message})
+  })
+
 })
 module.exports = Router;

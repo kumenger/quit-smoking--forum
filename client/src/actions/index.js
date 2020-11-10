@@ -193,6 +193,18 @@ export const userVerification = (urltoken) => (dispatch) => {
       dispatch({ type: "GET_ERROR_VERIFY", payload: err.resp.data });
     });
 };
+export const changePassword = (urltoken,formvalues) => (dispatch) => {
+  /// const response=await axios.post(`/users/confirmation/${urltoken}`)
+  // dispatch({type:"USER_VERIFICATION",payload:response.data}).
+  axios
+    .patch(`/users/emailforget/${urltoken}`,{Password:formvalues})
+    .then((resp) => {
+      dispatch({ type: "CHANGE_PASSWORD", payload: resp.data });
+    })
+    .catch((err) => {
+      dispatch({ type: "GET_ERROR_CHANGE_PASSWORD", payload: err.resp.data });
+    });
+};
 export const resendVerification=(email)=>dispatch=>{
   let obj={Email:null}
   axios.post('/users/resendverify',{...obj,Email:email}).then((resp)=>{dispatch({type:"RESEND_VERIFY",payload:resp.data})})

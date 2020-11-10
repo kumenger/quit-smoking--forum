@@ -47,19 +47,21 @@ const LogIn = (props) => {
      return<div>{ ResponseError.Email}</div>
     }
     if(ResponseError.Password){
-      return <div className='text-dark'> {ResponseError.Password} <Link className ='text-white' to='/'>forget PassWord?</Link>  </div>
+      return <div className='text-dark'> {ResponseError.Password} <button className='btn btn-info' onClick={()=>forgetccliked()} >forget PassWord?</button>  </div>
     }
     if(ResponseError.unverified){
       return <div className='text-dark'> {
-      ResponseError.unverified} &nbsp;
+      ResponseError.unverified} Check your Email &nbsp;
          <button className='btn btn-info' onClick={()=>unverfiedclicked()
         
-      }>Resend Verificatiin</button>  </div>
+      }>Resend Verificatiin?</button>  </div>
     }
    
     
   }
-  
+  const forgetccliked=()=>{
+    axios.post('http://localhost:8000/users/emailforget',{Email:props.Email}).then((res)=>{console.log(res.data)}).catch((err)=>{console.log(err)})
+  }
   const unverfiedclicked=()=>{
     setShow(true)
     props.resendVerification(props.Email)
