@@ -47,7 +47,7 @@ const LogIn = (props) => {
      return<div>{ ResponseError.Email}</div>
     }
     if(ResponseError.Password){
-      return <div className='text-dark'> {ResponseError.Password} <a className='btn btn-info' onClick={()=>forgetccliked()} >forget PassWord?</a>  </div>
+      return <div className='text-dark'> {ResponseError.Password} <strong><u><a style={{fontSize:"16px",fontWeight:"bold" ,color:"blue"}} onClick={()=>forgetccliked()} >forget PassWord?</a> </u> </strong>  </div>
     }
     if(ResponseError.unverified){
       return <div className='text-dark'> {
