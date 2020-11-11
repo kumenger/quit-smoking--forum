@@ -5,8 +5,9 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { userRejister, getalluser } from "../actions/index";
 import "react-datepicker/dist/react-datepicker.css";
+import Modal from "react-bootstrap/esm/Modal";
+import Button from "react-bootstrap/esm/Button";
 
-import axios from "axios";
 const rednerinput = (fromProps) => {
   return (
     <div className="row">
@@ -36,7 +37,7 @@ const SignUp = (props) => {
   const history = useHistory();
   const [date, setdate] = useState(new Date());
   const [checkemail, setcheckemail] = useState(" ");
-  const [dataall, setdatadataall] = useState([]);
+  const [show,setShow]=useState(false)
   useEffect(() => {
     setcheckemail(props.mongoregistersignupreducer.err)
    const check=()=>{
@@ -60,6 +61,23 @@ const SignUp = (props) => {
       iscanceled = true;
     };*/
   }, [checkemail]);
+  const unverfiedclicked2=()=>{
+    setShow(false)
+    if(props.mongoregistersignupreducer.newuser){
+      window.location.href='/'
+    }
+    
+    
+   
+  }
+  const loding=()=>{
+    return(<div className="text-center">
+    <p className=" text-danger">loding...</p>
+<div className="spinner-border" role="status">
+
+</div>
+</div>)
+  }
 
   const onforumSubmint = (fromValues) => {
     
@@ -69,6 +87,7 @@ const SignUp = (props) => {
       ...fromValues,
       ...{ ...myobj, QuitDate: date, JoinDate: new Date() },
     });
+    setShow(true)
     /*if (
       dataall.map((x) => x.Email === fromValues.Email).filter((x) => x === true)
         .length > 0
@@ -82,7 +101,7 @@ const SignUp = (props) => {
       history.push("/");
     }*/
   };
-  console.log(props.mongoregistersignupreducer.err)
+
   return (
     <div
       className="rounded-right rounded-left rounded-bottom rounded-top row "
@@ -92,7 +111,28 @@ const SignUp = (props) => {
       
        
       }}
-    ><div className='col-md-6 offset-md-3'>
+      
+    >
+       <Modal show={show}>
+        <Modal.Header>
+          <Modal.Title>Email Verification </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        {props.mongoregistersignupreducer.newuser?props.mongoregistersignupreducer.newuser:props.mongoregistersignupreducer.err?props.mongoregistersignupreducer.err:loding()}
+          
+  
+        </Modal.Body>
+        <Modal.Footer>
+          
+          <Button className="primary" onClick={() =>
+             unverfiedclicked2()}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal> 
+      
+      
+      <div className='col-md-6 offset-md-3'>
 
       <form
         onSubmit={props.handleSubmit(onforumSubmint)}
@@ -114,14 +154,17 @@ const SignUp = (props) => {
           component={rednerinput}
           lable=" Password"
           type="password"
+          
         />
         <br></br>
+        
         <Field
           name="Password2"
           component={rednerinput}
           lable="Repet pasword"
           type="password"
-        />
+        
+        /> 
         <br></br>
         <div className=" row">
           <div className="  col-md-4">
@@ -145,7 +188,7 @@ const SignUp = (props) => {
           component={rednerinput}
           lable="Location "
         />
-       <div><p className='text-danger text-center' style={{fontSize:"16px"}}>{props.mongoregistersignupreducer.newuser?props.mongoregistersignupreducer.newuser:props.mongoregistersignupreducer.err}</p></div> 
+      
         <br></br>
         <div className="row">
           <div className=" offset-md-1 col-md-5">

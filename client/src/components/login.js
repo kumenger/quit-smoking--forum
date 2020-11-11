@@ -47,14 +47,14 @@ const LogIn = (props) => {
      return<div>{ ResponseError.Email}</div>
     }
     if(ResponseError.Password){
-      return <div className='text-dark'> {ResponseError.Password} <button className='btn btn-info' onClick={()=>forgetccliked()} >forget PassWord?</button>  </div>
+      return <div className='text-dark'> {ResponseError.Password} <a className='btn btn-info' onClick={()=>forgetccliked()} >forget PassWord?</a>  </div>
     }
     if(ResponseError.unverified){
       return <div className='text-dark'> {
-      ResponseError.unverified} Check your Email &nbsp;
-         <button className='btn btn-info' onClick={()=>unverfiedclicked()
+      ResponseError.unverified} Check your Email or &nbsp;
+        <strong><u><a style={{fontSize:"16px",fontWeight:"bold" ,color:"blue"}} onClick={()=>unverfiedclicked()
         
-      }>Resend Verificatiin?</button>  </div>
+      }>Resend Verification?</a></u> </strong>  </div>
     }
    
     
@@ -74,6 +74,14 @@ const LogIn = (props) => {
     window.location.href='/'
     
    
+  }
+  const loding=()=>{
+    return(<div className="text-center">
+    <p className=" text-danger">loding...</p>
+<div className="spinner-border" role="status">
+
+</div>
+</div>)
   }
 
 
@@ -126,7 +134,7 @@ const LogIn = (props) => {
           <Modal.Title>Email Verification </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {props.emailverifyreducer.resend.msg?props.emailverifyreducer.resend.msg:props.emailverifyreducer.result.msg?props.emailverifyreducer.result.msg:"please wai..."}
+          {props.emailverifyreducer.resend.msg?props.emailverifyreducer.resend.msg:props.emailverifyreducer.result.msg?props.emailverifyreducer.result.msg:loding()}
           
   
         </Modal.Body>

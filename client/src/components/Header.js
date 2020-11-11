@@ -80,6 +80,7 @@ const Header = (props) => {
               
               <Nav.Link>
                {props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown"?"":<LogIn />} 
+               
               </Nav.Link> 
 
                

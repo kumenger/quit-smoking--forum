@@ -57,13 +57,14 @@ const ResetPassword = (props) => {
         </Modal.Footer>
       </Modal>
       <form onSubmit={props.handleSubmit(onforumSubmint)}>
-        <Field name="pass" component={renderInput} label="New Password" type='password'/>
+        <Field name="pass" component={renderInput} label="New Password"  type="password"/>
         <br></br>
         <Field
         password
           name="passrepet"
           component={renderInput}
           label="Repet Password"
+          type="password"
         />
 
         <br></br>

@@ -63,8 +63,7 @@ Router.route("/register").post((req, res) => {
                   user:'kumeprog@gmail.com',
                   clientId: "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
                   clientSecret: "RftAgT_DpMIVLBheeSSYPyQZ",
-                  refreshToken: "ya29.A0AfH6SMBQO25INJ7Fizj9CxDs1ZC2tGj-zxuGEfDQH76QF_5PDomy8Uw5p8dNLvDnqrnVDXcEimNcTKwqyEclAsPJwo4606kLvSIPt4WxBvA0NA7wslRbDmFbtElsFrNIb552PCYTphwNKflR69BlcsNeja-YvgoL2lWPdm49K40",
-                  accessToken: myaccetoken 
+                  refreshToken: "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM"
                       }
                });
                 var mailOptions = {
@@ -210,7 +209,7 @@ Router.route('/resendverify').post((req,res)=>{
             user:'kumeprog@gmail.com',
             clientId: "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
             clientSecret: "RftAgT_DpMIVLBheeSSYPyQZ",
-            refreshToken: "ya29.A0AfH6SMBQO25INJ7Fizj9CxDs1ZC2tGj-zxuGEfDQH76QF_5PDomy8Uw5p8dNLvDnqrnVDXcEimNcTKwqyEclAsPJwo4606kLvSIPt4WxBvA0NA7wslRbDmFbtElsFrNIb552PCYTphwNKflR69BlcsNeja-YvgoL2lWPdm49K40",
+            refreshToken: "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
             accessToken: myaccetoken 
                 }
          });
@@ -295,8 +294,7 @@ User.findOne({Email:req.body.Email}).then((user)=>{
        'RftAgT_DpMIVLBheeSSYPyQZ',
        '"https://developers.google.com/oauthplayground"'
      )
-     myouthclient.setCredentials(
-       {refresh_token:'1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM'})
+     myouthclient.setCredentials({refresh_token:'1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM'})
      const myaccetoken=myouthclient.getAccessToken()
      
        var transporter = nodemailer.createTransport({
@@ -307,7 +305,7 @@ User.findOne({Email:req.body.Email}).then((user)=>{
        user:'kumeprog@gmail.com',
        clientId: "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
        clientSecret: "RftAgT_DpMIVLBheeSSYPyQZ",
-       refreshToken: "ya29.A0AfH6SMBQO25INJ7Fizj9CxDs1ZC2tGj-zxuGEfDQH76QF_5PDomy8Uw5p8dNLvDnqrnVDXcEimNcTKwqyEclAsPJwo4606kLvSIPt4WxBvA0NA7wslRbDmFbtElsFrNIb552PCYTphwNKflR69BlcsNeja-YvgoL2lWPdm49K40",
+       refreshToken: "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
        accessToken: myaccetoken 
            }
     });
