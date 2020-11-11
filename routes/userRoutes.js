@@ -46,17 +46,27 @@ Router.route("/register").post((req, res) => {
                 }
             
                
-                var transporter = nodemailer.createTransport({
-                 
-                  host: 'smtp.gmail.com',
-                  port: 587,
-                  secure: false,
-                  requireTLS: true,
-                 
+                const myouthclient=new OAuth2(
+                  '75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com',
+                  'RftAgT_DpMIVLBheeSSYPyQZ',
+                  '"https://developers.google.com/oauthplayground"'
+                )
+                myouthclient.setCredentials(
+                  {refresh_token:'1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM'})
+                const myaccetoken=myouthclient.getAccessToken()
+                
+                  var transporter = nodemailer.createTransport({
+                      
+                  service: "gmail",
                   auth: {
-                    user:keys.Email, pass:keys.password
-                  },
-                });
+                  type:'OAuth2',
+                  user:'kumeprog@gmail.com',
+                  clientId: "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
+                  clientSecret: "RftAgT_DpMIVLBheeSSYPyQZ",
+                  refreshToken: "ya29.A0AfH6SMBQO25INJ7Fizj9CxDs1ZC2tGj-zxuGEfDQH76QF_5PDomy8Uw5p8dNLvDnqrnVDXcEimNcTKwqyEclAsPJwo4606kLvSIPt4WxBvA0NA7wslRbDmFbtElsFrNIb552PCYTphwNKflR69BlcsNeja-YvgoL2lWPdm49K40",
+                  accessToken: myaccetoken 
+                      }
+               });
                 var mailOptions = {
                   
                   from: "kumeprog@gmail.com",
