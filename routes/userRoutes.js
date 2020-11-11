@@ -10,6 +10,8 @@ const path =require('path');
 const user = require("../models/user");
 const { json } = require("body-parser");
 
+const { google } = require("googleapis");
+const OAuth2 = google.auth.OAuth2
 
 
 Router.route("/allusers").get((req, res) => {
@@ -268,16 +270,26 @@ User.findOne({Email:req.body.Email}).then((user)=>{
    user.resetPassword=crpto.randomBytes(16).toString('hex')
    user.save((err)=>{
      if(err){return res.status(500).json({msg:err})}
-     var transporter = nodemailer.createTransport({
-           
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
-      requireTLS: true,
+     const myouthclient=new OAuth2(
+       '75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com',
+       'RftAgT_DpMIVLBheeSSYPyQZ',
+       '"https://developers.google.com/oauthplayground"'
+     )
+     myouthclient.setCredentials(
+       {refresh_token:'1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM'})
+     const myaccetoken=myouthclient.getAccessToken()
      
-      auth: {
-        user:keys.Email, pass:keys.password
-      },
+       var transporter = nodemailer.createTransport({
+           
+       service: "gmail",
+       auth: {
+       type:'OAuth2',
+       user:'kumeprog@gmail.com',
+       clientId: "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
+       clientSecret: "RftAgT_DpMIVLBheeSSYPyQZ",
+       refreshToken: "ya29.A0AfH6SMBQO25INJ7Fizj9CxDs1ZC2tGj-zxuGEfDQH76QF_5PDomy8Uw5p8dNLvDnqrnVDXcEimNcTKwqyEclAsPJwo4606kLvSIPt4WxBvA0NA7wslRbDmFbtElsFrNIb552PCYTphwNKflR69BlcsNeja-YvgoL2lWPdm49K40",
+       accessToken: myaccetoken 
+           }
     });
     var mailOptions = {
         
