@@ -13,7 +13,7 @@ const renderInput = (formProps) => {
         <label>{formProps.label}</label>
       </div>
       <div className="col-md-6">
-        <input {...formProps.input} className="form-control" />
+        <input {...formProps.input} className="form-control" type={formProps.type}/>
       </div>
       <div className="col-md-12 text-center text-danger">
         {formProps.meta.error && formProps.meta.touched
