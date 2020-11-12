@@ -240,29 +240,40 @@ Router.route('/resendverify').post((req,res)=>{
         })
        }
        if(token){
+        const myouthclient=new OAuth2(
+          '75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com',
+          'RftAgT_DpMIVLBheeSSYPyQZ',
+          '"https://developers.google.com/oauthplayground"'
+        )
+        myouthclient.setCredentials(
+          {refresh_token:'1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM'})
+        const myaccetoken=myouthclient.getAccessToken()
+        
+        
         var transporter = nodemailer.createTransport({
-           
-          host: 'smtp.gmail.com',
-          port: 587,
-          secure: false,
-          requireTLS: true,
-         
+                
+          service: "gmail",
           auth: {
-            user:keys.Email, pass:keys.password
-          },
-        });
-        var mailOptions = {
+          type:'OAuth2',
+          user:'kumeprog@gmail.com',
+          clientId: "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
+          clientSecret: "RftAgT_DpMIVLBheeSSYPyQZ",
+          refreshToken: "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
+          accessToken: myaccetoken 
+              }
+       });
+       var mailOptions = {
             
-          from: "kumeprog@gmail.com",
-          to: user.Email,
-          subject: "Quit Smoking Account Verification ",
-          html:`Hello, ${user.FirstName} <br></br> please verify account by following this <a href='https://scary-eyeballs-76816.herokuapp.com/users/confirmation/${token.token} 
+        from: "kumeprog@gmail.com",
+        to: user.Email,
+        subject: "Quit Smoking Account Verification ",
+        html:`Hello, ${user.FirstName} <br></br> please verify account by following this <a href='https://scary-eyeballs-76816.herokuapp.com/users/confirmation/${token.token} 
 
-          
-          
-          ' ><strong>link</strong> </a> `
-          //text:'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host +'\/users' +'\/confirmation\/' + newtoke.token 
-        };
+        
+        
+        ' ><strong>link</strong> </a> `
+        //text:'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host +'\/users' +'\/confirmation\/' + newtoke.token 
+      };
         transporter.sendMail(mailOptions, function (err) {
           if (err) {
             return res.status(500).json({ msg: err.message });
