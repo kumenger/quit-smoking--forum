@@ -53,18 +53,18 @@ const MainBoard = (props) => {
       </div>
     );
   }
-
+ //flex-nowrap
   return (
 
     <div
-      className="row rounded-right rounded-left rounded-bottom rounded-top flex-nowrap  "
+      className="row rounded-right rounded-left rounded-bottom rounded-top "
       style={{
         
         
       }}
     >
-      
-      <div className="col-7  rounded-right rounded-left rounded-bottom rounded-top  "  >
+     
+      <div className="col-md-7  rounded-right rounded-left rounded-bottom rounded-top  "  >
          
         {props.allposts.map((x, index, arr) => (
           
@@ -161,7 +161,7 @@ const MainBoard = (props) => {
           </div>
         ))}
       </div>
-      <div className=" col-5 ">
+      <div className=" col-md-5 ">
         <div className="row">
           <div className="col text-center">
             <div className='row'>

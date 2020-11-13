@@ -21,7 +21,7 @@ componentDidMount(){
   render(){
   return (
     <div>
-      <div className="container" style={{ paddingLeft: "10px",paddingRight:"10px",paddingTop:"10px" }}>
+      <div  style={{ padding:"20px",paddingTop:"10px"}}>
         <Router history={history}>
         
      
