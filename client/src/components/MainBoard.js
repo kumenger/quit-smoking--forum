@@ -110,7 +110,7 @@ const MainBoard = (props) => {
                           )
                             ? x.replay[x.replay.length - 1].replayername
                             : x.name
-                        }&size=50&font-size=0.4&
+                        }&size=64&font-size=0.3&
                         
                           &background=${
                             myarry[Math.round(Math.random() * myarry.length)]
