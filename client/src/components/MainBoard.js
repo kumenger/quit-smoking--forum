@@ -72,28 +72,28 @@ const MainBoard = (props) => {
             <div
               className="row rounded-right rounded-left rounded-bottom rounded-top outset "
               style={{
-                backgroundColor: "#ebf1f1",
+                backgroundColor: "dimgray",
 
                 paddingTop: "5px",
               }}
             >
-              <div className="col-md-5">
+              <div className="col-7">
                 <Link
                   className="googlefont"
                   to={`PostReplay/${x._id}`}
                   onClick={() => props.getIdForReplay(x._id)}
                 >
-                  <h6 style={{ color: "darkinfo", fontFamily: "revert" }}>
+                  <h6 style={{ color:"snow", fontFamily: "revert" }}>
                     <u>{x.title}</u>
                   </h6>
                 </Link>
                 <p>{`Post by ${x.name} `}</p>
                 <p
-                  style={{ color: "#0B6943", fontSize: "12px" }}
+                  style={{ color: "lightskyblue", fontSize: "12px" }}
                 >{`${x.time}`}</p>
               </div>
 
-              <div className="col">
+              <div className="col-2">
                 <img
                   style={{ maxWidth: "100%" }}
                   className="rounded-right rounded-left rounded-bottom rounded-top img-responsive "
@@ -110,7 +110,7 @@ const MainBoard = (props) => {
                           )
                             ? x.replay[x.replay.length - 1].replayername
                             : x.name
-                        }&size=64&font-size=0.3&
+                        }&size=50&font-size=0.3&
                         
                           &background=${
                             myarry[Math.round(Math.random() * myarry.length)]
@@ -122,7 +122,7 @@ const MainBoard = (props) => {
                 />
                 <p style={{ fontSize: "12px" }} className="text-left">
                   {x.replay && x.replay.length > 0 ? (
-                    <span className="fas fa-comment " style={{ color: "indigo" }}>
+                    <span className="fas fa-comment " style={{ color: "lightskyblue" }}>
                       &nbsp;
                       {x.replay.length}
                     </span>
@@ -131,7 +131,7 @@ const MainBoard = (props) => {
                   )}
                   &nbsp;
                   {x.likes && x.likes > 0 ? (
-                    <span className="fas fa-heart" style={{ color: "#C13584" }}>
+                    <span className="fas fa-heart" style={{ color: "snow" }}>
                       &nbsp;
                       {x.likes}
                     </span>
@@ -140,8 +140,8 @@ const MainBoard = (props) => {
                   )}{" "}
                 </p>
               </div>
-              <div className="col">
-                <p style={{ fontSize: "14px" }} className="text-left">
+              <div className="col-3">
+                <p style={{ fontSize: "14px",color:"lightskyblue" }} className="text-left">
                 last replay{" "}
                   {x.replay &&
                   x.replay.length > 0 &&
@@ -149,7 +149,7 @@ const MainBoard = (props) => {
                     ? getfirst( x.replay[x.replay.length - 1].replayername)
                     : getfirst(x.name)}
                 </p>
-                <p style={{ fontSize: "12px", color: "BLUE" }}>
+                <p style={{ fontSize: "12px", color: "white" }}>
                   {x.replay &&
                   x.replay[x.replay.length - 1] &&
                   x.replay[x.replay.length - 1].hasOwnProperty("replyertime")
@@ -161,6 +161,7 @@ const MainBoard = (props) => {
           </div>
         ))}
       </div>
+      <br></br>
       <div className=" col-md-5 ">
         <div className="row">
           <div className="col text-center">
