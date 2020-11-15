@@ -27,12 +27,12 @@ componentDidMount(){
      
           
            <Header />
-           <br></br>
+           
            <div className='a  rounded-right rounded-left rounded-bottom rounded-top ' style={{padding:"1px"}}>
             <h5 className='text-center ' style={{color:"snow"}}>Quit Smoking! Get Help <i className="fas fa-hands-helping" style={{color:"lightblue"}}></i></h5>
             <h6 className='text-center' style={{color:"snow"}}>Share Your story ,relapse,how you beat <i className="fas fa-grin-tongue-wink" style={{color:"lightblue",fontSize:"20px"}}></i> the Nicodemon</h6>
            </div>
-           <br/>
+           
 
           <div>
             <Route path="/" exact component={MainBoard} />
