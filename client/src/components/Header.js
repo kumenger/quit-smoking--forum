@@ -51,8 +51,8 @@ const Header = (props) => {
           <Navbar expand="lg">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Brand>
-            <Link className='' to="/" onClick={() => getIdForReplay(null)}>
-                   <h5> Home</h5>
+            <Link to="/" onClick={() => getIdForReplay(null)}>
+                   <h5  className='btn btn-info' style={{fontSize:"16px"}}><strong>Home</strong> </h5>
                   </Link>
             </Navbar.Brand>
             <Navbar.Brand>

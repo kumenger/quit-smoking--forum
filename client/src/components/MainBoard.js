@@ -64,13 +64,13 @@ const MainBoard = (props) => {
       }}
     >
      
-      <div className="col-md-7 outset  rounded-right rounded-left rounded-bottom rounded-top  "  >
+      <div className="col-md-7   rounded-right rounded-left rounded-bottom rounded-top   "  >
          
         {props.allposts.map((x, index, arr) => (
           
           <div key={index} style={{}}>
             <div
-              className="row rounded-right rounded-left rounded-bottom rounded-top outset "
+              className="row rounded-right rounded-left rounded-bottom rounded-top border  "
               style={{
                 backgroundColor: "#ebf1f1",
 
@@ -158,6 +158,7 @@ const MainBoard = (props) => {
                 </p>
               </div>
             </div>
+          
           </div>
         ))}
       </div>
