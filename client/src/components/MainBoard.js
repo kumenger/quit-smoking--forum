@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import {
@@ -19,26 +19,27 @@ const MainBoard = (props) => {
     return s[0]
   }
   let myarry = [
-    "f7af89",
-    "e6e6fa",
-    "e9a6af",
+    "#f7af89",
+    "#e6e6fa",
+    "#e9a6af",
 
-    "21b1ff",
-    "ebffc0",
-    "ebffc0",
-    "1E90FF",
-    "aaccee",
-    "e9bfa6",
-    "6aa6e1",
-    "a6afe9",
-    "4169E1",
-    "008080",
-    "808000",
+    "#21b1ff",
+    "#ebffc0",
+    "#ebffc0",
+    "#1E90FF",
+    "#aaccee",
+    "#e9bfa6",
+    "#6aa6e1",
+    "#a6afe9",
+    "#4169E1",
+    "#008080",
+    "#808000",
   ];
+  let myarr2=['red','pink','brown']
 
   const [data, setdata] = useState([]);
   const [id, setid] = useState();
-
+  const color=useRef(myarry[Math.round(Math.random()*myarry.length)])
   useEffect(() => {
     props.loadAllPost();
 
@@ -94,32 +95,22 @@ const MainBoard = (props) => {
               </div>
 
               <div className="col-2">
-                <img
+             {props.facebookloginreducer.isLogIn &&
+                    props.facebookloginreducer.resp.userID === x.userID &&
+                    !props.facebookloginreducer.resp.error?
+                     <img
                   style={{ maxWidth: "100%" }}
                   className="rounded-right rounded-left rounded-bottom rounded-top img-responsive "
-                  src={
-                    props.facebookloginreducer.isLogIn &&
-                    props.facebookloginreducer.resp.userID === x.userID &&
-                    !props.facebookloginreducer.resp.error
-                      ? props.facebookloginreducer.resp.picture.data.url
-                      : `https://ui-avatars.com/api/?name=${
-                          x.replay &&
-                          x.replay.length > 0 &&
-                          x.replay[x.replay.length - 1].hasOwnProperty(
-                            "replayername"
-                          )
-                            ? x.replay[x.replay.length - 1].replayername
-                            : x.name
-                        }&size=50&font-size=0.3&
+                  src={props.facebookloginreducer.resp.picture.data.url}
+                       />: <span class="fas fa-user fa-3x" style={{color:`${myarry[Math.round(Math.random()*myarry.length)]}`}}>
                         
-                          &background=${
-                            myarry[Math.round(Math.random() * myarry.length)]
-                          }
+                        </span>
+                      
                 
               
-          `
-                  }
-                />
+          
+                  } 
+               
                 <p style={{ fontSize: "12px" }} className="text-left">
                   {x.replay && x.replay.length > 0 ? (
                     <span className="fas fa-comment " style={{ color: "darkslateblue" }}>
@@ -131,7 +122,7 @@ const MainBoard = (props) => {
                   )}
                   &nbsp;
                   {x.likes && x.likes > 0 ? (
-                    <span className="fas fa-heart" style={{ color: "royalblue" }}>
+                    <span className="fas fa-heart" style={{ color: "violet" }}>
                       &nbsp;
                       {x.likes}
                     </span>
@@ -142,7 +133,7 @@ const MainBoard = (props) => {
               </div>
               <div className="col-3">
                 <p style={{ fontSize: "14px",color:"darkslateblue" }} className="text-left">
-                last replay{" "}
+                <i class="fas fa-reply-all"></i>&nbsp; 
                   {x.replay &&
                   x.replay.length > 0 &&
                   x.replay[x.replay.length - 1].hasOwnProperty("replayername")
