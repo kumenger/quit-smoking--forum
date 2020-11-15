@@ -40,7 +40,7 @@ const Header = (props) => {
 
   return (
     <div
-      className="rounded-right rounded-left rounded-bottom rounded-to" style={{paddingTop:"px",backgroundColor:"#ebf1f1"}}
+      className="rounded-right rounded-left rounded-bottom rounded-to " style={{paddingTop:"5px",backgroundColor:""}}
      
     >
       <div

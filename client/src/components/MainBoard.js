@@ -165,7 +165,7 @@ const MainBoard = (props) => {
       <div className=" col-md-5 ">
         <div className="row">
           <div className="col text-center">
-            <div className='row'>
+            <div className='row' style={{paddingTop:"10px"}}>
             <div className='col'><img
               src="https://i.ibb.co/fkQ1THj/Ignition-of-the-last-one-cigarette-Quit-smoking-concept-photography-Shutterstock-ID-1125219683-Purch.jpg"
               className="rounded-right rounded-left rounded-bottom rounded-top text-center"
