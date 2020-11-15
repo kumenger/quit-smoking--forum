@@ -24,8 +24,8 @@ const MainBoard = (props) => {
     "#e9a6af",
 
     "#21b1ff",
-    "#ebffc0",
-    "#ebffc0",
+    
+   
     "#1E90FF",
     "#aaccee",
     "#e9bfa6",
