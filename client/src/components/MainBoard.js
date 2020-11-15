@@ -64,7 +64,7 @@ const MainBoard = (props) => {
       }}
     >
      
-      <div className="col-md-7  rounded-right rounded-left rounded-bottom rounded-top  "  >
+      <div className="col-md-7 outset  rounded-right rounded-left rounded-bottom rounded-top  "  >
          
         {props.allposts.map((x, index, arr) => (
           
@@ -72,7 +72,7 @@ const MainBoard = (props) => {
             <div
               className="row rounded-right rounded-left rounded-bottom rounded-top outset "
               style={{
-                backgroundColor: "dimgray",
+                backgroundColor: "#ebf1f1",
 
                 paddingTop: "5px",
               }}
@@ -83,13 +83,13 @@ const MainBoard = (props) => {
                   to={`PostReplay/${x._id}`}
                   onClick={() => props.getIdForReplay(x._id)}
                 >
-                  <h6 style={{ color:"snow", fontFamily: "revert" }}>
+                  <h6 style={{ color:"royalblue", fontFamily: "revert" }}>
                     <u>{x.title}</u>
                   </h6>
                 </Link>
                 <p>{`Post by ${x.name} `}</p>
                 <p
-                  style={{ color: "lightskyblue", fontSize: "12px" }}
+                  style={{ color: "gray", fontSize: "12px" }}
                 >{`${x.time}`}</p>
               </div>
 
@@ -122,7 +122,7 @@ const MainBoard = (props) => {
                 />
                 <p style={{ fontSize: "12px" }} className="text-left">
                   {x.replay && x.replay.length > 0 ? (
-                    <span className="fas fa-comment " style={{ color: "lightskyblue" }}>
+                    <span className="fas fa-comment " style={{ color: "darkslateblue" }}>
                       &nbsp;
                       {x.replay.length}
                     </span>
@@ -131,7 +131,7 @@ const MainBoard = (props) => {
                   )}
                   &nbsp;
                   {x.likes && x.likes > 0 ? (
-                    <span className="fas fa-heart" style={{ color: "snow" }}>
+                    <span className="fas fa-heart" style={{ color: "royalblue" }}>
                       &nbsp;
                       {x.likes}
                     </span>
@@ -141,7 +141,7 @@ const MainBoard = (props) => {
                 </p>
               </div>
               <div className="col-3">
-                <p style={{ fontSize: "14px",color:"lightskyblue" }} className="text-left">
+                <p style={{ fontSize: "14px",color:"darkslateblue" }} className="text-left">
                 last replay{" "}
                   {x.replay &&
                   x.replay.length > 0 &&
@@ -149,7 +149,7 @@ const MainBoard = (props) => {
                     ? getfirst( x.replay[x.replay.length - 1].replayername)
                     : getfirst(x.name)}
                 </p>
-                <p style={{ fontSize: "12px", color: "white" }}>
+                <p style={{ fontSize: "12px", color: "royalblue" }}>
                   {x.replay &&
                   x.replay[x.replay.length - 1] &&
                   x.replay[x.replay.length - 1].hasOwnProperty("replyertime")
@@ -161,7 +161,7 @@ const MainBoard = (props) => {
           </div>
         ))}
       </div>
-      <br></br>
+      
       <div className=" col-md-5 ">
         <div className="row">
           <div className="col text-center">
