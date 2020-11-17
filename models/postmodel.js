@@ -1,6 +1,20 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
-
+const replay=require('./replay')
+const replayschema=({
+  replayername: { type: String, trim: true },
+  replayerPost: { type: String ,trim:true},
+  replyertime: { type: String },
+  likes: { type: Number,default:0 },
+  userID:{type:String},
+  replies:[ {
+    replayername: { type: String, trim: true },
+    replayerPost: { type: String ,trim:true},
+    replyertime: { type: String },
+    likes: { type: Number,default:0 },
+    userID:{type:String}
+  },] 
+})
 const newSchema = new schema({
   name: { type: String, trim: true, required: true },
   userID: { type: String },
@@ -16,7 +30,8 @@ const newSchema = new schema({
       replayerPost: { type: String ,trim:true},
       replyertime: { type: String },
       likes: { type: Number,default:0 },
-      userID:{type:String}
+      userID:{type:String},
+      replayreplay:[replayschema]
     },
   ],
 

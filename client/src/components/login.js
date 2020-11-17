@@ -174,7 +174,7 @@ const LogIn = (props) => {
          
         />
         &nbsp;
-        <button className="btn btn-info" onClick={() => clicked()}>
+        <button className="btn btn-info text-center" onClick={() => clicked()}>
           {" "}
           Log In
         </button>

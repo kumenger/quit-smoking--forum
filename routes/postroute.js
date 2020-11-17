@@ -53,6 +53,21 @@ Router.route("/insertReplay/:id").put((req, res) => {
     }
   );
 });
+Router.route("/insertReplayreply/:id").put((req, res) => {
+  Post.findOneAndUpdate(
+    { _id: req.params.id ,"replay._id": req.body.id},
+
+    { $push: {"replay.$.replayreplay":{replayername:"kume",replayerPost:"kume",replyertime:"kume"}} },
+
+    function (error, success) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(success);
+      }
+    }
+  );
+})
 
 Router.route("/updatelikes/:id").put((req, res) => {
   Post.findByIdAndUpdate(

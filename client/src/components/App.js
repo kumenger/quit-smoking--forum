@@ -20,7 +20,7 @@ componentDidMount(){
 }
   render(){
   return (
-    <div className='' >
+    <div  >
        
         <Router history={history}>
         

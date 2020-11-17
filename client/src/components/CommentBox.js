@@ -119,7 +119,7 @@ const CommentBox = (props) => {
     >
       <div>
         <div className="row bg-dark   rounded-top border">
-          <div className="col ">
+          <div className="col-1 ">
             <p
               id="one"
               style={{fontSize:"13px"}}
@@ -131,7 +131,7 @@ const CommentBox = (props) => {
               {props.ReplayPosteName}
             </p>
           </div>
-          <div className="col ">
+          <div className="col-7 text-center ">
             <p
             
               id="four"
@@ -145,7 +145,7 @@ const CommentBox = (props) => {
               {props.ReplayPostTitle}
             </p>
           </div>
-          <div className="col">
+          <div className="col-4">
             <p
               id="two"
               style={{fontSize:"13px"}}

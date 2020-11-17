@@ -67,7 +67,7 @@ const PostReaply = (props) => {
    
     <div>
     
-      <div className="container-fluid">
+      <div className="">
         <div>
           <div></div>
 

@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 import LogIn from "./login";
 
 const Header = (props) => {
-
+ 
+ 
  
 
   const showwhneishome = () => {
@@ -40,7 +41,7 @@ const Header = (props) => {
 
   return (
     <div
-      className="rounded-right rounded-left rounded-bottom rounded-to " style={{backgroundColor:"ebf1f1"}}
+      className="rounded-right rounded-left rounded-bottom rounded-to " 
      
     >
       <div
@@ -49,7 +50,7 @@ const Header = (props) => {
       >
         <div className="col-md-12">
           <Navbar expand="lg">
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle aria-controls="basic-navbar-nav" id='toggler' />
             <Navbar.Brand>
             <Link to="/" onClick={() => getIdForReplay(null)}>
                    <h5  className='btn btn-info' style={{fontSize:"16px"}}><strong>Home</strong> </h5>
@@ -58,6 +59,7 @@ const Header = (props) => {
             <Navbar.Brand>
             { props.facebookloginreducer.isLogIn&&!props.facebookloginreducer.resp.status ||props.mongologinreduxer.isAuthenticated? "":<div><h5 ><Link to="/signup" className='btn btn-info '>Register</Link></h5> </div>  }
             </Navbar.Brand>
+           
            
            <Navbar.Brand style={{fontSize:"18px"}}>
            {props.checkpagetypereducer.page === true
