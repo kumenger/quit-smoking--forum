@@ -237,7 +237,7 @@ const RepliyListcommnetbox = (props) => {
       >
         <div className="col-md-10">{UpdateDeleteButton()}</div>{" "}
         <div className="col-md-2">
-        <i class="fas fa-reply-all"></i>
+        
           {" "}
           <button
             style={{ backgroundColor: "DARKGRAY", fontSize: "22px" }}

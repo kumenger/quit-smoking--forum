@@ -154,7 +154,7 @@ const MainBoard = (props) => {
         ))}
       </div>
       
-      <div className=" col-md-5 ">
+      <div className="col-md-5">
         <div className="row">
           <div className="col text-center">
             <div className='row' style={{paddingTop:"10px"}}>

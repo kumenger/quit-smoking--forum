@@ -108,7 +108,7 @@ Router.route("/login").post((req, res) => {
   const Password = req.body.password;
   User.findOne({ Email }).then((user) => {
     if (!user) {
-      return res.status(404).json({ error: { Email: "Email not found!!" } });
+      return res.status(404).json({ error: { Email: "We cound not find any account with this email!!" } });
     }
     if (!user.isVerfied)
       return res
