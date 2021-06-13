@@ -73,7 +73,7 @@ const MainBoard = (props) => {
             <div
               className="row rounded-right rounded-left rounded-bottom rounded-top border  "
               style={{
-                backgroundColor: "#ebf1f1",
+                backgroundColor: "white",
 
                 paddingTop: "5px",
               }}
@@ -84,9 +84,9 @@ const MainBoard = (props) => {
                   to={`PostReplay/${x._id}`}
                   onClick={() => props.getIdForReplay(x._id)}
                 >
-                  <h5 style={{ color:"royalblue", fontFamily: "revert" }}>
+                  <h6 style={{ color:"royalblue", fontFamily: "revert" }}>
                     <u>{x.title}</u>
-                  </h5>
+                  </h6>
                 </Link>
                 <p>{`Post by ${x.name} `}</p>
                 <p

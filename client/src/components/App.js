@@ -27,15 +27,15 @@ componentDidMount(){
      
           
          
-        <div className='a  rounded-right rounded-left rounded-bottom rounded-top ' >
-            <h5 className='text-center ' style={{color:"violet"}}>Quit Smoking! Get Help <i className="fas fa-hands-helping" style={{color:"lightblue"}}></i></h5>
-            <h5 className='text-center' style={{color:"Snow"}}>Share Your story ,Relapse,How you beat <i className="fas fa-grin-tongue-wink" style={{color:"lightblue",fontSize:"20px"}}></i> the Nicodemon</h5>
-           </div>
+        
           
            
            <Header />
            
-          
+           <div className=' rounded-right rounded-left rounded-bottom rounded-top ' >
+            <h5 className='text-center blickme ' style={{color:"violet"}}>Quit Smoking! Get Help <i className="fas fa-hands-helping" style={{color:"lightblue"}}></i></h5>
+            <h5 className='text-center' style={{color:"violet"}}>Share Your story ,Relapse,How you beat <i className="fas fa-grin-tongue-wink" style={{color:"lightblue",fontSize:"20px"}}></i> the Nicodemon</h5>
+           </div>
       
           <div className='container-fluid'>
             <Route path="/" exact component={MainBoard} />
