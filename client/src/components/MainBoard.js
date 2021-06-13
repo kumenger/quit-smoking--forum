@@ -20,7 +20,7 @@ const MainBoard = (props) => {
   }
   let myarry = [
     "#f7af89",
-    "#e6e6fa",
+    
     "#e9a6af",
 
     "#21b1ff",
@@ -84,9 +84,9 @@ const MainBoard = (props) => {
                   to={`PostReplay/${x._id}`}
                   onClick={() => props.getIdForReplay(x._id)}
                 >
-                  <h6 style={{ color:"royalblue", fontFamily: "revert" }}>
+                  <h5 style={{ color:"royalblue", fontFamily: "revert" }}>
                     <u>{x.title}</u>
-                  </h6>
+                  </h5>
                 </Link>
                 <p>{`Post by ${x.name} `}</p>
                 <p
@@ -102,10 +102,8 @@ const MainBoard = (props) => {
                   style={{ maxWidth: "100%" }}
                   className="rounded-right rounded-left rounded-bottom rounded-top img-responsive "
                   src={props.facebookloginreducer.resp.picture.data.url}
-                       />: <span class="fas fa-user fa-3x" style={{color:`${myarry[Math.round(Math.random()*myarry.length)]}`}}>
-                        
-                        </span>
-                      
+                       />: 
+                      <img src={`https://ui-avatars.com/api/?background=random&name=${x.name}&font-size=0.33`} className='rounded'/>
                 
               
           
@@ -122,7 +120,7 @@ const MainBoard = (props) => {
                   )}
                   &nbsp;
                   {x.likes && x.likes > 0 ? (
-                    <span className="fas fa-heart" style={{ color: "violet" }}>
+                    <span className="fas fa-heart" style={{ color: "darkslateblue" }}>
                       &nbsp;
                       {x.likes}
                     </span>
