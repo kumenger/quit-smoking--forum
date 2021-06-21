@@ -12,6 +12,7 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="stylesheet" href="css/style.css">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -27,13 +28,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <style>
-      .a{
-        background-image: url("https://i.ibb.co/dWYWdQn/pexels-pixabay-235985.jpg");
-        object-fit: cover;
-        background-repeat: repeat;
-        width: 100%;
-        
-      }
+      
       .outset{
         border-style: inset;
         border: 5px solid rgb(196, 194, 212);
@@ -62,49 +57,34 @@
       .googlefont{
         font-family:tahoma
       }
-      p {
-   margin: 0px;
-   padding: 0px;
-}
-     .blickme{
-      background-color: rgba(117, 203, 230, 0.192);
-       color: goldenrod;
-       border: solid 1px red;
-      
-       
-     }
-     .blink{
-  animation: blinker 1s linear infinite;
-}
-@keyframes blinker2 {
-  10% {
-    opacity: 0.5;
-  }
-}
-@keyframes blinker {
-  50% {
-    opacity: 0.3;
-  }
  
-}
-body{
- background-color: darkcyan;
-        object-fit: cover;
-        background-repeat: repeat;
-        width: 100%;
-        
- 
-}
+    
+  
 
+
+
+   .c{
+     background-image: linear-gradient(gray,dark);
+   }
+   .back{
+    height: 95vh;
+    background-image:linear-gradient(
+        to right bottom,
+        #7ed56f46,#55c57a) ,
+        url(https://i.ibb.co/fkQ1THj/Ignition-of-the-last-one-cigarette-Quit-smoking-concept-photography-Shutterstock-ID-1125219683-Purch.jpg);
+    background-size: cover;
+    background-position: top;
+   
+   }
 
     </style>
-    <title>React App</title>
+    <title>Kume's Quit Smoking Forum</title>
   </head>
   
 
-  <body  >
+  <body class="c"  >
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root" style="background-color: snow;"   ></div>
+    <div id="root"  style="background-image: linear-gradient(to top ,rgba(241, 160, 160, 0.918),rgba(48, 44, 44, 0.418))""></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
