@@ -61,11 +61,11 @@ const MainBoard = (props) => {
       className="row rounded-right rounded-left rounded-bottom rounded-top "
       
     >
-        <div className="col-md-12">
+        <div className="col-md-4">
         <div className="row">
-          <div className="col text-center">
-            <div className='row' style={{paddingTop:"5px"}}>
-            <div className='col ' style={{backgroundImage:"linear-gradient(to right bottom,#7ed56f46,#55c57a),url(https://i.ibb.co/fkQ1THj/Ignition-of-the-last-one-cigarette-Quit-smoking-concept-photography-Shutterstock-ID-1125219683-Purch.jpg)",backgroundSize:"cover",height:"60vh"}}  >
+          <div className="col ">
+            <div className='row' style={{padding:"10px"}}>
+            <div className='col ' style={{ backgroundImage:"linear-gradient(to right bottom,#7ed56f46,#55c57a),url(https://i.ibb.co/fkQ1THj/Ignition-of-the-last-one-cigarette-Quit-smoking-concept-photography-Shutterstock-ID-1125219683-Purch.jpg)",backgroundSize:"cover",height:"95vh",overflowY:"hidden"}}  >
            
            <div ><p
               style={{
@@ -75,7 +75,7 @@ const MainBoard = (props) => {
                 
               }}
             >
-              <strong >after 1 hour Quit Smoking...</strong>
+              <strong >After 1 hour Quit Smoking...</strong>
             </p>
             <p
                 className="  text-left"
@@ -167,15 +167,16 @@ const MainBoard = (props) => {
         </div>
       </div>
      
-      <div className="col-md-12   rounded-right rounded-left rounded-bottom rounded-top   " style={{}} >
+      <div className="col-md-8  rounded-right rounded-left rounded-bottom rounded-top   " style={{height:"95vh",overflowY:"auto"}} >
          
         {props.allposts.map((x, index, arr) => (
           
-          <div key={index}  >
+          <div key={index} style={{padding:"10px"}} >
             <div
               className="row rounded-right rounded-left rounded-bottom rounded-top border  "
               style={{
-                backgroundImage:"linear-gradient(to bottom,white,gray)",
+                
+                backgroundImage:"linear-gradient(to bottom,white,silver)",
                
                
 
@@ -252,9 +253,10 @@ const MainBoard = (props) => {
               </div>
               
             </div>
-          
+            <br></br>
           </div>
         ))}
+        
       </div>
       
     

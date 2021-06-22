@@ -34,10 +34,10 @@ componentDidMount(){
            
            <div className=' rounded-right rounded-left rounded-bottom rounded-top ' >
            
-            <h3 className='text-center' style={{color:"white"}}>Share Your story ,Relapse,How you beat <i className="fas fa-grin-tongue-wink" style={{color:"pink",fontSize:"20px"}}></i> the Nicodemon</h3>
+            <h5 className='text-center' style={{color:"black"}}>Quit Smoking Disscution forum ,Share Your story ,Relapse,How you beat <i className="fas fa-grin-tongue-wink" style={{color:"pink",fontSize:"20px"}}></i> the Nicodemon</h5>
            </div>
       
-          <div className='container'>
+          <div className='container-fluid'>
             <Route path="/" exact component={MainBoard} />
             <Route path="/PostReplay/:id" component={PostReaply} />
             <Route path="/NewPost" component={NewPost} />
