@@ -4,6 +4,6 @@ module.exports={
      clientID:1082730518808869,
      clientSecret:"e8d93059f915f3ea3917d7125a6f23ed",
      Email:'kumeprog@gmail.com',
-     password:'0112791187KK'
+     password:'TulUPxCSEDKlBP1e'
 
 }
