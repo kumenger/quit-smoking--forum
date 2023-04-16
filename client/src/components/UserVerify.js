@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { connect } from "react-redux";
 import { userVerification } from "../actions";
-import Spinner from 'react-bootstrap/Spinner'
+
 
 const UserVerify = (props) => {
   useEffect(() => {

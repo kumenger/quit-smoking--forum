@@ -140,7 +140,9 @@ const SignUp = (props) => {
         style={{padding:"20px"  ,  backgroundColor:"ActiveBorder"}}
         
        
-      ><div className='row'>
+      > <Button>hi</Button>
+        <div className='row'>
+       
         <div className='offset-md-1 col-md-10'>
         <Field name="FirstName" component={rednerinput} lable="FirstName" />
         <br></br>

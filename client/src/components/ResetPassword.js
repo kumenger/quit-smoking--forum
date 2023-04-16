@@ -6,7 +6,7 @@ import Modal from "react-bootstrap/esm/Modal";
 import Button from "react-bootstrap/esm/Button";
 const renderInput = (formProps) => {
  
-  console.log(formProps);
+
   return (
     <div className="row">
       <div className="col-md-2 offset-md-2">

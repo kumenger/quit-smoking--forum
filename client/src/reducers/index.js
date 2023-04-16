@@ -13,7 +13,7 @@ const allPostsReducer = (state = {}, action, getState) => {
   if (action.type === "createPost") {
     return { ...state, [action.payload.id]: action.payload };
   }
-
+ 
   if (action.type === "LOAD_POST") {
     return { ...state, [action.payload.id]: action.payload };
   }
@@ -64,11 +64,10 @@ const facebookloginreducer = (
   action
 ) => {
   if (action.type === "FB_LOGIN") {
-   
-    return { ...state, isLogIn: true, resp:action.payload};
+    return { ...state, isLogIn: true, resp: action.payload };
   }
   if (action.type === "FB_LOG_OUT") {
-    return { ...state, isLogIn: false, resp:""};
+    return { ...state, isLogIn: false, resp: "" };
   }
   return state;
 };
@@ -84,16 +83,18 @@ const whateditbuttonclikedreducer = (state = { nestedindex: null }, action) => {
   }
   return state;
 };
-const mongoregistersignupreducer = (state = {newuser:"",err:""}, action) => {
+const mongoregistersignupreducer = (
+  state = { newuser: "", err: "" },
+  action
+) => {
   if (action.type === "USER_REJISTER") {
-   
-    return {...state,newuser:action.payload.msg,err:''};
+    return { ...state, newuser: action.payload.msg, err: "" };
   }
- /* if (action.type === "ALL_USERS") {
+  /* if (action.type === "ALL_USERS") {
     return action.payload;
   }*/
   if (action.type === "GET_ERRORS_REGISTER") {
-    return {...state,newuser:"",err:action.payload} ;
+    return { ...state, newuser: "", err: action.payload };
   }
   return state;
 };
@@ -135,42 +136,58 @@ const getlastPostReducer = (state = { lastpost: null }, action) => {
   }
   return state;
 };
-const emailverifyreducer=(state={result:"",err:"",resend:""},action)=>{
-  if(action.type==='USER_VERIFICATION'){
-    return {...state,result:action.payload,err:""}
+const emailverifyreducer = (
+  state = { result: "", err: "", resend: "" },
+  action
+) => {
+  if (action.type === "USER_VERIFICATION") {
+    return { ...state, result: action.payload, err: "" };
   }
-  if(action.type==='GET_ERROR_VERIFY'){
-    return {...state,result:"",err:action.payload}
+  if (action.type === "GET_ERROR_VERIFY") {
+    return { ...state, result: "", err: action.payload };
   }
-  if(action.type==='RESEND_VERIFY'){
-  return {...state,result:"",err:"",resend:action.payload}
+  if (action.type === "RESEND_VERIFY") {
+    return { ...state, result: "", err: "", resend: action.payload };
   }
-  if(action.type==='FORGET_PASSWORD'){
-    return {...state,result:action.payload,err:"",resend:""}
-    }
-    if(action.type==='FORGET_PASSWORD_ERROR'){
-      return {...state,result:"",err:action.payload,resend:""}
-      }
-  return state
+  if (action.type === "FORGET_PASSWORD") {
+    return { ...state, result: action.payload, err: "", resend: "" };
+  }
+  if (action.type === "FORGET_PASSWORD_ERROR") {
+    return { ...state, result: "", err: action.payload, resend: "" };
+  }
+  return state;
+};
+const changePasswordReducer = (state = { result: "", err: "" }, action) => {
+  if (action.type === "CHANGE_PASSWORD") {
+    return { ...state, result: action.payload, err: "" };
+  }
+  if (action.type === "GET_ERROR_CHANGE_PASSWORD") {
+    return { ...state, result: "", err: action.payload };
+  }
+  return state;
+};
+const tryRemovePersis = (state,action) => {
+  if(action.type==='remove_Persist'){
+    localStorage.removeItem('persist:root')
+     persistor.purge()
+    return state
+    
+  }
+
 }
-const changePasswordReducer=(state={result:"",err:""},action)=>{
-if(action.type==='CHANGE_PASSWORD'){return {...state,result:action.payload,err:""}}
-if(action.type==='GET_ERROR_CHANGE_PASSWORD'){return {...state,result:"",err:action.payload}}
-  return state
-}
+
 const rootPersistConfig = {
   key: "root",
   storage,
   blacklist: [
-    'emailverifyreducer',
+    "emailverifyreducer",
     "mongologinreduxer",
     "form",
     "fbmongodbreducer",
     "getlastPostReducer",
     "getcurrentuserreducer",
-    'mongoregistersignupreducer',
-    'changePasswordReducer'
-
+    "mongoregistersignupreducer",
+    "changePasswordReducer",
   ],
 };
 
@@ -178,6 +195,7 @@ export default persistReducer(
   rootPersistConfig,
   combineReducers({
     form: formReducer,
+    tryRemovePersis,
     changePasswordReducer,
     emailverifyreducer,
     getlastPostReducer,

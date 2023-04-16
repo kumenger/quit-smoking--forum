@@ -21,7 +21,7 @@ componentDidMount(){
   render(){
   return (
     <div  >
-       
+       <button>clear</button>
         <Router history={history}>
         
      

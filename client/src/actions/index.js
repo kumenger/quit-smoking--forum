@@ -41,6 +41,7 @@ export const fetchuser = () => async (dispatch) => {
 };
 export const loadAllPost = () => async (dispatch) => {
   const response = await axios.get("/post/posts");
+ 
   dispatch({ type: "ALL_Posts", payload: response.data });
 };
 export const loadPost = (id) => async (dispatch) => {
@@ -63,6 +64,7 @@ export const facebooklogout = () => (dispatch) => {
 export const checkPageCreateOrReplay = (status) => {
   return { type: "CHECK_PAGE", payload: status };
 };
+
 
 export const CreatePostReplay = (formValues, id) => async (
   dispatch,
@@ -252,3 +254,6 @@ export const getlastPOst = (id) => async (dispatch) => {
   const response = await axios.get(`/post/${id}`);
   dispatch({ type: "LAST_POST", payload: response.data });
 };
+export const tryRemovePersis=()=>{
+  dispatch({ type: "remove_Persist"});
+}

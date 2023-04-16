@@ -9,7 +9,7 @@ import { loginUser,resendVerification ,forgetPassword} from "../actions/index";
 import { FormControl } from "react-bootstrap";
 import { reduxForm, Field, formValueSelector } from "redux-form";
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+
 import Jwt_decode from "jwt-decode";
 import Modal from "react-bootstrap/esm/Modal";
 import Button from "react-bootstrap/esm/Button";

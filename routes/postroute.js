@@ -1,4 +1,4 @@
-const { json } = require("body-parser");
+
 const Post = require("../models/postmodel");
 const Router = require("express").Router();
 
@@ -35,7 +35,7 @@ Router.route("/:id").get((req, res) => {
       res.json(excercis);
     })
     .catch((err) => {
-      err.status(400).json("Eror") + " " + err;
+      res.status(400).json({err}) + " " + err;
     });
 });
 Router.route("/insertReplay/:id").put((req, res) => {

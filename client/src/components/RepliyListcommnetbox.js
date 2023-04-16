@@ -15,8 +15,7 @@ import { reduxForm } from "redux-form";
 import Modal from "react-bootstrap/esm/Modal";
 
 
-import axios from "axios";
-import { configure } from "@testing-library/react";
+
 
 
 const RepliyListcommnetbox = (props) => {
@@ -186,7 +185,7 @@ const RepliyListcommnetbox = (props) => {
             <p
               ref={replayername}
               id={editable ? "four" : ""}
-              className="text-white r"
+           
               contentEditable={editable}
               className={`${editable ? "blickme" : "text-white"}`}
             >

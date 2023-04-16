@@ -11,7 +11,7 @@ const FacebookLogInPage = (props) => {
   }, []);
 
   const responseFacebook = (response) => {
-    console.log(response);
+  
     if (response.name) {
       setIslogIn(true);
       props.facebookloginaction(response);

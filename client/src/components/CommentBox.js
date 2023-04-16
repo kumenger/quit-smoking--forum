@@ -8,7 +8,7 @@ import ButtonGroup from "react-bootstrap/esm/ButtonGroup";
 import Modal from "react-bootstrap/esm/Modal";
 import {reduxForm} from 'redux-form';
 import {useHistory} from 'react-router-dom'
-import axios from "axios";
+
 import _ from 'lodash'
 const CommentBox = (props) => {
   let myobj = { name: null, title: null, post: null, time: null };
@@ -101,7 +101,7 @@ const CommentBox = (props) => {
       });
         
       seteditale(false);
-      console.log(myobj)
+      
     }
   };
   const iconclickedMain = () => {
