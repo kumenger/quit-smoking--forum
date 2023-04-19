@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
-import _, { concat } from "lodash";
+import { persistStore } from "redux-persist";
 import { persistReducer } from "redux-persist";
 import isEmpty from "is-empty";
+import _, { concat } from "lodash";
 import storage from "redux-persist/lib/storage";
 import { fbmongodbreducer } from "../reducers/fbmongodbreducer";
 
@@ -166,15 +167,15 @@ const changePasswordReducer = (state = { result: "", err: "" }, action) => {
   }
   return state;
 };
-const tryRemovePersis = (state,action) => {
-  if(action.type==='remove_Persist'){
-    localStorage.removeItem('persist:root')
-     persistor.purge()
-    return state
+// const tryRemovePersis = (state={},action) => {
+//   if(action.type==='PURGE'){
+//     localStorage.removeItem('persist:root')
+//     persistStore(this.props).purge()
+//     return state
     
-  }
+//   }
 
-}
+// }
 
 const rootPersistConfig = {
   key: "root",
@@ -195,7 +196,7 @@ export default persistReducer(
   rootPersistConfig,
   combineReducers({
     form: formReducer,
-    tryRemovePersis,
+    // tryRemovePersis,
     changePasswordReducer,
     emailverifyreducer,
     getlastPostReducer,

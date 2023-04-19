@@ -45,22 +45,13 @@ const SignUp = (props) => {
        history.push('/')
      }
    }
-   // props.getalluser();
-   // let iscanceled = false;
-   /* const get = async () => {
-      const resp = await axios.get("/users/allusers")
-      if (!iscanceled) {
-        setdatadataall(resp.data);
-      }
-    };*/
+    props.getalluser();
+
+
 
    check()
-   // get();
-   
-    /*return () => {
-      iscanceled = true;
-    };*/
-  }, [checkemail]);
+ 
+  }, []);
   const unverfiedclicked2=()=>{
     setShow(false)
     if(props.mongoregistersignupreducer.newuser){

@@ -254,6 +254,6 @@ export const getlastPOst = (id) => async (dispatch) => {
   const response = await axios.get(`/post/${id}`);
   dispatch({ type: "LAST_POST", payload: response.data });
 };
-export const tryRemovePersis=()=>{
-  dispatch({ type: "remove_Persist"});
-}
+// export const tryRemovePersis=(dispatch)=>{
+//   dispatch({ type: "PURGE",key:"persist:root",result:()=>null});
+// }

@@ -101,6 +101,9 @@ Router.route("/register").post((req, res) => {
 Router.route("/login").post((req, res) => {
   const Email = req.body.email;
   const Password = req.body.password;
+  if (!Email || !Password) {
+    res.status(404).json({ error: "email and password required" });
+  }
   User.findOne({ Email }).then((user) => {
     if (!user) {
       return res.status(404).json({
@@ -147,8 +150,7 @@ Router.route("/confirmation/:tok").post((req, res) => {
     if (!token) {
       return res.status(200).json({
         type: "un-verifed",
-        msg:
-          "We were unable to find a valid activation. Your activation my have expired",
+        msg: "We were unable to find a valid activation. Your activation my have expired",
       });
     }
     User.findOne({ _id: token._UserId }).then((user) => {

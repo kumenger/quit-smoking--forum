@@ -8,55 +8,54 @@ import history from "../history";
 import SignUp from "./Signup";
 import { connect } from "react-redux";
 import ReplayTOPost from "./ReaplyToPost";
-import {userVerification} from '../actions'
-import UserVerify from './UserVerify'
-import ResetPassword from './ResetPassword'
+import { userVerification } from "../actions";
+import UserVerify from "./UserVerify";
+import ResetPassword from "./ResetPassword";
 
-
-
-class App extends React.Component  {
-componentDidMount(){
- //this.props.userVerification()
-}
-  render(){
-  return (
-    <div  >
-       <button>clear</button>
+class App extends React.Component {
+  componentDidMount() {
+    //this.props.userVerification()
+  }
+  render() {
+    return (
+      <div>
         <Router history={history}>
-        
-     
-          
-         
-        
-          
-           
-           <Header />
-           
-           <div className=' rounded-right rounded-left rounded-bottom rounded-top ' >
-           
-            <h5 className='text-center' style={{color:"black"}}>Quit Smoking Disscution forum ,Share Your story ,Relapse,How you beat <i className="fas fa-grin-tongue-wink" style={{color:"pink",fontSize:"20px"}}></i> the Nicodemon</h5>
-           </div>
-      
-          <div className='container-fluid'>
+          <Header />
+
+          <div className=" rounded-right rounded-left rounded-bottom rounded-top ">
+            <h5 className="text-center" style={{ color: "black" }}>
+              Quit Smoking Disscution forum ,Share Your story ,Relapse,How you
+              beat{" "}
+              <i
+                className="fas fa-grin-tongue-wink"
+                style={{ color: "pink", fontSize: "20px" }}
+              ></i>{" "}
+              the Nicodemon
+            </h5>
+          </div>
+
+          <div className="container-fluid">
             <Route path="/" exact component={MainBoard} />
             <Route path="/PostReplay/:id" component={PostReaply} />
             <Route path="/NewPost" component={NewPost} />
             <Route path="/ReplayTOPost/:id" component={ReplayTOPost} />
-            <Route path='/users/confirmation/:tok' component={UserVerify}/>
-            <Route path='/users/emailforget/:resendToken' component={ResetPassword}/>
+            <Route path="/users/confirmation/:tok" component={UserVerify} />
+            <Route
+              path="/users/emailforget/:resendToken"
+              component={ResetPassword}
+            />
             <Route path="/signup" component={SignUp} />
             <Route path="/MainBoard" exact component={MainBoard} />
           </div>
         </Router>
       </div>
-  
-  );}
-};
-const mapStateToProps=(state)=>{
-  return{
-    fbmongodbreducer:state.fbmongodbreducer,
-    emailverifyreducer:state.emailverifyreducer
-  
+    );
   }
 }
-export default connect(mapStateToProps,{userVerification})(App);
+const mapStateToProps = (state) => {
+  return {
+    fbmongodbreducer: state.fbmongodbreducer,
+    emailverifyreducer: state.emailverifyreducer,
+  };
+};
+export default connect(mapStateToProps, { userVerification })(App);
