@@ -6,8 +6,7 @@ const keys = require("../config/key");
 const Token = require("../models/Tokens");
 const crpto = require("crypto");
 const nodemailer = require("nodemailer");
-const path = require("path");
-const user = require("../models/user");
+
 const { json } = require("body-parser");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
@@ -44,29 +43,17 @@ Router.route("/register").post((req, res) => {
               return res.status(500).json({ msg: err.message });
             }
 
-            const myouthclient = new OAuth2(
-              "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
-              "RftAgT_DpMIVLBheeSSYPyQZ",
-              '"https://developers.google.com/oauthplayground"'
-            );
-            myouthclient.setCredentials({
-              refresh_token:
-                "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
-            });
-            const myaccetoken = myouthclient.getAccessToken();
+         
+         
 
-            var transporter = nodemailer.createTransport({
-              service: "gmail",
-              auth: {
-                type: "OAuth2",
-                user: "kumeprog@gmail.com",
-                clientId:
-                  "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
-                clientSecret: "RftAgT_DpMIVLBheeSSYPyQZ",
-                refreshToken:
-                  "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
-              },
-            });
+           var transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+        
+              user: "kumeprog@gmail.com",
+              pass:"ecchomlridjohjmd"
+            },
+          });
             var mailOptions = {
               from: "kumeprog@gmail.com",
               to: newUser.Email,
@@ -200,28 +187,14 @@ Router.route("/resendverify").post((req, res) => {
                   return res.status(500).json({ msg: err.message });
                 }
 
-                const myouthclient = new OAuth2(
-                  "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
-                  "RftAgT_DpMIVLBheeSSYPyQZ",
-                  '"https://developers.google.com/oauthplayground"'
-                );
-                myouthclient.setCredentials({
-                  refresh_token:
-                    "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
-                });
-                const myaccetoken = myouthclient.getAccessToken();
+             
 
                 var transporter = nodemailer.createTransport({
                   service: "gmail",
                   auth: {
-                    type: "OAuth2",
+              
                     user: "kumeprog@gmail.com",
-                    clientId:
-                      "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
-                    clientSecret: "RftAgT_DpMIVLBheeSSYPyQZ",
-                    refreshToken:
-                      "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
-                    accessToken: myaccetoken,
+                    pass:"ecchomlridjohjmd"
                   },
                 });
                 var mailOptions = {
@@ -251,28 +224,13 @@ Router.route("/resendverify").post((req, res) => {
               });
             }
             if (token) {
-              const myouthclient = new OAuth2(
-                "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
-                "RftAgT_DpMIVLBheeSSYPyQZ",
-                '"https://developers.google.com/oauthplayground"'
-              );
-              myouthclient.setCredentials({
-                refresh_token:
-                  "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
-              });
-              const myaccetoken = myouthclient.getAccessToken();
-
+           
               var transporter = nodemailer.createTransport({
                 service: "gmail",
                 auth: {
-                  type: "OAuth2",
+            
                   user: "kumeprog@gmail.com",
-                  clientId:
-                    "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
-                  clientSecret: "RftAgT_DpMIVLBheeSSYPyQZ",
-                  refreshToken:
-                    "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
-                  accessToken: myaccetoken,
+                  pass:"ecchomlridjohjmd"
                 },
               });
               var mailOptions = {
@@ -317,40 +275,27 @@ Router.route("/emailforget").post((req, res) => {
         return res.status(200).json({ msg: "email not found" });
       }
       if (user) {
+        console.log(user)
         user.resetPassword = crpto.randomBytes(16).toString("hex");
         user.save((err) => {
           if (err) {
             return res.status(500).json({ msg: err });
           }
-          const myouthclient = new OAuth2(
-            "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
-            "RftAgT_DpMIVLBheeSSYPyQZ",
-            '"https://developers.google.com/oauthplayground"'
-          );
-          myouthclient.setCredentials({
-            refresh_token:
-              "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
-          });
-          const myaccetoken = myouthclient.getAccessToken();
+        
 
           var transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-              type: "OAuth2",
+        
               user: "kumeprog@gmail.com",
-              clientId:
-                "75537163394-ostmdmjg0flq6u48mac0pk0t6p9q9jmo.apps.googleusercontent.com",
-              clientSecret: "RftAgT_DpMIVLBheeSSYPyQZ",
-              refreshToken:
-                "1//04OBAqMUvau7YCgYIARAAGAQSNwF-L9Ir82K6LpYLlZkHT7a0uEQp4I5hz0MafU6WOerTqkxX2btbfXHvSjkIBirAYRD0zhnz7LM",
-              accessToken: myaccetoken,
+              pass:"ecchomlridjohjmd"
             },
           });
           var mailOptions = {
             from: "kumeprog@gmail.com",
             to: user.Email,
             subject: "Reset Password Request ",
-            html: `Hello, ${user.FirstName} <br></br> please follow the link to reset password <a href='https://scary-eyeballs-76816.herokuapp.com/users/emailforget/${user.resetPassword} 
+            html: `Hello, ${user.FirstName} <br></br> please follow the link to reset password <a href='/users/emailforget/${user.resetPassword} 
 
       
       
