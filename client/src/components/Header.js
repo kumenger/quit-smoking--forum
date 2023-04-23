@@ -28,11 +28,11 @@ const Header = (props) => {
   const showwhenidonreplay = () => {
     return props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown" ||props.mongologinreduxer.isAuthenticated ? (
       <Link
-        className=" blink blink btn btn-outline-primary "
+        className=" blink blink btn btn-primary "
         to={`/ReplayTOPost/${props.getIdForReplayReducer.id}`}
       >
         {" "}
-        Repaly 
+        Comment 
       </Link>
     ) : ""
 
