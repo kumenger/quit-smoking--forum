@@ -23,15 +23,11 @@ class App extends React.Component {
           <Header />
 
           <div className=" rounded-right rounded-left rounded-bottom rounded-top ">
-            <h5 className="text-center" style={{ color: "black" }}>
-              Quit Smoking Disscution forum ,Share Your story ,Relapse,How you
-              beat{" "}
-              <i
-                className="fas fa-grin-tongue-wink"
-                style={{ color: "pink", fontSize: "20px" }}
-              ></i>{" "}
-              the Nicodemon
-            </h5>
+            <h3 className="text-center" style={{ color: "Brown" }}>
+            <img src="https://img.icons8.com/color/48/null/no-smoking.png"/>   Quit Smoking 
+Discussion forum 
+<img src="https://img.icons8.com/color/48/null/no-smoking.png"/>      
+            </h3>
           </div>
 
           <div className="container-fluid">

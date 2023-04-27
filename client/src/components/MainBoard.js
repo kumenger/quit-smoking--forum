@@ -55,24 +55,28 @@ const MainBoard = (props) => {
     );
   }
  //flex-nowrap
- console.log(props.allposts)
+
   return (
 <div >
     <div
       className="row rounded-right rounded-left rounded-bottom rounded-top "
       
     >
-        <div className="col-md-4">
+        <div className="col-md-5">
         <div className="row">
-          <div className="col ">
+          <div className="col ">     <p class='text-danger blink_me'> <img src="https://img.icons8.com/ios-glyphs/30/null/info--v1.png"/> Did You Know
+<img src="https://img.icons8.com/ios-glyphs/30/null/info--v1.png"/></p>  
             <div className='row' style={{padding:"10px"}}>
-            <div className='col ' style={{ backgroundImage:"linear-gradient(to right bottom,#7ed56f46,#55c57a),url(https://i.ibb.co/fkQ1THj/Ignition-of-the-last-one-cigarette-Quit-smoking-concept-photography-Shutterstock-ID-1125219683-Purch.jpg)",backgroundSize:"cover",height:"95vh",overflowY:"hidden"}}  >
+     
+ 
+            <div className='col '   >
            
-           <div ><p
+           <div>
+            <p
               style={{
-                color: "snow",
+                color: "brown",
                 fontFamily: "monospace",
-                fontSize: "16px",
+                fontSize: "14px",
                 
               }}
             >
@@ -83,20 +87,21 @@ const MainBoard = (props) => {
                 style={{
                 color: "",
                 fontFamily: "monospace",
-                fontSize:"18px",
+                fontSize:"14px",
               
               }}
             >
               In as little as 20 minutes after the last cigarette is smoked, the
               heart rate drops and returns to normal. Blood pressure begins to
               drop, and circulation may start to improve.
+              <img src="https://img.icons8.com/bubbles/30/null/happy.png"/>
             </p>
             <p>
               <strong
                 style={{
-                  color: "snow",
+                  color: "brown",
                   fontFamily: "monospace",
-                  fontSize: "16px",
+                  fontSize: "14px",
                 }}
               >
                   In 12 hours...
@@ -107,20 +112,20 @@ const MainBoard = (props) => {
               style={{
                 color: "",
                 fontFamily: "monospace",
-                fontSize:"18px",
+                fontSize:"14px",
              
               }}
             >
               After just 12 hours
               without a cigarette, the body cleanses itself of the excess carbon
-              monoxide from the cigarettes. The carbon monoxide level returns to
+              monoxide from the cigarettes.<img src="https://img.icons8.com/bubbles/30/null/happy.png"/> The carbon monoxide level returns to
               normal, increasing the body’s oxygen levels
             </p>
             <p
               style={{
-                color: "snow",
+                color: "brown",
                 fontFamily: "monospace",
-                fontSize: "16px",
+                fontSize: "14px",
               }}
             >
               <strong>In 1  day...</strong>
@@ -130,33 +135,33 @@ const MainBoard = (props) => {
               style={{
                 color: "",
                 fontFamily: "monospace",
-                fontSize:"18px",
+                fontSize:"14px",
                
               }}
             >
               Just 1 day after quitting smoking, the risk of heart attack begins
-              to decrease. Smoking raises the risk of developing coronary heart
+              to decrease <img src="https://img.icons8.com/bubbles/30/null/happy.png"/>. Smoking raises the risk of developing coronary heart
               disease by lowering good cholesterol, which makes heart-healthy
               exercise harder to do.
             </p>
             <p
               style={{
-                color: "snow",
+                color: "brown",
                 fontFamily: "monospace",
-                fontSize: "16px",
+                fontSize: "14px",
               }}
             >
               <strong>In 2  day....</strong>
             </p>
             <p className="text-left"  style={{
                 color: "",
-                fontSize:"18px",
+                fontSize:"14px",
                 fontFamily: "monospace",
               
               }}>
               Smoking damages the nerve endings responsible for the senses of
               smell and taste. In as little as 2 days after quitting, a person
-              may notice a heightened sense of smell and more vivid tastes as
+              may notice a heightened sense of smell <img src="https://img.icons8.com/bubbles/30/null/happy.png"/> and more vivid tastes as
               these nerves heal.
             </p></div> </div>
            
@@ -168,16 +173,16 @@ const MainBoard = (props) => {
         </div>
       </div>
      
-      <div className="col-md-8  rounded-right rounded-left rounded-bottom rounded-top   " style={{height:"95vh",overflowY:"auto"}} >
+      <div className="col-md-7  rounded-right rounded-left rounded-bottom rounded-top   " style={{height:"95vh",overflowY:"auto"}} >
          
         {props.allposts.map((x, index, arr) => (
           
-          <div key={index} style={{padding:"10px"}} >
+          <div key={index} style={{padding:"2px"}} >
             <div
               className="row rounded-right rounded-left rounded-bottom rounded-top border  "
               style={{
                 
-                backgroundImage:"linear-gradient(to bottom,white,silver)",
+                backgroundImage:"linear-gradient()",
                
                
 
@@ -190,13 +195,13 @@ const MainBoard = (props) => {
                   to={`PostReplay/${x._id}`}
                   onClick={() => props.getIdForReplay(x._id)}
                 >
-                  <h6 style={{ color:"royalblue", fontFamily: "revert" }}>
+                  <p style={{ color:"navy", fontFamily: "revert", fontSize:"14px" }}>
                     <u>{x.title}</u>
-                  </h6>
+                  </p>
                 </Link>
-                <p>{`Post by ${x.name} `}</p>
+                <p style={{fontSize:"10px",color:"brown"}}>{`Post by ${x.name} `}</p>
                 <p
-                  style={{ color: "navy", fontSize: "12px" }}
+                  style={{ color:"navy", fontSize: "10px" }}
                 >{`${x.time}`}</p>
               </div>
 
@@ -209,15 +214,15 @@ const MainBoard = (props) => {
                   className="rounded-right rounded-left rounded-bottom rounded-top img-responsive "
                   src={props.facebookloginreducer.resp.picture.data.url}
                        />: 
-                      <img src={`https://ui-avatars.com/api/?background=random&name=${x.name}&font-size=0.33`} className='rounded'/>
+                      <img src={`https://ui-avatars.com/api/?background=random&name=${x.name}&font-size=0.25`} className='rounded'/>
                 
               
           
                   } 
                
-                <p style={{ fontSize: "12px" }} className="text-left">
+                <p style={{ fontSize: "10px" }} className="text-left">
                   {x.replay && x.replay.length > 0 ? (
-                    <span className="fas fa-comment " style={{ color: "darkslateblue" }}>
+                    <span className="fas fa-comment " style={{ color: "gray" }}>
                       &nbsp;
                       {x.replay.length}
                     </span>
@@ -226,7 +231,7 @@ const MainBoard = (props) => {
                   )}
                   &nbsp;
                   {x.likes && x.likes > 0 ? (
-                    <span className="fas fa-heart" style={{ color: "darkslateblue" }}>
+                    <span className="fas fa-heart" style={{ color: "gray" }}>
                       &nbsp;
                       {x.likes}
                     </span>
@@ -236,7 +241,7 @@ const MainBoard = (props) => {
                 </p>
               </div>
               <div className="col-3">
-                <p style={{ fontSize: "14px",color:"darkslateblue" }} className="text-left">
+                <p style={{ fontSize: "14px",color:"brown" }} className="text-left">
                 <i class="fas fa-reply-all"></i>&nbsp; 
                   {x.replay &&
                   x.replay.length > 0 &&
@@ -244,7 +249,7 @@ const MainBoard = (props) => {
                     ? getfirst( x.replay[x.replay.length - 1].replayername)
                     : getfirst(x.name)}
                 </p>
-                <p style={{ fontSize: "12px", color: "royalblue" }}>
+                <p style={{ fontSize: "10px", color: "navy" }}>
                   {x.replay &&
                   x.replay[x.replay.length - 1] &&
                   x.replay[x.replay.length - 1].hasOwnProperty("replyertime")
@@ -254,15 +259,16 @@ const MainBoard = (props) => {
               </div>
               
             </div>
-            <br></br>
+        
           </div>
         ))}
         
       </div>
       
+      
     
     </div>
-    <br></br>
+    
     </div>
   );
 };

@@ -41,11 +41,11 @@ const Header = (props) => {
 
   return (
     <div
-      className="rounded-right rounded-left rounded-bottom rounded-to " 
+      className="" 
      
     >
       <div
-        className="row rounded-right rounded-left rounded-bottom rounded-top  "
+        className="row borderrounded-right rounded-left rounded-bottom rounded-top  "
        
       >
         <div className="col-md-12">
@@ -53,15 +53,15 @@ const Header = (props) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" id='toggler' />
             <Navbar.Brand>
             <Link to="/" onClick={() => getIdForReplay(null)}>
-                   <h5  className='btn btn-info' style={{fontSize:"16px"}}><strong>Home</strong> </h5>
+                   <h5  className='btn btn-secondary' style={{fontSize:"12px",background:"brown"}}><strong><img src="https://img.icons8.com/material-outlined/24/null/home-page.png"/> Home</strong> </h5>
                   </Link>
             </Navbar.Brand>
             <Navbar.Brand>
-            { props.facebookloginreducer.isLogIn&&!props.facebookloginreducer.resp.status ||props.mongologinreduxer.isAuthenticated? "":<div><h5 ><Link to="/signup" className='btn btn-info '>Register</Link></h5> </div>  }
+            { props.facebookloginreducer.isLogIn&&!props.facebookloginreducer.resp.status ||props.mongologinreduxer.isAuthenticated? "":<div><h5 ><Link to="/signup" className='btn btn-secondary 'style={{fontSize:"12px",background:"brown"}}><strong><img src="https://img.icons8.com/external-bearicons-detailed-outline-bearicons/30/null/external-signup-call-to-action-bearicons-detailed-outline-bearicons.png"/> Register</strong></Link></h5> </div>  }
             </Navbar.Brand>
            
            
-           <Navbar.Brand style={{fontSize:"18px"}}>
+           <Navbar.Brand style={{fontSize:"12px"}}>
            {props.checkpagetypereducer.page === true
                 ? window.location.href.indexOf("PostReplay") != -1
                   ? showwhenidonreplay()

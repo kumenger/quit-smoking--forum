@@ -58,7 +58,7 @@
         font-family:tahoma
       }
  
-    
+       }
   
 
 
@@ -66,16 +66,15 @@
    .c{
      background-image: linear-gradient(gray,dark);
    }
-   .back{
-    height: 95vh;
-    background-image:linear-gradient(
-        to right bottom,
-        #7ed56f46,#55c57a) ,
-        url(https://i.ibb.co/fkQ1THj/Ignition-of-the-last-one-cigarette-Quit-smoking-concept-photography-Shutterstock-ID-1125219683-Purch.jpg);
-    background-size: cover;
-    background-position: top;
-   
-   }
+   .blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 
     </style>
     <title>Kume's Quit Smoking Forum</title>

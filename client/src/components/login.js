@@ -182,11 +182,12 @@ const LogIn = (props) => {
           />
           &nbsp;
           <button
-            className="btn btn-info text-center"
+          style={{background:"#4267B2"}}
+            className="btn btn-secondary text-center"
             onClick={() => clicked()}
           >
-            {" "}
-            Log In
+            <img src="https://img.icons8.com/ios-glyphs/20/000000/login-rounded-right--v1.png"/>
+            LogIn
           </button>
         </form>
       )}
