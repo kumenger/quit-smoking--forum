@@ -14,7 +14,7 @@ const Header = (props) => {
 
   const showwhneishome = () => {
     return props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown" ||props.mongologinreduxer.isAuthenticated  ? (
-      <Link to="/NewPost" className="blink btn btn-outline-primary ">
+      <Link to="/NewPost" style={{fontSize:"12px",background:"#6e4f5a"}}>
         Create Post
       </Link>
     ) : 
@@ -28,7 +28,7 @@ const Header = (props) => {
   const showwhenidonreplay = () => {
     return props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown" ||props.mongologinreduxer.isAuthenticated ? (
       <Link
-        className=" blink blink btn btn-primary "
+      style={{fontSize:"12px",background:"#6e4f5a"}}
         to={`/ReplayTOPost/${props.getIdForReplayReducer.id}`}
       >
         {" "}
@@ -53,15 +53,15 @@ const Header = (props) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" id='toggler' />
             <Navbar.Brand>
             <Link to="/" onClick={() => getIdForReplay(null)}>
-                   <h5  className='btn btn-secondary' style={{fontSize:"12px",background:"#6e4f5a"}}><strong><img src="https://img.icons8.com/material-outlined/20/null/home-page.png"/> Home</strong> </h5>
+                   <h5  className='btn btn-secondary border' style={{fontSize:"12px",background:"#6e4f5a"}}><strong><img src="https://img.icons8.com/material-outlined/20/null/home-page.png"/> Home</strong> </h5>
                   </Link>
             </Navbar.Brand>
             <Navbar.Brand>
-            { props.facebookloginreducer.isLogIn&&!props.facebookloginreducer.resp.status ||props.mongologinreduxer.isAuthenticated? "":<div><h5 ><Link to="/signup" className='btn btn-secondary 'style={{fontSize:"12px",background:"#6e4f5a"}}><strong><img src="https://img.icons8.com/external-bearicons-detailed-outline-bearicons/20/null/external-signup-call-to-action-bearicons-detailed-outline-bearicons.png"/> Register</strong></Link></h5> </div>  }
+            { props.facebookloginreducer.isLogIn&&!props.facebookloginreducer.resp.status ||props.mongologinreduxer.isAuthenticated? "":<div><h5 ><Link to="/signup" className='btn btn-secondary border 'style={{fontSize:"12px",background:"#6e4f5a"}}><strong><img src="https://img.icons8.com/external-bearicons-detailed-outline-bearicons/20/null/external-signup-call-to-action-bearicons-detailed-outline-bearicons.png"/> Register</strong></Link></h5> </div>  }
             </Navbar.Brand>
             <Navbar.Brand>
             <Link to="/stories" onClick={() => getIdForReplay(null)}>
-                   <h5  className='btn btn-secondary' style={{fontSize:"12px",background:"#6e4f5a"}}><strong><img src="https://img.icons8.com/color/20/null/storytelling.png"/> Stories</strong> </h5>
+                   <h5  className='btn btn-secondary border' style={{fontSize:"12px",background:"#6e4f5a"}}><strong><img src="https://img.icons8.com/color/20/null/storytelling.png"/> Stories</strong> </h5>
                   </Link>
             </Navbar.Brand>
            

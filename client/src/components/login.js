@@ -183,10 +183,10 @@ const LogIn = (props) => {
           &nbsp;
           <button
           style={{background:"#6e4f5a"}}
-            className="btn btn-secondary text-center"
+            className="btn btn-secondary border"
             onClick={() => clicked()}
           >
-            <img src="https://img.icons8.com/ios-glyphs/20/000000/login-rounded-right--v1.png"/>
+          <img src="https://img.icons8.com/color/20/null/login-rounded-right.png"/>
             LogIn
           </button>
         </form>

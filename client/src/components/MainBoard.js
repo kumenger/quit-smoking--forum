@@ -57,14 +57,14 @@ const MainBoard = (props) => {
  //flex-nowrap
 
   return (
-<div >
+<div className="container-fluid" >
     <div
-      className="row rounded-right rounded-left rounded-bottom rounded-top "
+      className="row rounded-right rounded-left rounded-bottom rounded-top bg-ligh"
       
     >
       
      
-      <div className="col-md-12  rounded-right rounded-left rounded-bottom rounded-top   " style={{height:"95vh",overflowY:"auto"}} >
+      <div className="col-md-12  rounded-right rounded-left rounded-bottom rounded-top   " style={{overflowY:"auto"}} >
          
         {props.allposts.map((x, index, arr) => (
           
@@ -159,7 +159,7 @@ const MainBoard = (props) => {
       
     
     </div>
-    
+    <br></br>
     </div>
   );
 };

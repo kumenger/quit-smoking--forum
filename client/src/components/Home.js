@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Home=()=>{
+const home=()=>{
     return(<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",paddingLeft:"15px"}}>
    
 <div classname="" style={{width:"40%" ,}}>  <h2 style={{color:"navy",textAlign:"center"}}>Quitting Never
@@ -70,4 +70,4 @@ Felt So Good.</h2>
 </div>
     )
 }
-export default Home
+export default home
