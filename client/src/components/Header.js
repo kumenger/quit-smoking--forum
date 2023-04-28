@@ -15,7 +15,7 @@ const Header = (props) => {
   const showwhneishome = () => {
     return props.facebookloginreducer.isLogIn&&props.facebookloginreducer.resp.status!="unknown" ||props.mongologinreduxer.isAuthenticated  ? (
       <Link to="/NewPost" style={{fontSize:"12px",background:"#6e4f5a"}}>
-        Create Post
+        <h5 className='btn btn-secondary border'>Create Post</h5>
       </Link>
     ) : 
       
@@ -32,7 +32,7 @@ const Header = (props) => {
         to={`/ReplayTOPost/${props.getIdForReplayReducer.id}`}
       >
         {" "}
-        Comment 
+        <h5 className='btn btn-secondary border'>Comment</h5>
       </Link>
     ) : ""
 
