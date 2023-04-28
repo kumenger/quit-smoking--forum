@@ -11,6 +11,7 @@ import ReplayTOPost from "./ReaplyToPost";
 import { userVerification } from "../actions";
 import UserVerify from "./UserVerify";
 import ResetPassword from "./ResetPassword";
+import Home from './Home'
 
 class App extends React.Component {
   componentDidMount() {
@@ -23,19 +24,16 @@ class App extends React.Component {
           <Header />
 
           <div className=" rounded-right rounded-left rounded-bottom rounded-top ">
-            <h3 className="text-center" style={{ color: "Brown" }}>
-            <img src="https://img.icons8.com/color/48/null/no-smoking.png"/>   Quit Smoking 
-Discussion forum 
-<img src="https://img.icons8.com/color/48/null/no-smoking.png"/>      
-            </h3>
+           
           </div>
 
           <div className="container-fluid">
-            <Route path="/" exact component={MainBoard} />
+            <Route path="/" exact component={Home} />
             <Route path="/PostReplay/:id" component={PostReaply} />
             <Route path="/NewPost" component={NewPost} />
             <Route path="/ReplayTOPost/:id" component={ReplayTOPost} />
             <Route path="/users/confirmation/:tok" component={UserVerify} />
+            <Route path="/stories" exact component={MainBoard} />
             <Route
               path="/users/emailforget/:resendToken"
               component={ResetPassword}

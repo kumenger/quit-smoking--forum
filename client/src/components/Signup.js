@@ -79,25 +79,14 @@ const SignUp = (props) => {
       ...{ ...myobj, QuitDate: date, JoinDate: new Date() },
     });
     setShow(true)
-    /*if (
-      dataall.map((x) => x.Email === fromValues.Email).filter((x) => x === true)
-        .length > 0
-    ) {
-      setcheckemail("Email aready registerd");
-    } else {
-      props.userRejister({
-        ...fromValues,
-        ...{ ...myobj, QuitDate: date, JoinDate: new Date() },
-      });
-      history.push("/");
-    }*/
+  
   };
 
   return (
     <div
       className="rounded-right rounded-left rounded-bottom rounded-top row "
       style={{
-        backgroundColor:"dark",
+     
         alignItems: "center",
       
        
@@ -128,10 +117,10 @@ const SignUp = (props) => {
       <form
         onSubmit={props.handleSubmit(onforumSubmint)}
         className="rounded-right rounded-left rounded-bottom rounded-top"
-        style={{padding:"20px"  ,  backgroundColor:"ActiveBorder"}}
+        style={{padding:"20px"  ,  }}
         
        
-      > <Button>hi</Button>
+      > 
         <div className='row'>
        
         <div className='offset-md-1 col-md-10'>
