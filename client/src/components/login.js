@@ -182,7 +182,7 @@ const LogIn = (props) => {
           />
           &nbsp;
           <button
-          style={{background:"#6e4f5a"}}
+          style={{background:"#055C9D"}}
             className="btn btn-secondary border"
             onClick={() => clicked()}
           >
