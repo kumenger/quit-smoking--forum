@@ -4,26 +4,29 @@ const home = () => {
     return (
         <div className="container-fluid bg-light"  >
         <div style={{ height:"80vh",paddingTop:"30px"}}
-          className="row  t-.25"
+          className="row  "
           
         >
           
          
-          <div className="offset-md-1 col-md-5   "  >
-             
-          <img className="img-fluid" src='https://i.ibb.co/RvRdq8m/img-utp-OTTjdn-EAT5-Rl-Fl3-F19r-Ix.png'/>
+          <div className=" col-md-5  imgdiv "  >
+          <h2 style={
+                        {
+                            color: "#055C9D",
+                            textAlign: "center",
+                        
+                            fontWeight:"bold"
+                          
+                        }
+                    }>Quitting  Never<br></br>
+                    Felt So Good<img src="https://img.icons8.com/bubbles/30/null/happy.png"/> </h2>
+          {/* <img className="img-fluid img-thumbnail float-right" src='https://i.ibb.co/RvRdq8m/img-utp-OTTjdn-EAT5-Rl-Fl3-F19r-Ix.png'/> */}
           
           </div>
           
-          <div className="col-md-4    "  style={{letterSpacing:"1px"}} >
+          <div className="col-md-6    "  style={{letterSpacing:"1px"}} >
              
-          <h2 style={
-                        {
-                            color: "navy",
-                            textAlign: "center"
-                        }
-                    }>Quitting Never
-                    Felt So Good.</h2>
+          
 
                     <h4 style={
                         {
@@ -33,7 +36,7 @@ const home = () => {
                             textAlign: "center"
                         }
                     }>
-                        <strong> 1 hour after Quit Smoking...</strong>
+                        An hour after Quit Smoking...
                     </h4>
                     <p classname="  text-left"
                         style={
@@ -41,7 +44,7 @@ const home = () => {
                                 color: "",
                                 fontFamily: "",
                                 
-                                fontWeight: "bold"
+                                fontWeight: ""
                             }
                     }>
                         In as little as 20 minutes after the last cigarette is smoked, the
@@ -58,9 +61,9 @@ const home = () => {
                             textAlign: "center"
                         }
                     }>
-                        <strong>
-                             12 hours...
-                        </strong>
+                      
+                             half a day...
+                       
                     </h4>
                     <p classname=" text-left"
                         style={
@@ -68,7 +71,7 @@ const home = () => {
                                 color: "",
                                 fontFamily: "",
                               
-                                fontWeight: "bolder"
+                                fontWeight: ""
                             }
                     }>
                         After just 12 hours
@@ -85,7 +88,7 @@ const home = () => {
                             textAlign: "center"
                         }
                     }>
-                        <strong>one  day...</strong>
+                        one  day...
                     </h4>
                     <p classname="text-left"
                         style={
@@ -93,7 +96,7 @@ const home = () => {
                                 color: "",
                                 fontFamily: "",
                                
-                                fontWeight: "bolder"
+                                fontWeight: ""
                             }
                     }>
                         Just 1 day after quitting smoking, the risk of heart attack begins
@@ -110,14 +113,14 @@ const home = () => {
                             textAlign: "center"
                         }
                     }>
-                        <strong>two day....</strong>
+                       two day....
                     </h4>
                     <p classname="text-left"
                         style={
                             {
                                 color: "",
                                
-                                fontWeight: "bolder",
+                                fontWeight: "",
                                 fontFamily: ""
                             }
                     }>

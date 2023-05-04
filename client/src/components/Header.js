@@ -53,11 +53,11 @@ const Header = (props) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" id='toggler' />
             <Navbar.Brand>
             <Link to="/" onClick={() => getIdForReplay(null)}>
-                   <h5  className='btn btn-secondary border' style={{background:"#055C9D"}}><img src="https://img.icons8.com/material-outlined/20/null/home-page.png"/> Home </h5>
+                   <h5  className='btn btn-secondary border' style={{background:"#055C9D"}}><img src="https://img.icons8.com/cotton/25/null/home--v3.png"/> Home </h5>
                   </Link>
             </Navbar.Brand>
             <Navbar.Brand>
-            { props.facebookloginreducer.isLogIn&&!props.facebookloginreducer.resp.status ||props.mongologinreduxer.isAuthenticated? "":<div><h5 ><Link to="/signup" className='btn btn-secondary border 'style={{background:"#055C9D"}}><img src="https://img.icons8.com/external-bearicons-detailed-outline-bearicons/20/null/external-signup-call-to-action-bearicons-detailed-outline-bearicons.png"/> Register</Link></h5> </div>  }
+            { props.facebookloginreducer.isLogIn&&!props.facebookloginreducer.resp.status ||props.mongologinreduxer.isAuthenticated? "":<div><h5 ><Link to="/signup" className='btn btn-secondary border 'style={{background:"#055C9D"}}><img src="https://img.icons8.com/fluency/20/null/petition.png"/> Register</Link></h5> </div>  }
             </Navbar.Brand>
             <Navbar.Brand>
             <Link to="/stories" onClick={() => getIdForReplay(null)}>

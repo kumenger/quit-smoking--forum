@@ -58,7 +58,7 @@ Router.route("/register").post((req, res) => {
               from: "kumeprog@gmail.com",
               to: newUser.Email,
               subject: "Quit Smoking Account Verification ",
-              html: `Hello, ${newUser.FirstName} <br></br> please verify account by following this <a href='https://scary-eyeballs-76816.herokuapp.com/users/confirmation/${newtoke.token} 
+              html: `Hello, ${newUser.FirstName} <br></br> please verify account by following this <a href='https://kumequitsmoking.herokuapp.com/users/confirmation/${newtoke.token} 
    
                   
                   

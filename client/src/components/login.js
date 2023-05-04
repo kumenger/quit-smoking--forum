@@ -40,41 +40,41 @@ const LogIn = (props) => {
 
   const renderlink = () => {
     if (ResponseError.Email) {
-      return <div>{ResponseError.Email}</div>;
+      return <div  className="text-light" >{ResponseError.Email}</div>;
     }
     if (ResponseError.Password) {
       return (
-        <div className="text-dark">
+        <div className="text-light">
           {" "}
           {ResponseError.Password}{" "}
-          <strong>
+      
             <u>
               <a
-                style={{ fontSize: "16px", fontWeight: "bold", color: "blue" }}
+                style={{ fontSize: "12px", color: "snow" }}
                 onClick={() => forgetccliked()}
               >
                 forget PassWord?
               </a>{" "}
             </u>{" "}
-          </strong>{" "}
+    
         </div>
       );
     }
     if (ResponseError.unverified) {
       return (
-        <div className="text-dark">
+        <div className="text-light">
           {" "}
           {ResponseError.unverified} Check your Email or &nbsp;
-          <strong>
+       
             <u>
               <a
-                style={{ fontSize: "16px", fontWeight: "bold", color: "blue" }}
+                style={{ fontSize: "12px",  color: "snow" }}
                 onClick={() => unverfiedclicked()}
               >
                 Resend Verification?
               </a>
             </u>{" "}
-          </strong>{" "}
+        
         </div>
       );
     }
