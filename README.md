@@ -23,7 +23,7 @@
  
 
 ## Deployed Application :
-[Quit smoking](https://scary-eyeballs-76816.herokuapp.com/)
+[Quit smoking](https://kumequitsmoking.herokuapp.com/)
 ## Link to Full Video
 
 [Link to view Full Video of Application](https://www.youtube.com/watch?v=2uZ4BrSvvm4)
