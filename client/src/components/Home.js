@@ -2,29 +2,33 @@ import React, {useState, useEffect} from "react";
 
 const home = () => {
     return (
-        <div className="container-fluid bg-light"  >
-        <div style={{ height:"80vh",paddingTop:"30px"}}
-          className="row  "
+     
+        <div style={{ paddingTop:"30px" ,height:"100vh" ,backgroundColor:"snow"}}
+          className="row border"
           
         >
           
          
-          <div className=" col-md-5  imgdiv "  >
+          <div className="col-xs-12 col-s-12 col-md-6 col-l-6  text-center " style={{ }}  >
           <h2 style={
                         {
                             color: "#055C9D",
-                            textAlign: "center",
+                           
                         
                             fontWeight:"bold"
                           
                         }
-                    }>Quitting  Never<br></br>
+                    }>Quitting  Never
                     Felt So Good<img src="https://img.icons8.com/bubbles/30/null/happy.png"/> </h2>
-          {/* <img className="img-fluid img-thumbnail float-right" src='https://i.ibb.co/RvRdq8m/img-utp-OTTjdn-EAT5-Rl-Fl3-F19r-Ix.png'/> */}
+          <img className="img-fluid img-thumbnail " width="70%"
+          src='https://i.ibb.co/VHk07ng/img-l-HSBc-HSy-YQFW3r-Ribh-B8-We-UE.png'
+         // src='https://i.ibb.co/RvRdq8m/img-utp-OTTjdn-EAT5-Rl-Fl3-F19r-Ix.png'
+          />
           
           </div>
           
-          <div className="col-md-6    "  style={{letterSpacing:"1px"}} >
+          <div className=" col-xs-12 col-s-12
+             col-md-6 col-l-6   "  style={{letterSpacing:"1px"}} >
              
           
 
@@ -137,8 +141,7 @@ const home = () => {
           
         
         </div>
-        <br></br>
-        </div>
+       
        
     )
 }

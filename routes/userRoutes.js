@@ -295,7 +295,7 @@ Router.route("/emailforget").post((req, res) => {
             from: "kumeprog@gmail.com",
             to: user.Email,
             subject: "Reset Password Request ",
-            html: `Hello, ${user.FirstName} <br></br> please follow the link to reset password <a href='https://kumequitsmoking.herokuapp.com/users/emailforget/${user.resetPassword} 
+            html: `Hello, ${user.FirstName} <br></br> please follow the link to reset password <a href='https://kumequitsmoking.herokuapp.com/user/emailforget/${user.resetPassword} 
 
       
       

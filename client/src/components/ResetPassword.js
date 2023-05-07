@@ -38,7 +38,7 @@ const ResetPassword = (props) => {
     setShow(true)
   };
   return (
-    <div>
+    <div >
          <Modal show={show}>
         <Modal.Header>
           <Modal.Title>Change Password </Modal.Title>

@@ -27,16 +27,14 @@ class App extends React.Component {
            
           </div>
 
-          <div className="container-fluid">
+          <div className="">
             <Route path="/" exact component={Home} />
             <Route path="/PostReplay/:id" component={PostReaply} />
             <Route path="/NewPost" component={NewPost} />
             <Route path="/ReplayTOPost/:id" component={ReplayTOPost} />
             <Route path="/users/confirmation/:tok" component={UserVerify} />
             <Route path="/stories" exact component={MainBoard} />
-            <Route
-              path="/users/emailforget/:resendToken"
-              component={ResetPassword}
+            <Route path="/users/emailforget/:resendToken" component={ResetPassword}
             />
             <Route path="/signup" component={SignUp} />
             <Route path="/MainBoard" exact component={MainBoard} />
