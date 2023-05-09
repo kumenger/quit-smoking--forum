@@ -20,7 +20,7 @@ const home = () => {
                         }
                     }>Quitting  Never
                     Felt So Good<img src="https://img.icons8.com/bubbles/30/null/happy.png"/> </h2>
-          <img className="img-fluid img-thumbnail " width="70%"
+          <img className="img-fluid img-thumbnail " width="90%"
           src='https://i.ibb.co/VHk07ng/img-l-HSBc-HSy-YQFW3r-Ribh-B8-We-UE.png'
          // src='https://i.ibb.co/RvRdq8m/img-utp-OTTjdn-EAT5-Rl-Fl3-F19r-Ix.png'
           />

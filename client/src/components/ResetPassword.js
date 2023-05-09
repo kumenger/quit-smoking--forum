@@ -8,7 +8,7 @@ const renderInput = (formProps) => {
  
 
   return (
-    <div className="row">
+    <div className="row ">
       <div className="col-md-2 offset-md-2">
         <label>{formProps.label}</label>
       </div>
@@ -20,6 +20,7 @@ const renderInput = (formProps) => {
           ? formProps.meta.error
           : ""}
       </div>
+     
     </div>
   );
 };
@@ -38,7 +39,7 @@ const ResetPassword = (props) => {
     setShow(true)
   };
   return (
-    <div >
+    <div className="container">
          <Modal show={show}>
         <Modal.Header>
           <Modal.Title>Change Password </Modal.Title>
@@ -56,7 +57,7 @@ const ResetPassword = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
-      <form onSubmit={props.handleSubmit(onforumSubmint)}>
+      <form onSubmit={props.handleSubmit(onforumSubmint)}style={{paddingTop:"30px"}}>
         <Field name="pass" component={renderInput} label="New Password"  type="password"/>
         <br></br>
         <Field

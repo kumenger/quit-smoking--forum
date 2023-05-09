@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import MainBoard from "./MainBoard";
 import PostReaply from "./PostReplay";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import NewPost from "./NewPost";
 import Header from "./Header";
 import history from "../history";
@@ -11,7 +11,7 @@ import ReplayTOPost from "./ReaplyToPost";
 import { userVerification } from "../actions";
 import UserVerify from "./UserVerify";
 import ResetPassword from "./ResetPassword";
-import Home from './Home'
+import Home from './home'
 
 class App extends React.Component {
   componentDidMount() {
@@ -34,10 +34,10 @@ class App extends React.Component {
             <Route path="/ReplayTOPost/:id" component={ReplayTOPost} />
             <Route path="/users/confirmation/:tok" component={UserVerify} />
             <Route path="/stories" exact component={MainBoard} />
-            <Route path="/users/emailforget/:resendToken" component={ResetPassword}
-            />
+            <Route path="/users/emailforget/:resendToken" component={ResetPassword} />
             <Route path="/signup" component={SignUp} />
             <Route path="/MainBoard" exact component={MainBoard} />
+            <Route path="/testreset" exact component={ResetPassword} />
           </div>
         </Router>
       </div>

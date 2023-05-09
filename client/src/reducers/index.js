@@ -167,15 +167,7 @@ const changePasswordReducer = (state = { result: "", err: "" }, action) => {
   }
   return state;
 };
-// const tryRemovePersis = (state={},action) => {
-//   if(action.type==='PURGE'){
-//     localStorage.removeItem('persist:root')
-//     persistStore(this.props).purge()
-//     return state
-    
-//   }
 
-// }
 
 const rootPersistConfig = {
   key: "root",

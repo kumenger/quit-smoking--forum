@@ -9,10 +9,10 @@ const nodemailer = require("nodemailer");
 
 const { json } = require("body-parser");
 const { google } = require("googleapis");
-const OAuth2 = google.auth.OAuth2;
+
 
 Router.route("/allusers").get((req, res) => {
-  User.find()
+  User.find({})
     .then((user) => {
       res.json(user);
     })
@@ -20,8 +20,24 @@ Router.route("/allusers").get((req, res) => {
       err.status(400).json("Eror") + " " + err;
     });
 });
+Router.route("/user").get(async(req, res) => {
+  let user=await User.findOne({Email:req.body.email})
+  if(!user){
+    return res.json({mesg:"no user found"})
+  }
+  console.log(user)
+  res.json(user)
+});
+Router.route("/user").delete(async(req, res) => {
+  let user=await User.findOneAndDelete({Email:req.body.email})
+  if(!user){
+    return res.json({mesg:"no user found"})
+  }
+  
+  res.json(user)
+});
 Router.route("/register").post((req, res) => {
-  User.findOne({ Email: req.body.Email }).then((user) => {
+  User.findOne({ Email:req.body.Email }).then((user) => {
     if (user) {
       return res.status(400).json({ msg: "Email aready taken!" });
     }
@@ -89,7 +105,7 @@ Router.route("/login").post((req, res) => {
   const Email = req.body.email;
   const Password = req.body.password;
   if (!Email || !Password) {
-    res.status(404).json({ error: "email and password required" });
+ return res.status(404).json({ error:{Both:"email and password required"} });
   }
   User.findOne({ Email }).then((user) => {
     if (!user) {
@@ -137,7 +153,7 @@ Router.route("/confirmation/:tok").post((req, res) => {
     if (!token) {
       return res.status(200).json({
         type: "un-verifed",
-        msg: "We were unable to find a valid activation. Your activation my have expired",
+        msg: "We were unable to find a valid activation. Your activation may have expired",
       });
     }
     User.findOne({ _id: token._UserId }).then((user) => {
@@ -268,14 +284,14 @@ Router.route("/resendverify").post((req, res) => {
       return res.status(500).json({ msg: err.message });
     });
 });
-Router.route("/emailforget").post((req, res) => {
+Router.route("/emailforget").post( (req, res) => {
   User.findOne({ Email: req.body.Email })
     .then((user) => {
       if (!user) {
         return res.status(200).json({ msg: "email not found" });
       }
       if (user) {
-        console.log(user)
+        
         user.resetPassword = crpto.randomBytes(16).toString("hex");
         user.save((err) => {
           if (err) {
@@ -295,7 +311,7 @@ Router.route("/emailforget").post((req, res) => {
             from: "kumeprog@gmail.com",
             to: user.Email,
             subject: "Reset Password Request ",
-            html: `Hello, ${user.FirstName} <br></br> please follow the link to reset password <a href='https://kumequitsmoking.herokuapp.com/user/emailforget/${user.resetPassword} 
+            html: `Hello, ${user.FirstName} <br></br> please follow the link to reset password <a href='/user/emailforget/${user.resetPassword} 
 
       
       
@@ -304,7 +320,7 @@ Router.route("/emailforget").post((req, res) => {
           };
           transporter.sendMail(mailOptions, function (err) {
             if (err) {
-              return res.status(500).json({ msg: err.message });
+              return res.status(500).json({ msg: err.message });-`--`
             }
             res.status(200).json({
               msg:

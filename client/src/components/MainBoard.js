@@ -35,11 +35,8 @@ const MainBoard = (props) => {
     "#008080",
     "#808000",
   ];
-  let myarr2=['red','pink','brown']
 
-  const [data, setdata] = useState([]);
-  const [id, setid] = useState();
-  const color=useRef(myarry[Math.round(Math.random()*myarry.length)])
+
   useEffect(() => {
     props.loadAllPost();
 

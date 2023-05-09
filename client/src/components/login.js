@@ -39,6 +39,9 @@ const LogIn = (props) => {
   const [ResponseError, setResponseError] = useState("");
 
   const renderlink = () => {
+    if (ResponseError.Both) {
+      return <div  className="text-light" >{ResponseError.Both}</div>;
+    }
     if (ResponseError.Email) {
       return <div  className="text-light" >{ResponseError.Email}</div>;
     }
@@ -123,6 +126,7 @@ const LogIn = (props) => {
           setResponseError("");
         })
         .catch((err) => {
+          console.log(err.response.data.error)
           //props.dispatch({ type: "GET_ERRORS", payload: err.response.data });
           setResponseError(err.response.data.error);
         });
