@@ -11,7 +11,7 @@ import ReplayTOPost from "./ReaplyToPost";
 import { userVerification } from "../actions";
 import UserVerify from "./UserVerify";
 import ResetPassword from "./ResetPassword";
-import Home from './home'
+import Home from './Home'
 
 class App extends React.Component {
   componentDidMount() {
