@@ -23,9 +23,7 @@ class App extends React.Component {
         <Router history={history}>
           <Header />
 
-          <div className=" rounded-right rounded-left rounded-bottom rounded-top ">
-           
-          </div>
+          
 
           <div className="">
             <Route path="/" exact component={Home} />

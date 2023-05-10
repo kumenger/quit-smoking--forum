@@ -104,8 +104,8 @@ Router.route("/register").post((req, res) => {
 Router.route("/login").post((req, res) => {
   const Email = req.body.email;
   const Password = req.body.password;
-  if (!Email || !Password) {
- return res.status(404).json({ error:{Both:"email and password required"} });
+  if (!req.body.email || !req.body.password) {
+ return res.status(404).json({error:{Both:"Email and password required"} });
   }
   User.findOne({ Email }).then((user) => {
     if (!user) {
@@ -311,7 +311,7 @@ Router.route("/emailforget").post( (req, res) => {
             from: "kumeprog@gmail.com",
             to: user.Email,
             subject: "Reset Password Request ",
-            html: `Hello, ${user.FirstName} <br></br> please follow the link to reset password <a href='/user/emailforget/${user.resetPassword} 
+            html: `Hello, ${user.FirstName} <br></br> please follow the link to reset password <a href='https://kumequitsmoking.herokuapp.com/users/emailforget/${user.resetPassword} 
 
       
       

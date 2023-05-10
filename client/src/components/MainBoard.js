@@ -54,10 +54,10 @@ const MainBoard = (props) => {
  //flex-nowrap
 
   return (
-<div className="container-fluid" >
+<div className="container-fluid " >
     <div
-      className="row rounded-right rounded-left rounded-bottom rounded-top bg-ligh"
-      
+      className="row rounded-right rounded-left rounded-bottom rounded-top " 
+     
     >
       
      

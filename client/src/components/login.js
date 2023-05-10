@@ -34,13 +34,13 @@ const renderInput = (fromProps, props) => {
 
 const LogIn = (props) => {
   const [show, setShow] = useState(false);
-  const [email, setemail] = useState("");
+  
 
   const [ResponseError, setResponseError] = useState("");
 
   const renderlink = () => {
     if (ResponseError.Both) {
-      return <div  className="text-light" >{ResponseError.Both}</div>;
+      return <div  className="text-light">{ResponseError.Both}</div>;
     }
     if (ResponseError.Email) {
       return <div  className="text-light" >{ResponseError.Email}</div>;
@@ -85,7 +85,7 @@ const LogIn = (props) => {
   const forgetccliked = () => {
     setShow(true);
     props.forgetPassword(props.Email);
-    //axios.post('http://localhost:8000/users/emailforget',{Email:props.Email}).then((res)=>{console.log(res.data)}).catch((err)=>{console.log(err)})
+   
   };
   const unverfiedclicked = () => {
     setShow(true);
